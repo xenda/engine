@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{locomotive_cms}
-  s.version = "0.0.3.3"
+  s.version = "0.0.3.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Didier Lafforgue"]
-  s.date = %q{2010-07-16}
+  s.date = %q{2010-08-17}
   s.description = %q{a brand new CMS system with super sexy UI and cool features (alpha version for now)}
   s.email = ["didier@nocoffee.fr"]
   s.extra_rdoc_files = [
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "app/controllers/admin/base_controller.rb",
      "app/controllers/admin/content_types_controller.rb",
      "app/controllers/admin/contents_controller.rb",
+     "app/controllers/admin/cross_domain_sessions_controller.rb",
      "app/controllers/admin/current_sites_controller.rb",
      "app/controllers/admin/custom_fields_controller.rb",
      "app/controllers/admin/layouts_controller.rb",
@@ -84,12 +85,15 @@ Gem::Specification.new do |s|
      "app/views/admin/contents/edit.html.haml",
      "app/views/admin/contents/index.html.haml",
      "app/views/admin/contents/new.html.haml",
+     "app/views/admin/cross_domain_sessions/new.html.haml",
      "app/views/admin/current_sites/_form.html.haml",
      "app/views/admin/current_sites/edit.html.haml",
      "app/views/admin/custom_fields/_custom_form.html.haml",
      "app/views/admin/custom_fields/_edit_field.html.haml",
      "app/views/admin/custom_fields/_index.html.haml",
      "app/views/admin/custom_fields/edit_category.html.haml",
+     "app/views/admin/errors/404.html.haml",
+     "app/views/admin/errors/500.html.haml",
      "app/views/admin/layouts/_form.html.haml",
      "app/views/admin/layouts/_layout.html.haml",
      "app/views/admin/layouts/edit.html.haml",
@@ -132,7 +136,7 @@ Gem::Specification.new do |s|
      "app/views/admin/theme_assets/new.html.haml",
      "app/views/home/show.html.haml",
      "app/views/layouts/admin/application.html.haml",
-     "app/views/layouts/admin/login.html.haml",
+     "app/views/layouts/admin/box.html.haml",
      "app/views/layouts/application.html.haml",
      "config/application.rb",
      "config/boot.rb",
@@ -188,7 +192,9 @@ Gem::Specification.new do |s|
      "lib/locomotive/liquid/drops/contents.rb",
      "lib/locomotive/liquid/drops/javascripts.rb",
      "lib/locomotive/liquid/drops/page.rb",
+     "lib/locomotive/liquid/drops/site.rb",
      "lib/locomotive/liquid/drops/stylesheets.rb",
+     "lib/locomotive/liquid/drops/theme_images.rb",
      "lib/locomotive/liquid/filters/date.rb",
      "lib/locomotive/liquid/filters/html.rb",
      "lib/locomotive/liquid/filters/misc.rb",
@@ -202,20 +208,30 @@ Gem::Specification.new do |s|
      "lib/locomotive/liquid/tags/snippet.rb",
      "lib/locomotive/liquid/tags/with_scope.rb",
      "lib/locomotive/logger.rb",
+     "lib/locomotive/misc_form_builder.rb",
      "lib/locomotive/mongoid.rb",
      "lib/locomotive/mongoid/document.rb",
      "lib/locomotive/mongoid/model_extensions.rb",
      "lib/locomotive/mongoid/patches.rb",
      "lib/locomotive/regexps.rb",
      "lib/locomotive/render.rb",
+     "lib/locomotive/routing.rb",
      "lib/locomotive/routing/default_constraint.rb",
      "lib/locomotive/routing/site_dispatcher.rb",
-     "lib/misc_form_builder.rb",
      "lib/tasks/cucumber.rake",
+     "lib/tasks/mongoid.rake",
      "lib/tasks/rspec.rake",
      "public/images/admin/background/body.png",
      "public/images/admin/background/footer.png",
      "public/images/admin/background/light.png",
+     "public/images/admin/box/bottom_panel_bg.png",
+     "public/images/admin/box/buttons/left_bg.png",
+     "public/images/admin/box/buttons/right_bg.png",
+     "public/images/admin/box/content_panel_bg.png",
+     "public/images/admin/box/input_bg.png",
+     "public/images/admin/box/light_bg.png",
+     "public/images/admin/box/top_panel_bg.png",
+     "public/images/admin/box/wrapper_bg.png",
      "public/images/admin/buttons/action-left.png",
      "public/images/admin/buttons/action-right.png",
      "public/images/admin/buttons/add-left.png",
@@ -469,14 +485,6 @@ Gem::Specification.new do |s|
      "public/images/admin/list/none-small.png",
      "public/images/admin/list/none.png",
      "public/images/admin/list/thumb.png",
-     "public/images/admin/login/bottom_panel_bg.png",
-     "public/images/admin/login/buttons/left_bg.png",
-     "public/images/admin/login/buttons/right_bg.png",
-     "public/images/admin/login/content_panel_bg.png",
-     "public/images/admin/login/input_bg.png",
-     "public/images/admin/login/light_bg.png",
-     "public/images/admin/login/top_panel_bg.png",
-     "public/images/admin/login/wrapper_bg.png",
      "public/images/admin/menu/arrow.png",
      "public/images/admin/menu/blue-bg.png",
      "public/images/admin/menu/blue-border.png",
@@ -519,6 +527,8 @@ Gem::Specification.new do |s|
      "public/images/admin/plugins/fancybox/fancybox-x.png",
      "public/images/admin/plugins/fancybox/fancybox-y.png",
      "public/images/admin/plugins/fancybox/fancybox.png",
+     "public/images/admin/plugins/selectmenu/arrow.png",
+     "public/images/admin/plugins/selectmenu/background.png",
      "public/images/admin/plugins/toggle_handle-bg.png",
      "public/images/admin/plugins/toggle_handle_left-bg.png",
      "public/images/admin/plugins/toggle_handle_right-bg.png",
@@ -534,6 +544,7 @@ Gem::Specification.new do |s|
      "public/javascripts/admin/custom_fields/category.js",
      "public/javascripts/admin/jquery.js",
      "public/javascripts/admin/jquery.ui.js",
+     "public/javascripts/admin/layouts.js",
      "public/javascripts/admin/locales/datepicker_fr.js",
      "public/javascripts/admin/page_parts.js",
      "public/javascripts/admin/pages.js",
@@ -557,6 +568,7 @@ Gem::Specification.new do |s|
      "public/javascripts/admin/plugins/cookie.js",
      "public/javascripts/admin/plugins/fancybox.js",
      "public/javascripts/admin/plugins/growl.js",
+     "public/javascripts/admin/plugins/imagepicker.js",
      "public/javascripts/admin/plugins/json2.js",
      "public/javascripts/admin/plugins/plupload/gears_init.js",
      "public/javascripts/admin/plugins/plupload/jquery.plupload.queue.min.js",
@@ -571,6 +583,7 @@ Gem::Specification.new do |s|
      "public/javascripts/admin/plugins/plupload/plupload.silverlight.min.js",
      "public/javascripts/admin/plugins/plupload/plupload.silverlight.xap",
      "public/javascripts/admin/plugins/scrollTo.js",
+     "public/javascripts/admin/plugins/selectmenu.js",
      "public/javascripts/admin/plugins/shortcut.js",
      "public/javascripts/admin/plugins/subscribe.js",
      "public/javascripts/admin/plugins/tiny_mce/langs/en.js",
@@ -849,6 +862,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/admin/blueprint/src/typography.css",
      "public/stylesheets/admin/box.css",
      "public/stylesheets/admin/buttons.css",
+     "public/stylesheets/admin/fancybox_changes.css",
      "public/stylesheets/admin/formtastic.css",
      "public/stylesheets/admin/formtastic_changes.css",
      "public/stylesheets/admin/jquery/images/ui-bg_flat_0_aaaaaa_40x100.png",
@@ -864,9 +878,9 @@ Gem::Specification.new do |s|
      "public/stylesheets/admin/jquery/images/ui-icons_454545_256x240.png",
      "public/stylesheets/admin/jquery/images/ui-icons_888888_256x240.png",
      "public/stylesheets/admin/jquery/images/ui-icons_cd0a0a_256x240.png",
+     "public/stylesheets/admin/jquery/images/ui-icons_ffffff_256x240.png",
      "public/stylesheets/admin/jquery/ui.css",
      "public/stylesheets/admin/layout.css",
-     "public/stylesheets/admin/login.css",
      "public/stylesheets/admin/menu.css",
      "public/stylesheets/admin/page_parts.css",
      "public/stylesheets/admin/plugins/codemirror/csscolors.css",
@@ -878,6 +892,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/admin/plugins/codemirror/sparqlcolors.css",
      "public/stylesheets/admin/plugins/codemirror/xmlcolors.css",
      "public/stylesheets/admin/plugins/fancybox.css",
+     "public/stylesheets/admin/plugins/selectmenu.css",
      "public/stylesheets/admin/plugins/tiny_mce.css",
      "public/stylesheets/admin/plugins/toggle.css",
      "vendor/plugins/custom_fields/Gemfile",
@@ -888,9 +903,9 @@ Gem::Specification.new do |s|
      "vendor/plugins/custom_fields/lib/custom_fields.rb",
      "vendor/plugins/custom_fields/lib/custom_fields/custom_fields_for.rb",
      "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/associations/embeds_many.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/associations/references_many.rb",
      "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/associations/proxy.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/document.rb",
+     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/associations/references_many.rb",
+     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/hierarchy.rb",
      "vendor/plugins/custom_fields/lib/custom_fields/field.rb",
      "vendor/plugins/custom_fields/lib/custom_fields/proxy_class_enabler.rb",
      "vendor/plugins/custom_fields/lib/custom_fields/types/boolean.rb",
@@ -922,7 +937,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://www.locomotiveapp.org}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Locomotive cms engine}
   s.test_files = [
     "spec/factories.rb",
@@ -962,73 +977,70 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, ["= 3.0.0.beta3"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<rails>, ["= 3.0.0.rc"])
       s.add_runtime_dependency(%q<liquid>, ["= 2.0.0"])
-      s.add_runtime_dependency(%q<bson_ext>, [">= 1.0.1"])
-      s.add_runtime_dependency(%q<mongo_ext>, [">= 0"])
-      s.add_runtime_dependency(%q<mongoid>, ["= 2.0.0.beta6"])
+      s.add_runtime_dependency(%q<bson_ext>, [">= 1.0.4"])
+      s.add_runtime_dependency(%q<mongoid>, ["= 2.0.0.beta.15"])
       s.add_runtime_dependency(%q<mongoid_acts_as_tree>, ["= 0.1.5"])
       s.add_runtime_dependency(%q<mongo_session_store>, ["= 2.0.0.pre"])
       s.add_runtime_dependency(%q<warden>, [">= 0"])
-      s.add_runtime_dependency(%q<devise>, ["= 1.1.rc1"])
-      s.add_runtime_dependency(%q<haml>, ["= 3.0.1"])
+      s.add_runtime_dependency(%q<devise>, ["= 1.1.1"])
+      s.add_runtime_dependency(%q<haml>, ["= 3.0.15"])
       s.add_runtime_dependency(%q<rmagick>, ["= 2.12.2"])
       s.add_runtime_dependency(%q<aws>, [">= 0"])
-      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<mimetype-fu>, [">= 0"])
-      s.add_runtime_dependency(%q<formtastic-rails3>, [">= 0"])
-      s.add_runtime_dependency(%q<carrierwave-rails3>, [">= 0"])
+      s.add_runtime_dependency(%q<formtastic-rails3>, ["= 1.0.0.beta3"])
+      s.add_runtime_dependency(%q<carrierwave>, ["= 0.5.0.beta2"])
       s.add_runtime_dependency(%q<actionmailer-with-request>, [">= 0"])
       s.add_runtime_dependency(%q<heroku>, [">= 0"])
-      s.add_runtime_dependency(%q<httparty>, ["= 0.6.0"])
+      s.add_runtime_dependency(%q<httparty>, ["= 0.6.1"])
       s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
       s.add_runtime_dependency(%q<inherited_resources>, ["= 1.1.2"])
+      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
     else
-      s.add_dependency(%q<rails>, ["= 3.0.0.beta3"])
+      s.add_dependency(%q<rails>, ["= 3.0.0.rc"])
       s.add_dependency(%q<liquid>, ["= 2.0.0"])
-      s.add_dependency(%q<bson_ext>, [">= 1.0.1"])
-      s.add_dependency(%q<mongo_ext>, [">= 0"])
-      s.add_dependency(%q<mongoid>, ["= 2.0.0.beta6"])
+      s.add_dependency(%q<bson_ext>, [">= 1.0.4"])
+      s.add_dependency(%q<mongoid>, ["= 2.0.0.beta.15"])
       s.add_dependency(%q<mongoid_acts_as_tree>, ["= 0.1.5"])
       s.add_dependency(%q<mongo_session_store>, ["= 2.0.0.pre"])
       s.add_dependency(%q<warden>, [">= 0"])
-      s.add_dependency(%q<devise>, ["= 1.1.rc1"])
-      s.add_dependency(%q<haml>, ["= 3.0.1"])
+      s.add_dependency(%q<devise>, ["= 1.1.1"])
+      s.add_dependency(%q<haml>, ["= 3.0.15"])
       s.add_dependency(%q<rmagick>, ["= 2.12.2"])
       s.add_dependency(%q<aws>, [">= 0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<mimetype-fu>, [">= 0"])
-      s.add_dependency(%q<formtastic-rails3>, [">= 0"])
-      s.add_dependency(%q<carrierwave-rails3>, [">= 0"])
+      s.add_dependency(%q<formtastic-rails3>, ["= 1.0.0.beta3"])
+      s.add_dependency(%q<carrierwave>, ["= 0.5.0.beta2"])
       s.add_dependency(%q<actionmailer-with-request>, [">= 0"])
       s.add_dependency(%q<heroku>, [">= 0"])
-      s.add_dependency(%q<httparty>, ["= 0.6.0"])
+      s.add_dependency(%q<httparty>, ["= 0.6.1"])
       s.add_dependency(%q<RedCloth>, [">= 0"])
       s.add_dependency(%q<inherited_resources>, ["= 1.1.2"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
-    s.add_dependency(%q<rails>, ["= 3.0.0.beta3"])
+    s.add_dependency(%q<rails>, ["= 3.0.0.rc"])
     s.add_dependency(%q<liquid>, ["= 2.0.0"])
-    s.add_dependency(%q<bson_ext>, [">= 1.0.1"])
-    s.add_dependency(%q<mongo_ext>, [">= 0"])
-    s.add_dependency(%q<mongoid>, ["= 2.0.0.beta6"])
+    s.add_dependency(%q<bson_ext>, [">= 1.0.4"])
+    s.add_dependency(%q<mongoid>, ["= 2.0.0.beta.15"])
     s.add_dependency(%q<mongoid_acts_as_tree>, ["= 0.1.5"])
     s.add_dependency(%q<mongo_session_store>, ["= 2.0.0.pre"])
     s.add_dependency(%q<warden>, [">= 0"])
-    s.add_dependency(%q<devise>, ["= 1.1.rc1"])
-    s.add_dependency(%q<haml>, ["= 3.0.1"])
+    s.add_dependency(%q<devise>, ["= 1.1.1"])
+    s.add_dependency(%q<haml>, ["= 3.0.15"])
     s.add_dependency(%q<rmagick>, ["= 2.12.2"])
     s.add_dependency(%q<aws>, [">= 0"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<mimetype-fu>, [">= 0"])
-    s.add_dependency(%q<formtastic-rails3>, [">= 0"])
-    s.add_dependency(%q<carrierwave-rails3>, [">= 0"])
+    s.add_dependency(%q<formtastic-rails3>, ["= 1.0.0.beta3"])
+    s.add_dependency(%q<carrierwave>, ["= 0.5.0.beta2"])
     s.add_dependency(%q<actionmailer-with-request>, [">= 0"])
     s.add_dependency(%q<heroku>, [">= 0"])
-    s.add_dependency(%q<httparty>, ["= 0.6.0"])
+    s.add_dependency(%q<httparty>, ["= 0.6.1"])
     s.add_dependency(%q<RedCloth>, [">= 0"])
     s.add_dependency(%q<inherited_resources>, ["= 1.1.2"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
 
