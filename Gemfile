@@ -7,12 +7,12 @@ gem 'liquid', '2.0.0'
 # i think we'll need to fork our templating language
 # gem 'locomotive-liquid'
 
-gem 'bson_ext', '>= 1.0.1'
-gem 'mongoid', :git => "git://github.com/durran/mongoid.git", :ref => "e387a0d1dc74da057472"
+gem 'bson_ext', '>= 1.0.4'
+gem 'mongoid', '2.0.0.beta.15'
 gem 'mongoid_acts_as_tree', '0.1.5'
 gem 'mongo_session_store', '2.0.0.pre'
 gem 'warden'
-gem 'devise', :git => "git://github.com/plataformatec/devise.git"
+gem 'devise', '1.1.1'
 gem 'haml', '3.0.15'
 gem 'rmagick', '2.12.2'
 gem 'aws'

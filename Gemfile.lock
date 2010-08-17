@@ -1,23 +1,9 @@
 GIT
-  remote: git://github.com/durran/mongoid.git
-  revision: e387a0d
-  ref: e387a0d1dc74da057472
-  specs:
-
-GIT
   remote: git://github.com/floehopper/mocha.git
   revision: d1715ff
   specs:
     mocha (0.9.8.20090918115329)
       rake
-
-GIT
-  remote: git://github.com/plataformatec/devise.git
-  revision: 01c272c
-  specs:
-    devise (1.2.0)
-      bcrypt-ruby (~> 2.1.2)
-      warden (~> 0.10.7)
 
 GIT
   remote: http://github.com/codegram/pickle.git
@@ -92,10 +78,13 @@ GEM
     culerity (0.2.10)
     daemons (1.1.0)
     database_cleaner (0.5.2)
+    devise (1.1.1)
+      bcrypt-ruby (~> 2.1.2)
+      warden (~> 0.10.7)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    factory_girl (1.3.1)
+    factory_girl (1.3.2)
     factory_girl_rails (1.0)
       factory_girl (~> 1.3)
       rails (>= 3.0.0.beta4)
@@ -128,7 +117,7 @@ GEM
       gemcutter (>= 0.1.0)
       git (>= 1.2.5)
       rubyforge (>= 2.0.0)
-    json_pure (1.4.3)
+    json_pure (1.4.6)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -234,14 +223,14 @@ DEPENDENCIES
   actionmailer-with-request
   autotest
   aws
-  bson_ext (>= 1.0.1)
+  bson_ext (>= 1.0.4)
   capybara
   carrierwave (= 0.5.0.beta2)
   cgi_multipart_eof_fix
   cucumber
   cucumber-rails
   database_cleaner
-  devise!
+  devise (= 1.1.1)
   factory_girl_rails
   fastthread
   formtastic-rails3 (= 1.0.0.beta3)
@@ -256,7 +245,7 @@ DEPENDENCIES
   mimetype-fu
   mocha!
   mongo_session_store (= 2.0.0.pre)
-  mongoid!
+  mongoid (= 2.0.0.beta.15)
   mongoid_acts_as_tree (= 0.1.5)
   mongrel
   pickle!
