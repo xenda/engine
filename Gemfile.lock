@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/floehopper/mocha.git
-  revision: d1715ff
+  revision: e0a00a7
   specs:
-    mocha (0.9.8.20090918115329)
+    mocha (0.9.8.20100819090654)
       rake
 
 GIT
@@ -75,7 +75,8 @@ GEM
       term-ansicolor (~> 1.0.4)
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
-    culerity (0.2.10)
+    culerity (0.2.12)
+    custom_fields (0.0.0.1)
     daemons (1.1.0)
     database_cleaner (0.5.2)
     devise (1.1.1)
@@ -129,14 +130,14 @@ GEM
       treetop (>= 1.4.5)
     mime-types (1.16)
     mimetype-fu (0.1.2)
-    mongo (1.0.6)
+    mongo (1.0.7)
       bson (>= 1.0.4)
     mongo_session_store (2.0.0.pre)
       actionpack (~> 3.0)
-    mongoid (2.0.0.beta.15)
+    mongoid (2.0.0.beta.16)
       activemodel (= 3.0.0.rc)
       bson (= 1.0.4)
-      mongo (= 1.0.6)
+      mongo (= 1.0.7)
       tzinfo (= 0.3.22)
       will_paginate (~> 3.0.pre)
     mongoid_acts_as_tree (0.1.5)
@@ -153,7 +154,7 @@ GEM
       pickle (>= 0.3.0)
     polyglot (0.3.1)
     rack (1.2.1)
-    rack-mount (0.6.9)
+    rack-mount (0.6.11)
       rack (>= 1.0.0)
     rack-test (0.5.4)
       rack (>= 1.0)
@@ -229,6 +230,7 @@ DEPENDENCIES
   cgi_multipart_eof_fix
   cucumber
   cucumber-rails
+  custom_fields (= 0.0.0.1)
   database_cleaner
   devise (= 1.1.1)
   factory_girl_rails
@@ -245,7 +247,7 @@ DEPENDENCIES
   mimetype-fu
   mocha!
   mongo_session_store (= 2.0.0.pre)
-  mongoid (= 2.0.0.beta.15)
+  mongoid (= 2.0.0.beta.16)
   mongoid_acts_as_tree (= 0.1.5)
   mongrel
   pickle!

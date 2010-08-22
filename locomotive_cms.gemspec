@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{locomotive_cms}
-  s.version = "0.0.3.4"
+  s.version = "0.0.3.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Didier Lafforgue"]
-  s.date = %q{2010-08-17}
+  s.date = %q{2010-08-22}
   s.description = %q{a brand new CMS system with super sexy UI and cool features (alpha version for now)}
   s.email = ["didier@nocoffee.fr"]
   s.extra_rdoc_files = [
@@ -894,45 +894,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/admin/plugins/fancybox.css",
      "public/stylesheets/admin/plugins/selectmenu.css",
      "public/stylesheets/admin/plugins/tiny_mce.css",
-     "public/stylesheets/admin/plugins/toggle.css",
-     "vendor/plugins/custom_fields/Gemfile",
-     "vendor/plugins/custom_fields/MIT-LICENSE",
-     "vendor/plugins/custom_fields/README",
-     "vendor/plugins/custom_fields/Rakefile",
-     "vendor/plugins/custom_fields/init.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/custom_fields_for.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/associations/embeds_many.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/associations/proxy.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/associations/references_many.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/extensions/mongoid/hierarchy.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/field.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/proxy_class_enabler.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/types/boolean.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/types/category.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/types/date.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/types/default.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/types/file.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/types/string.rb",
-     "vendor/plugins/custom_fields/lib/custom_fields/types/text.rb",
-     "vendor/plugins/custom_fields/spec/fixtures/doc.txt",
-     "vendor/plugins/custom_fields/spec/integration/custom_fields_for_spec.rb",
-     "vendor/plugins/custom_fields/spec/integration/types/category_spec.rb",
-     "vendor/plugins/custom_fields/spec/integration/types/file_spec.rb",
-     "vendor/plugins/custom_fields/spec/models/person.rb",
-     "vendor/plugins/custom_fields/spec/models/project.rb",
-     "vendor/plugins/custom_fields/spec/models/task.rb",
-     "vendor/plugins/custom_fields/spec/spec_helper.rb",
-     "vendor/plugins/custom_fields/spec/support/carrierwave.rb",
-     "vendor/plugins/custom_fields/spec/support/mongoid.rb",
-     "vendor/plugins/custom_fields/spec/unit/custom_field_spec.rb",
-     "vendor/plugins/custom_fields/spec/unit/custom_fields_for_spec.rb",
-     "vendor/plugins/custom_fields/spec/unit/proxy_class_enabler_spec.rb",
-     "vendor/plugins/custom_fields/spec/unit/types/boolean_spec.rb",
-     "vendor/plugins/custom_fields/spec/unit/types/category_spec.rb",
-     "vendor/plugins/custom_fields/spec/unit/types/date_spec.rb",
-     "vendor/plugins/custom_fields/spec/unit/types/file_spec.rb",
-     "vendor/plugins/custom_fields/uninstall.rb"
+     "public/stylesheets/admin/plugins/toggle.css"
   ]
   s.homepage = %q{http://www.locomotiveapp.org}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -981,7 +943,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<rails>, ["= 3.0.0.rc"])
       s.add_runtime_dependency(%q<liquid>, ["= 2.0.0"])
       s.add_runtime_dependency(%q<bson_ext>, [">= 1.0.4"])
-      s.add_runtime_dependency(%q<mongoid>, ["= 2.0.0.beta.15"])
+      s.add_runtime_dependency(%q<mongoid>, ["= 2.0.0.beta.16"])
       s.add_runtime_dependency(%q<mongoid_acts_as_tree>, ["= 0.1.5"])
       s.add_runtime_dependency(%q<mongo_session_store>, ["= 2.0.0.pre"])
       s.add_runtime_dependency(%q<warden>, [">= 0"])
@@ -998,11 +960,12 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<RedCloth>, [">= 0"])
       s.add_runtime_dependency(%q<inherited_resources>, ["= 1.1.2"])
       s.add_runtime_dependency(%q<jeweler>, [">= 0"])
+      s.add_runtime_dependency(%q<custom_fields>, ["= 0.0.0.1"])
     else
       s.add_dependency(%q<rails>, ["= 3.0.0.rc"])
       s.add_dependency(%q<liquid>, ["= 2.0.0"])
       s.add_dependency(%q<bson_ext>, [">= 1.0.4"])
-      s.add_dependency(%q<mongoid>, ["= 2.0.0.beta.15"])
+      s.add_dependency(%q<mongoid>, ["= 2.0.0.beta.16"])
       s.add_dependency(%q<mongoid_acts_as_tree>, ["= 0.1.5"])
       s.add_dependency(%q<mongo_session_store>, ["= 2.0.0.pre"])
       s.add_dependency(%q<warden>, [">= 0"])
@@ -1019,12 +982,13 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<RedCloth>, [">= 0"])
       s.add_dependency(%q<inherited_resources>, ["= 1.1.2"])
       s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<custom_fields>, ["= 0.0.0.1"])
     end
   else
     s.add_dependency(%q<rails>, ["= 3.0.0.rc"])
     s.add_dependency(%q<liquid>, ["= 2.0.0"])
     s.add_dependency(%q<bson_ext>, [">= 1.0.4"])
-    s.add_dependency(%q<mongoid>, ["= 2.0.0.beta.15"])
+    s.add_dependency(%q<mongoid>, ["= 2.0.0.beta.16"])
     s.add_dependency(%q<mongoid_acts_as_tree>, ["= 0.1.5"])
     s.add_dependency(%q<mongo_session_store>, ["= 2.0.0.pre"])
     s.add_dependency(%q<warden>, [">= 0"])
@@ -1041,6 +1005,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<RedCloth>, [">= 0"])
     s.add_dependency(%q<inherited_resources>, ["= 1.1.2"])
     s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<custom_fields>, ["= 0.0.0.1"])
   end
 end
 
