@@ -1,0 +1,69 @@
+es:
+  formtastic:
+    titles:
+      information: Información General
+      meta: Metadata de SEO 
+      code: "Código"
+      raw_template: Tema
+      credentials: Credenciales
+      language: Idioma
+      sites: Sitios
+      access_points: Puntos de acceso
+      memberships: Cuentas
+      membership_email: Email de la cuenta
+      file: Archivo
+      preview: Vista previa
+      options: Opciones avanzadas
+      custom_fields: Campos personalizados
+      other_fields: "Otra información" 
+      presentation: "Presentación"
+      attributes: Atributos
+      upload: Subida de archivos
+    labels:
+      theme_asset:
+        plain_text_name: Nombre de archivo
+        content_type: Tipo de archivo
+        new:
+          source: Archivo
+        edit:
+          source: Reemplazar archivo
+      custom_fields:
+        field:
+          _alias: Alias
+      import:
+        new:
+          source: Archivo
+          samples: Copiar ejemplos
+          reset: Reiniciar sitio
+      content_type:
+        api_accounts: Notificar cuentas
+
+    hints:
+      page:
+        published: "Solo cuentas autenticadas pueden ver páginas no publicadas"
+        cache_strategy: "Convierte la página en estática para mejor rendimiento. La opción 'Simple' es la recomendada"
+        templatized: "Usa la página como un template para un modelo que se defina"
+        listed: "Controla si una página aparecerá en el menu generado"
+        content_type_id: "El tipo de contenido que esta página servirá de template"
+      snippet:
+        slug: "Necesitas conocerlo para insertar un texto en la página"
+      site:
+        meta_keywords: "Palabras clave que se usarán en la cabecera de la página. Debe estar separadas por un espacio. Requeridas por SEO"
+        meta_description: "Descripción meta que se usará en la cabecera de la página. Requerida por SEO"
+        domain_name: "ex: midominio.org"
+      theme_asset:
+        slug: "No necesitas añadir la extensión del archivo (.css or .js)"
+        edit:
+          source: "Puedes reemplazar el archivo por uno de la misma extension"
+      custom_fields:
+        field:
+          _alias: "Propiedad disponible en los templateds liquid"
+          hint: "Texto mostrado en el formulario del modelo debajo del campo"
+      import:
+        source: "Un archivo zip que contiene el database.yml con los archivos y templates"
+        samples: "Si habilitado, el proceso de importación copiará también contenidos y archivos"
+        reset: "Si habilitado, toda la data del sitio será destruida antes de importar el nuevo sitio"
+      content_type:
+        api_enabled: "Se usa para permitir a terceras personas crear nuevas instancias (ejemplo: mensajes en un formulario de contactomessages in a contact form)"
+        api_accounts: "Un email de notificación se enviará a cada una de las cuentas listada arriba cuando una nueva instancia sea creada" 
+

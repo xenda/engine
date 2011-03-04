@@ -1,0 +1,302 @@
+es:
+  admin:
+    buttons:
+      login: "Iniciar sesión"
+      send_password: Enviar
+      change_password: Actualizar
+      new_item: "+ añadir"
+      switch_to_site: Ir
+
+    messages:
+      confirm: "¿Está seguro?"
+
+    shared:
+      header:
+        welcome: Bienvenido, %{name}
+        see: Ir al sitio web
+        logout: "Cerrar sesión"
+      menu:
+        contents: Contenidos
+        assets: Archivos
+        settings: "Configuración"
+        pages: "Páginas"
+        snippets: Textos
+        account: Mi cuenta
+        site: Sitio
+        theme_assets: "Archivo de diseño"
+      footer:
+        who_is_behind: "Desarrollado por Xenda utilizando LocomotiveCMS y HashiCMS."
+      form_actions:
+        back: Regresar sin grabar
+        create: Crear
+        update: Actualizar
+        send: Enviar
+
+    errors:
+      "500":
+        title: Error en la aplicación
+        notice: "Lo sentimos, pero hay un error en el sitio"
+        link: "&rarr; Regresar"
+      "404":
+        title: "Página no encontrada"
+        notice: "La página a la que accedió no existe"
+        link: "&rarr; Regresar"
+
+    notifications:
+      new_content_instance:
+        subject: "Nuevo [%{type}]"
+        title: "Hola %{name}, sólo queríamos contarte que se ha creado algo nuevo el %{date}"
+        type: "Modelo: %{type}"
+
+    custom_fields:
+      edit:
+        title: Editando campo personalizado
+      kind:
+        string: Linea de Texto
+        text: Caja de Texto 
+        category: "Campo de selección"
+        boolean: "Cajas de selección"
+        date: Fecha
+        file: Archivo
+      text_formatting:
+        none: None
+        html: HTML
+      edit_field:
+        title: Editar campo
+      edit_category:
+        title: Editar opciones
+        help: Actualizar la lista de opciones para seleccionar
+        collection_label: Lista de opciones
+      custom_form:
+        edit_categories: Editar opciones
+        delete_file: Borrar archivo
+
+    sessions:
+      new:
+        title: "Iniciar sesión"
+        link: "Olvidé mi contraseña"
+        email: "Correo electrónico"
+        password: "Contraseña"
+
+    passwords:
+      new:
+        title: "Recuperación de contraseña"
+        link: "&rarr; Recuperar contraseña"
+        email: "Tu correo electrónico"
+      edit:
+        title: "Cambiar contraseña"
+        link: "&rarr; Regresar a página de inicio de sesión"
+        password: "Tu nueva contraseña"
+        password_confirmation: "Confirma la nueva contraseña"
+
+    pages:
+      index:
+        title: "Listado de páginas"
+        help: "Listadas como árbol. También se pueden ordenar como carpetas."
+        no_items: "No se han creado páginas aún. Empieza <a href=\"%{url}\">acá</a> para crear la primera."
+        new: "nueva página"
+        lastest_items: "Últimas páginas"
+      new:
+        title: "Nueva página"
+        help: "Llene la información para crear la página. Por defecto, la página no será publicada."
+      page:
+        updated_at: Actualizaba el 
+      edit:
+        show: ver
+        help: "Puedes actualizar el título de la página haciendo click en esta."
+        ask_for_title: "Introduzca el nuevo título"
+      form:
+        delete_file: Eliminar archivo
+        default_block: Predeterminado
+        cache_strategy:
+          none: Ninguno
+          simple: Simple
+          hour: 1 hora
+          day: "1 día"
+          week: 1 semana
+          month: 1 mes
+
+    snippets:
+      index:
+        title: "Listado de textos"
+        help: "Los textos son piezas de HTML que se pueden incluir en distintos lugares en el sitio (como en el pie de página)."
+        no_items: "Por ahora no hay textos creados. Pueden <a href=\"%{url}\">crear</a> uno ahora"
+        new: nuevo texto
+      new:
+        title: Nuevo texto
+        help: "Utilice el formulario para actualizar el texto"
+      edit:
+        title: Editando texto
+        help: "Utilice el formulario para actualizar el texto"
+      snippet:
+        updated_at: Actualizado en
+
+    sites:
+      new:
+        title: Nuevo sitio
+        help: "Utilice el formulario inferior para crear un nuevo sitioFill in the form below to create your new site"
+
+    current_sites:
+      edit:
+        import: importar
+        new_membership: "añadir cuenta"
+        help: "Puedes actualizar el nombre del sitio haciendo click en él"
+        ask_for_name: "Ingresa el nuevo nombre"
+
+    memberships:
+      new:
+        title: Nueva cuenta
+        help: "Ingrese un correo electrónico para añadir la cuenta. Si no existe, se creará un usuario con esos datos."
+
+    accounts:
+      new:
+        title: Nueva cuenta
+        help: "Ingrese los datos en la cuenta en el formulario siguiente."
+
+    my_accounts:
+      edit:
+        help: "El nombre puede ser actualizado haciendo click en él."
+        new_site:nuevo sitio 
+        en: "Inglés"
+        de: "Alemán"
+        fr: "Francés"
+        pt-BR: "Portugués Brazileño"
+        ask_for_name: "Ingresa el nuevo nombre"
+
+    theme_assets:
+      index:
+        title: Listando archivos de tema
+        help: "Los archivos del tema se podrán actualizar directamente en esta sección. Si necesita actualizar la galería de imágenes, puede ir a la sección de Archivos."
+        all: todos los archivos
+        new: nuevo archivo
+        snippets: Textos
+        css_and_js: Estilos y javascript
+        fonts: Fuentes
+        images: "Imágenes"
+        medias: Medios
+        no_items: "Por ahora no hay archivos. Puede <a href=\"%{url}\">crear</a> uno aquí."
+      asset:
+        updated_at: Actualizado al
+      new:
+        title: Nuevo archivo
+        help: "Puede enviar cualquier archivo o copiar y pegar una hoja de estilo o archivo javascript."
+      edit:
+        title: "Editando %{file}"
+        help: "Este archivo puede ser accesado en esta dirección: <a href='%{url}'>%{url}</a>"
+      form:
+        picker_link: Insertar un archivo en el código
+        choose_file: Elegir archivo
+        choose_plain_text: Elegir texto plano
+      images:
+        title: "Listando imágenes"
+        no_items: "Por ahora no hay imágenes"
+
+    asset_collections:
+      index:
+        title: Colección de archivos
+        help: "El nombre de la colección puede ser actualizado haciendo click en él. Puede personalizar archivos en colecciones al añadirles campos de información nuevos."
+        new: "nueva colección"
+        no_items: "Por ahora no hay colecciones. Puede <a href=\"%{url}\">crear</a> una para empezar."
+      new:
+        title: Nueva colección
+        help: "Por ahora, ingrese el nombre. Otros campos aparecerán al enviar el formulario."
+      edit:
+        help: "El nombre de la colección se puede actualizar haciendo click en él. Puedes personalizar los archivos en una colección añadiéndo campos personalizados nuevos"
+        add_asset: "añadir archivo"
+        destroy: "eliminar colección"
+        no_items: "Por ahora no hay archivos. Puede <a href=\"%{url}\">crear</a> uno para empezar."
+        ask_for_name: "Ingrese el nuevo nombre"
+
+    assets:
+      new:
+        title: Nuevo archivo
+        help: "Llene el formulario para crear el archivo." 
+      edit:
+        title: Editar archivo
+        help: "Llene el formulario para crear el archivo"
+
+    content_types:
+      index:
+        new: nuevo modelo
+      new:
+        title: Nuevo modelo
+        help: "Cree un nuevo modelo de datos (Proyectos, Personas, etc.) El modelo debe tener al menos un campo de datos."
+      edit:
+        title: Editando modelo
+        help: "El model debe tener al menos un campo." 
+        show_items: ver elementos
+        new_item: nuevo elemento
+      form:
+        order_by:
+          created_at: 'Por fecha de creación'
+          updated_at: 'Por fecha de actualización'
+          position_in_list: Manualmente
+
+    contents:
+      index:
+        title: 'Listando "%{type}"'
+        edit: editando modelo
+        destroy: eliminar modelo
+        download: descargar elementos
+        new: nuevo elemento
+        category_noname: "Sin nombre"
+        lastest_items: "Ultimos elementos"
+        updated_at: "Actualizado el"
+      list:
+        no_items: "No hay elementos por ahora. Puede <a href=\"%{url}\">craer</a> uno para empezar"
+      new:
+        title: '%{type} &mdash; nuevo elemento'
+      edit:
+        title: '%{type} &mdash; editando elemento'
+
+    image_picker:
+      link: Insertar una imagen
+
+    cross_domain_sessions:
+      new:
+        title: "Autenticación entre dominios (Cross-domain)"
+        notice: "Se redireccionará al dominio por unos segundos."
+
+    imports:
+      new:
+        title: Importar
+        help: "Sea cuidadoso al enviar un tema nuevo al sitio web existente, la información existente podría ser modificada e incluso eliminada."
+      show:
+        title: Importación en progreso
+        help: "El sitio se está actualizando en base al archivo .zip que se ha enviado. Demorará al menos unos segundos."
+        steps:
+          site: Información del sitioinformation
+          content_types: Tipos de contenido personalizados
+          assets: Archivos del tema
+          asset_collections: Colecciones de archivos
+          snippets: Textos
+          pages: "Páginas"
+        messages:
+          success: "El sitio ha sido actualizado exitosamente"
+          failure: "El proceso de importación tuvo un error."
+
+    installation:
+      common:
+        title: "Primera instalación"
+        next: Siguiente 
+      step_1:
+        title: Paso 1/3
+        explanations: "Este es el primer paso de la instalación. Lea cuidadosamente antes de continuar."
+        database:
+          label: "Nombre de la base de datos: <em>%{name}</em>"
+          notes: "Todas las conexiones a mongodb pueden hayarse en el archivo <b>config/mongoid.yml</b> de la aplicación."
+        default_domain:
+          label: "Dominio por defecto: <em>%{name}</em>"
+          notes: "Cada sitio tiene un subdominio por defecto basado en el dominio por defecto. Puede agregar otros dominios al sitio adicionalmente.<br/>El nombre del dominio por defecto puede ser encontrado en el archivo <b>config/initializers/locomotive.rb</b>."
+      step_2:
+        title: "Paso 2/3 &mdash; Crear cuenta"
+        name: Cuenta
+        email: "Correo electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        done: "Has creado una cuenta con los datos:<br/><strong>%{name}</strong>, <em>%{email}</em>"
+        next: Crear cuenta
+      step_3:
+        title: "Paso 3/3 &mdash; Crear el sitio"
+        explanations: "Este es el último paso de la instalación. Puedes enviar un tema en un archivo .zip. "
+        next: Crear sitio
