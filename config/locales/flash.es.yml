@@ -1,116 +1,116 @@
 es:
-	flash:
-		admin:
-			pages:
-				create:
-					notice: "P&aacute;gina fue creada exitosamente."
-					alert: "P&aacute;gina no fue creada."
-				update:
-					notice: "P&aacute;gina fue actualizada exitosamente."
-					alert: "P&aacute;gina no fue actualizada."
-				sort:
-					notice: "P&aacute;ginas fueron ordenadas exitosamente."
-				destroy:
-					notice: "P&aacute;gina fue eliminada exitosamente."
+  flash:
+    admin:
+      pages:
+        create:
+          notice: "P&aacute;gina fue creada exitosamente."
+          alert: "P&aacute;gina no fue creada."
+        update:
+          notice: "P&aacute;gina fue actualizada exitosamente."
+          alert: "P&aacute;gina no fue actualizada."
+        sort:
+          notice: "P&aacute;ginas fueron ordenadas exitosamente."
+        destroy:
+          notice: "P&aacute;gina fue eliminada exitosamente."
 
-			contents:
-				create:
-					notice: "Contenido fue creado exitosamente."
-					alert: "Contenido no fue creado."
-				update:
-					notice: "Contenido fue actualizado exitosamente."
-					alert: "Contenido no fue actualizado."
-				sort:
-					notice: "Contenidos fue ordenado exitosamente."
-				destroy:
-					notice: "Contenido fue eliminado exitosamente."
+      contents:
+        create:
+          notice: "Contenido fue creado exitosamente."
+          alert: "Contenido no fue creado."
+        update:
+          notice: "Contenido fue actualizado exitosamente."
+          alert: "Contenido no fue actualizado."
+        sort:
+          notice: "Contenidos fue ordenado exitosamente."
+        destroy:
+          notice: "Contenido fue eliminado exitosamente."
 
-			content_types:
-				create:
-					notice: "Modelo fue creado exitosamente."
-					alert: "Modelo no fue creado."
-				update:
-					notice: "Modelo fue actualizado exitosamente."
-					alert: "Modelo no fue actualizado."
-				destroy:
-					notice: "Modelo fue eliminado exitosamente."
+      content_types:
+        create:
+          notice: "Modelo fue creado exitosamente."
+          alert: "Modelo no fue creado."
+        update:
+          notice: "Modelo fue actualizado exitosamente."
+          alert: "Modelo no fue actualizado."
+        destroy:
+          notice: "Modelo fue eliminado exitosamente."
 
-			current_sites:
-				update:
-					notice: "Mi sitio fue actualizado exitosamente."
-					alert: "Mi sitio no fue actualizado."
+      current_sites:
+        update:
+          notice: "Mi sitio fue actualizado exitosamente."
+          alert: "Mi sitio no fue actualizado."
 
-			snippets:
-				create:
-					notice: "Texto fue creado exitosamente."
-					alert: "Texto no fue creado."
-				update:
-					notice: "Texto fue actualizado exitosamente."
-					alert: "Texto no fue actualizado."
-				destroy:
-					notice: "Texto fue eliminado exitosamente."
+      snippets:
+        create:
+          notice: "Texto fue creado exitosamente."
+          alert: "Texto no fue creado."
+        update:
+          notice: "Texto fue actualizado exitosamente."
+          alert: "Texto no fue actualizado."
+        destroy:
+          notice: "Texto fue eliminado exitosamente."
 
-			accounts:
-				create:
-					notice: "Cuenta fue creada exitosamente."
-					alert: "Cuenta no fue creada."
+      accounts:
+        create:
+          notice: "Cuenta fue creada exitosamente."
+          alert: "Cuenta no fue creada."
 
-			my_accounts:
-				update:
-					notice: "Mi cuenta fue actualizada exitosamente."
-					alert: "Mi cuenta no fue actualizada."
+      my_accounts:
+        update:
+          notice: "Mi cuenta fue actualizada exitosamente."
+          alert: "Mi cuenta no fue actualizada."
 
-			sites:
-				create:
-					notice: "Sitio fue creado exitosamente."
-					alert: "Sitio no fue creado."
-				destroy:
-					notice: "Sitio fue eliminado exitosamente."
+      sites:
+        create:
+          notice: "Sitio fue creado exitosamente."
+          alert: "Sitio no fue creado."
+        destroy:
+          notice: "Sitio fue eliminado exitosamente."
 
-			memberships:
-				create:
-					notice: "Cuenta fue creada exitosamente."
-					alert: "Cuenta no fue creada."
-					already_created: "Cuenta ya hab&iacute;a sido a&ntilde;adida a este sitio."
+      memberships:
+        create:
+          notice: "Cuenta fue creada exitosamente."
+          alert: "Cuenta no fue creada."
+          already_created: "Cuenta ya hab&iacute;a sido a&ntilde;adida a este sitio."
 
-			asset_collections:
-				create:
-					notice: "Colecci&oacute;n fue creada exitosamente."
-					alert: "Colecci&oacute;n no fue creada."
-				update:
-					notice: "Colecci&oacute;n fue actualizada exitosamente."
-					alert: "Colecci&oacute;n no fue actualizada."
-				destroy:
-					notice: "Colecci&oacute;n fue eliminada exitosamente."
+      asset_collections:
+        create:
+          notice: "Colecci&oacute;n fue creada exitosamente."
+          alert: "Colecci&oacute;n no fue creada."
+        update:
+          notice: "Colecci&oacute;n fue actualizada exitosamente."
+          alert: "Colecci&oacute;n no fue actualizada."
+        destroy:
+          notice: "Colecci&oacute;n fue eliminada exitosamente."
 
-			assets:
-				create:
-					notice: "Archivo fue creado exitosamente."
-					alert: "Archivo no fue creado."
-				update:
-					notice: "Archivo fue actualizado exitosamente."
-					alert: "Archivo no fue actualizado."
+      assets:
+        create:
+          notice: "Archivo fue creado exitosamente."
+          alert: "Archivo no fue creado."
+        update:
+          notice: "Archivo fue actualizado exitosamente."
+          alert: "Archivo no fue actualizado."
 
-			theme_assets:
-				create:
-					notice: "Archivo de tema fue creado exitosamente."
-					alert: "Archivo de tema no fue creado."
-				update:
-					notice: "Archivo de tema fue actualizado exitosamente."
-					alert: "Archivo de tema no fue actualizado."
-				destroy:
-					notice: "Archivo de tema fue eliminado exitosamente."
+      theme_assets:
+        create:
+          notice: "Archivo de tema fue creado exitosamente."
+          alert: "Archivo de tema no fue creado."
+        update:
+          notice: "Archivo de tema fue actualizado exitosamente."
+          alert: "Archivo de tema no fue actualizado."
+        destroy:
+          notice: "Archivo de tema fue eliminado exitosamente."
 
-			custom_fields:
-				update:
-					alert: "Campo no actualizado"
+      custom_fields:
+        update:
+          alert: "Campo no actualizado"
 
-			cross_domain_sessions:
-				create:
-					alert: "Necesitas iniciar sesi&oacute;n"
+      cross_domain_sessions:
+        create:
+          alert: "Necesitas iniciar sesi&oacute;n"
 
-			imports:
-				create:
-					done: "El sitio fue actualizado exitosamente."
-					notice: "El sitio est&aacute; siendo actualizado"
-					alert: "La importaci&oacute;n no se realiz&oacute; correctamente"
+      imports:
+        create:
+          done: "El sitio fue actualizado exitosamente."
+          notice: "El sitio est&aacute; siendo actualizado"
+          alert: "La importaci&oacute;n no se realiz&oacute; correctamente"
