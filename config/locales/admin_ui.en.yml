@@ -161,6 +161,7 @@ en:
         de: German
         fr: French
         pt-BR: "Brazilian Portuguese"
+				es: "Spanish"
         ask_for_name: "Please type your new name"
 
     theme_assets:

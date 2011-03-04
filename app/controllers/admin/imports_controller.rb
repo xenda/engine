@@ -32,6 +32,8 @@ module Admin
 
         redirect_to Locomotive.config.delayed_job ? admin_import_url : new_admin_import_url
       rescue Exception => e
+        puts e.message
+        puts e.backtrace
         logger.error "[Locomotive import] #{e.message} / #{e.backtrace}"
         logger.info "[Locomotive import] #{e.message} / #{e.backtrace}"
         @error = t('errors.messages.invalid_theme_file')
