@@ -1,9 +1,9 @@
 es:
   formtastic:
     titles:
-      information: "Informaci&oacute;n General"
+      information: "Información General"
       meta: Metadata de SEO 
-      code: "C&oacute;digo"
+      code: "Código"
       raw_template: Tema
       credentials: Credenciales
       language: Idioma
@@ -15,8 +15,8 @@ es:
       preview: Vista previa
       options: Opciones avanzadas
       custom_fields: Campos personalizados
-      other_fields: "Otra informaci&oacute;n" 
-      presentation: "Presentaci&oacute;n"
+      other_fields: "Otra información" 
+      presentation: "Presentación"
       attributes: Atributos
       upload: Subida de archivos
     labels:
@@ -40,19 +40,19 @@ es:
 
     hints:
       page:
-        published: "Solo cuentas autenticadas pueden ver p&aacute;ginas no publicadas"
-        cache_strategy: "Convierte la p&aacute;gina en est&aacute;tica para mejor rendimiento. La opci&oacute;n 'Simple' es la recomendada"
-        templatized: "Usa la p&aacute;gina como un template para un modelo que se defina"
-        listed: "Controla si una p&aacute;gina aparecer&aacute; en el menu generado"
-        content_type_id: "El tipo de contenido que esta p&aacute;gina servir&aacute; de template"
+        published: "Solo cuentas autenticadas pueden ver páginas no publicadas"
+        cache_strategy: "Convierte la página en estática para mejor rendimiento. La opción 'Simple' es la recomendada"
+        templatized: "Usa la página como un template para un modelo que se defina"
+        listed: "Controla si una página aparecerá en el menu generado"
+        content_type_id: "El tipo de contenido que esta página servirá de template"
       snippet:
-        slug: "Necesitas conocerlo para insertar un texto en la p&aacute;gina"
+        slug: "Necesitas conocerlo para insertar un texto en la página"
       site:
-        meta_keywords: "Palabras clave que se usar&aacute;n en la cabecera de la p&aacute;gina. Debe estar separadas por un espacio. Requeridas por SEO"
-        meta_description: "Descripci&oacute;n meta que se usar&aacute; en la cabecera de la p&aacute;gina. Requerida por SEO"
+        meta_keywords: "Palabras clave que se usarán en la cabecera de la página. Debe estar separadas por un espacio. Requeridas por SEO"
+        meta_description: "Descripción meta que se usará en la cabecera de la página. Requerida por SEO"
         domain_name: "ex: midominio.org"
       theme_asset:
-        slug: "No necesitas a&ntilde;adir la extensi&oacute;n del archivo (.css or .js)"
+        slug: "No necesitas añadir la extensión del archivo (.css or .js)"
         edit:
           source: "Puedes reemplazar el archivo por uno de la misma extension"
       custom_fields:
@@ -61,9 +61,9 @@ es:
           hint: "Texto mostrado en el formulario del modelo debajo del campo"
       import:
         source: "Un archivo zip que contiene el database.yml con los archivos y templates"
-        samples: "Si habilitado, el proceso de importaci&oacute;n copiar&aacute; tambi&eacute;n contenidos y archivos"
-        reset: "Si habilitado, toda la data del sitio ser&aacute; destruida antes de importar el nuevo sitio"
+        samples: "Si habilitado, el proceso de importación copiará también contenidos y archivos"
+        reset: "Si habilitado, toda la data del sitio será destruida antes de importar el nuevo sitio"
       content_type:
         api_enabled: "Se usa para permitir a terceras personas crear nuevas instancias (ejemplo: mensajes en un formulario de contactomessages in a contact form)"
-        api_accounts: "Un email de notificaci&oacute;n se enviar&aacute; a cada una de las cuentas listada arriba cuando una nueva instancia sea creada" 
+        api_accounts: "Un email de notificación se enviará a cada una de las cuentas listada arriba cuando una nueva instancia sea creada" 
 

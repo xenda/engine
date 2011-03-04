@@ -3,15 +3,15 @@ es:
     admin:
       pages:
         create:
-          notice: "P&aacute;gina fue creada exitosamente."
-          alert: "P&aacute;gina no fue creada."
+          notice: "Página fue creada exitosamente."
+          alert: "Página no fue creada."
         update:
-          notice: "P&aacute;gina fue actualizada exitosamente."
-          alert: "P&aacute;gina no fue actualizada."
+          notice: "Página fue actualizada exitosamente."
+          alert: "Página no fue actualizada."
         sort:
-          notice: "P&aacute;ginas fueron ordenadas exitosamente."
+          notice: "Páginas fueron ordenadas exitosamente."
         destroy:
-          notice: "P&aacute;gina fue eliminada exitosamente."
+          notice: "Página fue eliminada exitosamente."
 
       contents:
         create:
@@ -71,17 +71,17 @@ es:
         create:
           notice: "Cuenta fue creada exitosamente."
           alert: "Cuenta no fue creada."
-          already_created: "Cuenta ya hab&iacute;a sido a&ntilde;adida a este sitio."
+          already_created: "Cuenta ya había sido añadida a este sitio."
 
       asset_collections:
         create:
-          notice: "Colecci&oacute;n fue creada exitosamente."
-          alert: "Colecci&oacute;n no fue creada."
+          notice: "Colección fue creada exitosamente."
+          alert: "Colección no fue creada."
         update:
-          notice: "Colecci&oacute;n fue actualizada exitosamente."
-          alert: "Colecci&oacute;n no fue actualizada."
+          notice: "Colección fue actualizada exitosamente."
+          alert: "Colección no fue actualizada."
         destroy:
-          notice: "Colecci&oacute;n fue eliminada exitosamente."
+          notice: "Colección fue eliminada exitosamente."
 
       assets:
         create:
@@ -107,10 +107,10 @@ es:
 
       cross_domain_sessions:
         create:
-          alert: "Necesitas iniciar sesi&oacute;n"
+          alert: "Necesitas iniciar sesión"
 
       imports:
         create:
           done: "El sitio fue actualizado exitosamente."
-          notice: "El sitio est&aacute; siendo actualizado"
-          alert: "La importaci&oacute;n no se realiz&oacute; correctamente"
+          notice: "El sitio está siendo actualizado"
+          alert: "La importación no se realizó correctamente"
