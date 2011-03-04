@@ -1,302 +1,302 @@
 es:
-  admin:
-    buttons:
-      login: "Iniciar sesi&oacute;n"
-      send_password: Enviar
-      change_password: Actualizar
-      new_item: "+ a&ntilde;adir"
-      switch_to_site: Ir
+	admin:
+		buttons:
+			login: "Iniciar sesi&oacute;n"
+			send_password: Enviar
+			change_password: Actualizar
+			new_item: "+ a&ntilde;adir"
+			switch_to_site: Ir
 
-    messages:
-      confirm: "¿Est&aacute; seguro?"
+		messages:
+			confirm: "¿Est&aacute; seguro?"
 
-    shared:
-      header:
-        welcome: Bienvenido, %{name}
-        see: Ir al sitio web
-        logout: "Cerrar sesi&oacute;n"
-      menu:
-        contents: Contenidos
-        assets: Archivos
-        settings: "Configuraci&oacute;n"
-        pages: "P&aacute;ginas"
-        snippets: Textos
-        account: Mi cuenta
-        site: Sitio
-        theme_assets: "Archivo de dise&ntilde;o"
-      footer:
-        who_is_behind: "Desarrollado por Xenda utilizando LocomotiveCMS y HashiCMS."
-      form_actions:
-        back: Regresar sin grabar
-        create: Crear
-        update: Actualizar
-        send: Enviar
+		shared:
+			header:
+				welcome: Bienvenido, %{name}
+				see: Ir al sitio web
+				logout: "Cerrar sesi&oacute;n"
+			menu:
+				contents: Contenidos
+				assets: Archivos
+				settings: "Configuraci&oacute;n"
+				pages: "P&aacute;ginas"
+				snippets: Textos
+				account: Mi cuenta
+				site: Sitio
+				theme_assets: "Archivo de dise&ntilde;o"
+			footer:
+				who_is_behind: "Desarrollado por Xenda utilizando LocomotiveCMS y HashiCMS."
+			form_actions:
+				back: Regresar sin grabar
+				create: Crear
+				update: Actualizar
+				send: Enviar
 
-    errors:
-      "500":
-        title: Error en la aplicaci&oacute;n
-        notice: "Lo sentimos, pero hay un error en el sitio"
-        link: "&rarr; Regresar"
-      "404":
-        title: "P&aacute;gina no encontrada"
-        notice: "La p&aacute;gina a la que accedi&oacute; no existe"
-        link: "&rarr; Regresar"
+		errors:
+			"500":
+				title: Error en la aplicaci&oacute;n
+				notice: "Lo sentimos, pero hay un error en el sitio"
+				link: "&rarr; Regresar"
+			"404":
+				title: "P&aacute;gina no encontrada"
+				notice: "La p&aacute;gina a la que accedi&oacute; no existe"
+				link: "&rarr; Regresar"
 
-    notifications:
-      new_content_instance:
-        subject: "Nuevo [%{type}]"
-        title: "Hola %{name}, s&oacute;lo quer&iacute;amos contarte que se ha creado algo nuevo el %{date}"
-        type: "Modelo: %{type}"
+		notifications:
+			new_content_instance:
+				subject: "Nuevo [%{type}]"
+				title: "Hola %{name}, s&oacute;lo quer&iacute;amos contarte que se ha creado algo nuevo el %{date}"
+				type: "Modelo: %{type}"
 
-    custom_fields:
-      edit:
-        title: Editando campo personalizado
-      kind:
-        string: Linea de Texto
-        text: Caja de Texto 
-        category: "Campo de selecci&oacute;n"
-        boolean: "Cajas de selecci&oacute;n"
-        date: Fecha
-        file: Archivo
-      text_formatting:
-        none: None
-        html: HTML
-      edit_field:
-        title: Editar campo
-      edit_category:
-        title: Editar opciones
-        help: Actualizar la lista de opciones para seleccionar
-        collection_label: Lista de opciones
-      custom_form:
-        edit_categories: Editar opciones
-        delete_file: Borrar archivo
+		custom_fields:
+			edit:
+				title: Editando campo personalizado
+			kind:
+				string: Linea de Texto
+				text: Caja de Texto 
+				category: "Campo de selecci&oacute;n"
+				boolean: "Cajas de selecci&oacute;n"
+				date: Fecha
+				file: Archivo
+			text_formatting:
+				none: None
+				html: HTML
+			edit_field:
+				title: Editar campo
+			edit_category:
+				title: Editar opciones
+				help: Actualizar la lista de opciones para seleccionar
+				collection_label: Lista de opciones
+			custom_form:
+				edit_categories: Editar opciones
+				delete_file: Borrar archivo
 
-    sessions:
-      new:
-        title: "Iniciar sesi&oacute;n"
-        link: "Olvid&eacute; mi contrase&ntilde;a"
-        email: "Correo electr&oacute;nico"
-        password: "Contrase&ntilde;a"
+		sessions:
+			new:
+				title: "Iniciar sesi&oacute;n"
+				link: "Olvid&eacute; mi contrase&ntilde;a"
+				email: "Correo electr&oacute;nico"
+				password: "Contrase&ntilde;a"
 
-    passwords:
-      new:
-        title: "Recuperaci&oacute;n de contrase&ntilde;a"
-        link: "&rarr; Recuperar contrase&ntilde;a"
-        email: "Tu correo electr&oacute;nico"
-      edit:
-        title: "Cambiar contrase&ntilde;a"
-        link: "&rarr; Regresar a p&aacute;gina de inicio de sesi&oacute;n"
-        password: "Tu nueva contrase&ntilde;a"
-        password_confirmation: "Confirma la nueva contrase&ntilde;a"
+		passwords:
+			new:
+				title: "Recuperaci&oacute;n de contrase&ntilde;a"
+				link: "&rarr; Recuperar contrase&ntilde;a"
+				email: "Tu correo electr&oacute;nico"
+			edit:
+				title: "Cambiar contrase&ntilde;a"
+				link: "&rarr; Regresar a p&aacute;gina de inicio de sesi&oacute;n"
+				password: "Tu nueva contrase&ntilde;a"
+				password_confirmation: "Confirma la nueva contrase&ntilde;a"
 
-    pages:
-      index:
-        title: "Listado de p&aacute;ginas"
-        help: "Listadas como &aacute;rbol. Tambi&eacute;n se pueden ordenar como carpetas."
-        no_items: "No se han creado p&aacute;ginas a&uacute;n. Empieza <a href=\"%{url}\">ac&aacute;</a> para crear la primera."
-        new: "nueva p&aacute;gina"
-        lastest_items: "&uacute;ltimas p&aacute;ginas"
-      new:
-        title: "Nueva p&aacute;gina"
-        help: "Llene la informaci&oacute;n para crear la p&aacute;gina. Por defecto, la p&aacute;gina no ser&aacute; publicada."
-      page:
-        updated_at: Actualizaba el 
-      edit:
-        show: ver
-        help: "Puedes actualizar el t&iacute;tulo de la p&aacute;gina haciendo click en esta."
-        ask_for_title: "Introduzca el nuevo t&iacute;tulo"
-      form:
-        delete_file: Eliminar archivo
-        default_block: Predeterminado
-        cache_strategy:
-          none: Ninguno
-          simple: Simple
-          hour: 1 hora
-          day: "1 d&iacute;a"
-          week: 1 semana
-          month: 1 mes
+		pages:
+			index:
+				title: "Listado de p&aacute;ginas"
+				help: "Listadas como &aacute;rbol. Tambi&eacute;n se pueden ordenar como carpetas."
+				no_items: "No se han creado p&aacute;ginas a&uacute;n. Empieza <a href=\"%{url}\">ac&aacute;</a> para crear la primera."
+				new: "nueva p&aacute;gina"
+				lastest_items: "&uacute;ltimas p&aacute;ginas"
+			new:
+				title: "Nueva p&aacute;gina"
+				help: "Llene la informaci&oacute;n para crear la p&aacute;gina. Por defecto, la p&aacute;gina no ser&aacute; publicada."
+			page:
+				updated_at: Actualizaba el 
+			edit:
+				show: ver
+				help: "Puedes actualizar el t&iacute;tulo de la p&aacute;gina haciendo click en esta."
+				ask_for_title: "Introduzca el nuevo t&iacute;tulo"
+			form:
+				delete_file: Eliminar archivo
+				default_block: Predeterminado
+				cache_strategy:
+					none: Ninguno
+					simple: Simple
+					hour: 1 hora
+					day: "1 d&iacute;a"
+					week: 1 semana
+					month: 1 mes
 
-    snippets:
-      index:
-        title: "Listado de textos"
-        help: "Los textos son piezas de HTML que se pueden incluir en distintos lugares en el sitio (como en el pie de p&aacute;gina)."
-        no_items: "Por ahora no hay textos creados. Pueden <a href=\"%{url}\">crear</a> uno ahora"
-        new: nuevo texto
-      new:
-        title: Nuevo texto
-        help: "Utilice el formulario para actualizar el texto"
-      edit:
-        title: Editando texto
-        help: "Utilice el formulario para actualizar el texto"
-      snippet:
-        updated_at: Actualizado en
+		snippets:
+			index:
+				title: "Listado de textos"
+				help: "Los textos son piezas de HTML que se pueden incluir en distintos lugares en el sitio (como en el pie de p&aacute;gina)."
+				no_items: "Por ahora no hay textos creados. Pueden <a href=\"%{url}\">crear</a> uno ahora"
+				new: nuevo texto
+			new:
+				title: Nuevo texto
+				help: "Utilice el formulario para actualizar el texto"
+			edit:
+				title: Editando texto
+				help: "Utilice el formulario para actualizar el texto"
+			snippet:
+				updated_at: Actualizado en
 
-    sites:
-      new:
-        title: Nuevo sitio
-        help: "Utilice el formulario inferior para crear un nuevo sitioFill in the form below to create your new site"
+		sites:
+			new:
+				title: Nuevo sitio
+				help: "Utilice el formulario inferior para crear un nuevo sitioFill in the form below to create your new site"
 
-    current_sites:
-      edit:
-        import: importar
-        new_membership: "a&ntilde;adir cuenta"
-        help: "Puedes actualizar el nombre del sitio haciendo click en &eacute;l"
-        ask_for_name: "Ingresa el nuevo nombre"
+		current_sites:
+			edit:
+				import: importar
+				new_membership: "a&ntilde;adir cuenta"
+				help: "Puedes actualizar el nombre del sitio haciendo click en &eacute;l"
+				ask_for_name: "Ingresa el nuevo nombre"
 
-    memberships:
-      new:
-        title: Nueva cuenta
-        help: "Ingrese un correo electr&oacute;nico para a&ntilde;adir la cuenta. Si no existe, se crear&aacute; un usuario con esos datos."
+		memberships:
+			new:
+				title: Nueva cuenta
+				help: "Ingrese un correo electr&oacute;nico para a&ntilde;adir la cuenta. Si no existe, se crear&aacute; un usuario con esos datos."
 
-    accounts:
-      new:
-        title: Nueva cuenta
-        help: "Ingrese los datos en la cuenta en el formulario siguiente."
+		accounts:
+			new:
+				title: Nueva cuenta
+				help: "Ingrese los datos en la cuenta en el formulario siguiente."
 
-    my_accounts:
-      edit:
-        help: "El nombre puede ser actualizado haciendo click en &eacute;l."
-        new_site:nuevo sitio 
-        en: "Ingl&eacute;s"
-        de: "Alem&aacute;n"
-        fr: "Franc&eacute;s"
-        pt-BR: "Portugu&eacute;s Brazile&ntilde;o"
-        ask_for_name: "Ingresa el nuevo nombre"
+		my_accounts:
+			edit:
+				help: "El nombre puede ser actualizado haciendo click en &eacute;l."
+				new_site:nuevo sitio 
+				en: "Ingl&eacute;s"
+				de: "Alem&aacute;n"
+				fr: "Franc&eacute;s"
+				pt-BR: "Portugu&eacute;s Brazile&ntilde;o"
+				ask_for_name: "Ingresa el nuevo nombre"
 
-    theme_assets:
-      index:
-        title: Listando archivos de tema
-        help: "Los archivos del tema se podr&aacute;n actualizar directamente en esta secci&oacute;n. Si necesita actualizar la galer&iacute;a de im&aacute;genes, puede ir a la secci&oacute;n de Archivos."
-        all: todos los archivos
-        new: nuevo archivo
-        snippets: Textos
-        css_and_js: Estilos y javascript
-        fonts: Fuentes
-        images: "Im&aacute;genes"
-        medias: Medios
-        no_items: "Por ahora no hay archivos. Puede <a href=\"%{url}\">crear</a> uno aqu&iacute;."
-      asset:
-        updated_at: Actualizado al
-      new:
-        title: Nuevo archivo
-        help: "Puede enviar cualquier archivo o copiar y pegar una hoja de estilo o archivo javascript."
-      edit:
-        title: "Editando %{file}"
-        help: "Este archivo puede ser accesado en esta direcci&oacute;n: <a href='%{url}'>%{url}</a>"
-      form:
-        picker_link: Insertar un archivo en el c&oacute;digo
-        choose_file: Elegir archivo
-        choose_plain_text: Elegir texto plano
-      images:
-        title: "Listando im&aacute;genes"
-        no_items: "Por ahora no hay im&aacute;genes"
+		theme_assets:
+			index:
+				title: Listando archivos de tema
+				help: "Los archivos del tema se podr&aacute;n actualizar directamente en esta secci&oacute;n. Si necesita actualizar la galer&iacute;a de im&aacute;genes, puede ir a la secci&oacute;n de Archivos."
+				all: todos los archivos
+				new: nuevo archivo
+				snippets: Textos
+				css_and_js: Estilos y javascript
+				fonts: Fuentes
+				images: "Im&aacute;genes"
+				medias: Medios
+				no_items: "Por ahora no hay archivos. Puede <a href=\"%{url}\">crear</a> uno aqu&iacute;."
+			asset:
+				updated_at: Actualizado al
+			new:
+				title: Nuevo archivo
+				help: "Puede enviar cualquier archivo o copiar y pegar una hoja de estilo o archivo javascript."
+			edit:
+				title: "Editando %{file}"
+				help: "Este archivo puede ser accesado en esta direcci&oacute;n: <a href='%{url}'>%{url}</a>"
+			form:
+				picker_link: Insertar un archivo en el c&oacute;digo
+				choose_file: Elegir archivo
+				choose_plain_text: Elegir texto plano
+			images:
+				title: "Listando im&aacute;genes"
+				no_items: "Por ahora no hay im&aacute;genes"
 
-    asset_collections:
-      index:
-        title: Colecci&oacute;n de archivos
-        help: "El nombre de la colecci&oacute;n puede ser actualizado haciendo click en &eacute;l. Puede personalizar archivos en colecciones al a&ntilde;adirles campos de informaci&oacute;n nuevos."
-        new: "nueva colecci&oacute;n"
-        no_items: "Por ahora no hay colecciones. Puede <a href=\"%{url}\">crear</a> una para empezar."
-      new:
-        title: Nueva colecci&oacute;n
-        help: "Por ahora, ingrese el nombre. Otros campos aparecer&aacute;n al enviar el formulario."
-      edit:
-        help: "El nombre de la colecci&oacute;n se puede actualizar haciendo click en &eacute;l. Puedes personalizar los archivos en una colecci&oacute;n a&ntilde;adi&eacute;ndo campos personalizados nuevos"
-        add_asset: "a&ntilde;adir archivo"
-        destroy: "eliminar colecci&oacute;n"
-        no_items: "Por ahora no hay archivos. Puede <a href=\"%{url}\">crear</a> uno para empezar."
-        ask_for_name: "Ingrese el nuevo nombre"
+		asset_collections:
+			index:
+				title: Colecci&oacute;n de archivos
+				help: "El nombre de la colecci&oacute;n puede ser actualizado haciendo click en &eacute;l. Puede personalizar archivos en colecciones al a&ntilde;adirles campos de informaci&oacute;n nuevos."
+				new: "nueva colecci&oacute;n"
+				no_items: "Por ahora no hay colecciones. Puede <a href=\"%{url}\">crear</a> una para empezar."
+			new:
+				title: Nueva colecci&oacute;n
+				help: "Por ahora, ingrese el nombre. Otros campos aparecer&aacute;n al enviar el formulario."
+			edit:
+				help: "El nombre de la colecci&oacute;n se puede actualizar haciendo click en &eacute;l. Puedes personalizar los archivos en una colecci&oacute;n a&ntilde;adi&eacute;ndo campos personalizados nuevos"
+				add_asset: "a&ntilde;adir archivo"
+				destroy: "eliminar colecci&oacute;n"
+				no_items: "Por ahora no hay archivos. Puede <a href=\"%{url}\">crear</a> uno para empezar."
+				ask_for_name: "Ingrese el nuevo nombre"
 
-    assets:
-      new:
-        title: Nuevo archivo
-        help: "Llene el formulario para crear el archivo." 
-      edit:
-        title: Editar archivo
-        help: "Llene el formulario para crear el archivo"
+		assets:
+			new:
+				title: Nuevo archivo
+				help: "Llene el formulario para crear el archivo." 
+			edit:
+				title: Editar archivo
+				help: "Llene el formulario para crear el archivo"
 
-    content_types:
-      index:
-        new: nuevo modelo
-      new:
-        title: Nuevo modelo
-        help: "Cree un nuevo modelo de datos (Proyectos, Personas, etc.) El modelo debe tener al menos un campo de datos."
-      edit:
-        title: Editando modelo
-        help: "El model debe tener al menos un campo." 
-        show_items: ver elementos
-        new_item: nuevo elemento
-      form:
-        order_by:
-          created_at: 'Por fecha de creaci&oacute;n'
-          updated_at: 'Por fecha de actualizaci&oacute;n'
-          position_in_list: Manualmente
+		content_types:
+			index:
+				new: nuevo modelo
+			new:
+				title: Nuevo modelo
+				help: "Cree un nuevo modelo de datos (Proyectos, Personas, etc.) El modelo debe tener al menos un campo de datos."
+			edit:
+				title: Editando modelo
+				help: "El model debe tener al menos un campo." 
+				show_items: ver elementos
+				new_item: nuevo elemento
+			form:
+				order_by:
+					created_at: 'Por fecha de creaci&oacute;n'
+					updated_at: 'Por fecha de actualizaci&oacute;n'
+					position_in_list: Manualmente
 
-    contents:
-      index:
-        title: 'Listando "%{type}"'
-        edit: editando modelo
-        destroy: eliminar modelo
-        download: descargar elementos
-        new: nuevo elemento
-        category_noname: "Sin nombre"
-        lastest_items: "Ultimos elementos"
-        updated_at: "Actualizado el"
-      list:
-        no_items: "No hay elementos por ahora. Puede <a href=\"%{url}\">craer</a> uno para empezar"
-      new:
-        title: '%{type} &mdash; nuevo elemento'
-      edit:
-        title: '%{type} &mdash; editando elemento'
+		contents:
+			index:
+				title: 'Listando "%{type}"'
+				edit: editando modelo
+				destroy: eliminar modelo
+				download: descargar elementos
+				new: nuevo elemento
+				category_noname: "Sin nombre"
+				lastest_items: "Ultimos elementos"
+				updated_at: "Actualizado el"
+			list:
+				no_items: "No hay elementos por ahora. Puede <a href=\"%{url}\">craer</a> uno para empezar"
+			new:
+				title: '%{type} &mdash; nuevo elemento'
+			edit:
+				title: '%{type} &mdash; editando elemento'
 
-    image_picker:
-      link: Insertar una imagen
+		image_picker:
+			link: Insertar una imagen
 
-    cross_domain_sessions:
-      new:
-        title: "Autenticaci&oacute;n entre dominios (Cross-domain)"
-        notice: "Se redireccionar&aacute; al dominio por unos segundos."
+		cross_domain_sessions:
+			new:
+				title: "Autenticaci&oacute;n entre dominios (Cross-domain)"
+				notice: "Se redireccionar&aacute; al dominio por unos segundos."
 
-    imports:
-      new:
-        title: Importar
-        help: "Sea cuidadoso al enviar un tema nuevo al sitio web existente, la informaci&oacute;n existente podr&iacute;a ser modificada e incluso eliminada."
-      show:
-        title: Importaci&oacute;n en progreso
-        help: "El sitio se est&aacute; actualizando en base al archivo .zip que se ha enviado. Demorar&aacute; al menos unos segundos."
-        steps:
-          site: Informaci&oacute;n del sitioinformation
-          content_types: Tipos de contenido personalizados
-          assets: Archivos del tema
-          asset_collections: Colecciones de archivos
-          snippets: Textos
-          pages: "P&aacute;ginas"
-        messages:
-          success: "El sitio ha sido actualizado exitosamente"
-          failure: "El proceso de importaci&oacute;n tuvo un error."
+		imports:
+			new:
+				title: Importar
+				help: "Sea cuidadoso al enviar un tema nuevo al sitio web existente, la informaci&oacute;n existente podr&iacute;a ser modificada e incluso eliminada."
+			show:
+				title: Importaci&oacute;n en progreso
+				help: "El sitio se est&aacute; actualizando en base al archivo .zip que se ha enviado. Demorar&aacute; al menos unos segundos."
+				steps:
+					site: Informaci&oacute;n del sitioinformation
+					content_types: Tipos de contenido personalizados
+					assets: Archivos del tema
+					asset_collections: Colecciones de archivos
+					snippets: Textos
+					pages: "P&aacute;ginas"
+				messages:
+					success: "El sitio ha sido actualizado exitosamente"
+					failure: "El proceso de importaci&oacute;n tuvo un error."
 
-    installation:
-      common:
-        title: "Primera instalaci&oacute;n"
-        next: Siguiente 
-      step_1:
-        title: Paso 1/3
-        explanations: "Este es el primer paso de la instalaci&oacute;n. Lea cuidadosamente antes de continuar."
-        database:
-          label: "Nombre de la base de datos: <em>%{name}</em>"
-          notes: "Todas las conexiones a mongodb pueden hayarse en el archivo <b>config/mongoid.yml</b> de la aplicaci&oacute;n."
-        default_domain:
-          label: "Dominio por defecto: <em>%{name}</em>"
-          notes: "Cada sitio tiene un subdominio por defecto basado en el dominio por defecto. Puede agregar otros dominios al sitio adicionalmente.<br/>El nombre del dominio por defecto puede ser encontrado en el archivo <b>config/initializers/locomotive.rb</b>."
-      step_2:
-        title: "Paso 2/3 &mdash; Crear cuenta"
-        name: Cuenta
-        email: "Correo electr&oacute;nico"
-        password: "Contrase&ntilde;a"
-        password_confirmation: "Confirmaci&oacute;n de contrase&ntilde;a"
-        done: "Has creado una cuenta con los datos:<br/><strong>%{name}</strong>, <em>%{email}</em>"
-        next: Crear cuenta
-      step_3:
-        title: "Paso 3/3 &mdash; Crear el sitio"
-        explanations: "Este es el &uacute;ltimo paso de la instalaci&oacute;n. Puedes enviar un tema en un archivo .zip. "
-        next: Crear sitio
+		installation:
+			common:
+				title: "Primera instalaci&oacute;n"
+				next: Siguiente 
+			step_1:
+				title: Paso 1/3
+				explanations: "Este es el primer paso de la instalaci&oacute;n. Lea cuidadosamente antes de continuar."
+				database:
+					label: "Nombre de la base de datos: <em>%{name}</em>"
+					notes: "Todas las conexiones a mongodb pueden hayarse en el archivo <b>config/mongoid.yml</b> de la aplicaci&oacute;n."
+				default_domain:
+					label: "Dominio por defecto: <em>%{name}</em>"
+					notes: "Cada sitio tiene un subdominio por defecto basado en el dominio por defecto. Puede agregar otros dominios al sitio adicionalmente.<br/>El nombre del dominio por defecto puede ser encontrado en el archivo <b>config/initializers/locomotive.rb</b>."
+			step_2:
+				title: "Paso 2/3 &mdash; Crear cuenta"
+				name: Cuenta
+				email: "Correo electr&oacute;nico"
+				password: "Contrase&ntilde;a"
+				password_confirmation: "Confirmaci&oacute;n de contrase&ntilde;a"
+				done: "Has creado una cuenta con los datos:<br/><strong>%{name}</strong>, <em>%{email}</em>"
+				next: Crear cuenta
+			step_3:
+				title: "Paso 3/3 &mdash; Crear el sitio"
+				explanations: "Este es el &uacute;ltimo paso de la instalaci&oacute;n. Puedes enviar un tema en un archivo .zip. "
+				next: Crear sitio
