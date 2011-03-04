@@ -37,6 +37,9 @@ module Models
               begin
                 self._parse_and_serialize_template
               rescue ::Liquid::SyntaxError => error
+                puts "Liquid error"
+                puts error.message
+                puts error.backtrace
                 @parsing_errors << :liquid_syntax
               rescue ::Locomotive::Liquid::PageNotFound => error
                 @parsing_errors << :liquid_extend
