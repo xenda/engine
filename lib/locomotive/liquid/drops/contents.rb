@@ -32,6 +32,10 @@ module Locomotive
         def api
           { 'create' => @context.registers[:controller].send('admin_api_contents_url', @content_type.slug) }
         end
+        
+        def get(conditions)
+        	@content_type.contents.find(:all, :conditions => conditions)
+        end
 
         def before_method(meth)
           klass = @content_type.contents.klass # delegate to the proxy class
