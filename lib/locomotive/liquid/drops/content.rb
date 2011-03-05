@@ -12,7 +12,7 @@ module Locomotive
         end
         
         def resources
-        	::ContentType.find_by_slug('event').where("event='breaking_bad_convention'")
+        	::ContentType.find(:all, :conditions => {:slug => "resources", :event => "breaking_bad_convention"})
         end
 
         def highlighted_field_value
