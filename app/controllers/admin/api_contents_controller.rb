@@ -9,12 +9,7 @@ module Admin
     
     def get(conditions)
     	@collection = @content_type.contents.find(:all, :conditions => conditions)
-    	respond_to do |format|
-    		format.json { render :json => { :content => @collection } }
-    		format.html do
-    			@collection
-    		end
-    	end
+    	@collection
     end
 
     def create
