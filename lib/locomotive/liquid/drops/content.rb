@@ -12,7 +12,7 @@ module Locomotive
         end
         
         def resources
-        	@source.class.where("event='#{@source._slug}'")
+        	Resources.where("event='#{@source._slug}'")
         	Locomotive.logger @source._slug
         end
 
