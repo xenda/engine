@@ -32,7 +32,7 @@ module Locomotive
         end
         
         def resource_image_url(site_id, id, filename)
-        	"http: //alpha-theia.heroku.com.s3.amazonaws.com/sites/#{site_id}/contents/content_instance/#{id}/files/#{filename}"
+        	"http://alpha-theia.heroku.com.s3.amazonaws.com/sites/#{site_id}/contents/content_instance/#{id}/files/#{filename}"
         end
 
         def theme_image_url(input)
