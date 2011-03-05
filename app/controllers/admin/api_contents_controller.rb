@@ -6,11 +6,6 @@ module Admin
     before_filter :require_site
 
     before_filter :set_content_type
-    
-    def get(conditions)
-    	@collection = @content_type.contents.find(:all, :conditions => conditions)
-    	@collection
-    end
 
     def create
       @content = @content_type.contents.build(params[:content])
