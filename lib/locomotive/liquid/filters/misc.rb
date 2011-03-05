@@ -20,18 +20,6 @@ module Locomotive
         def modulo(word, index, modulo)
           (index.to_i + 1) % modulo == 0 ? word : ''
         end
-        
-        def get(conditions)
-        	@content_type.contents.klass.send('where', conditions)
-        end
-        
-        def get2(conditions)
-        	@content_type.contents.klass.where(conditions)
-        end
-        
-        def get3(conditions)
-        	@content_type.contents.find(:all, :conditions => conditions)
-        end
 
       end
 

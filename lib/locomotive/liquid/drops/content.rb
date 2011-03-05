@@ -10,6 +10,11 @@ module Locomotive
             value = @source.send(meth)
           end
         end
+        
+        def resources
+        	@source.class.where("event='#{@source._slug}'")
+        	Locomotive.logger @source._slug
+        end
 
         def highlighted_field_value
           @source.highlighted_field_value
