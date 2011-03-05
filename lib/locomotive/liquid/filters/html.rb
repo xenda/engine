@@ -30,6 +30,10 @@ module Locomotive
 
            %{<script src="#{input}" type="text/javascript"></script>}
         end
+        
+        def resource_image_url(input)
+        	"http: //alpha-theia.heroku.com.s3.amazonaws.com/sites/#{@context.registers[:site].id}/contents/content_instance/#{input.attributes._id}/files/#{input.attributes.custom_field_1}"
+        end
 
         def theme_image_url(input)
           return '' if input.nil?
