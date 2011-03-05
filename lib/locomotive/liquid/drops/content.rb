@@ -22,7 +22,7 @@ module Locomotive
         end
         
         def id
-        	@id
+        	@id.to_s
         end
         
         def site_id
