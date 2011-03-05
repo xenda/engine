@@ -33,10 +33,6 @@ module Locomotive
           { 'create' => @context.registers[:controller].send('admin_api_contents_url', @content_type.slug) }
         end
         
-        def get(conditions)
-        	@content_type.contents.klass.send('where', conditions)
-        end
-        
         def before_method(meth)
           klass = @content_type.contents.klass # delegate to the proxy class
           if (meth.to_s =~ /^group_by_.+$/) == 0
