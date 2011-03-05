@@ -13,7 +13,7 @@ module Locomotive
         
         def resources
         	#::ContentType.find(:all, :conditions => {:slug => "resources", :contents => {"custom_field_4" => "breaking_bad_convention" }})
-        	::ContentType.find(:all, :conditions => {:slug => "resources"})
+        	::ContentType.only(:contents).where(:slug => "resources")
         end
 
         def highlighted_field_value
