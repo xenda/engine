@@ -92,6 +92,10 @@ class ContentType
     @group_by_field ||= self.content_custom_fields.detect { |f| f._name == self.group_by_field_name }
   end
 
+  def to_liquid
+    Locomotive::Liquid::Drops::Content.new(self)
+  end
+
   protected
 
   def set_default_values
