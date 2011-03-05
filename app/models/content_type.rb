@@ -93,7 +93,7 @@ class ContentType
   end
 
   def to_liquid
-    Locomotive::Liquid::Drops::Content.new(self)
+    Locomotive::Liquid::Drops::ContentType.new(self)
   end
 
   protected
