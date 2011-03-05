@@ -12,7 +12,7 @@ module Locomotive
         end
         
         def resources
-        	Resource.where("event='#{@source._slug}'")
+        	ContenType.find_by_slug('event').where("event='breaking_bad_logo'")
         end
 
         def highlighted_field_value
