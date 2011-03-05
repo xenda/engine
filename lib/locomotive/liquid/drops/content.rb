@@ -2,6 +2,11 @@ module Locomotive
   module Liquid
     module Drops
       class Content < Base
+      	
+      	def initialize(source)
+		  @id = source.id
+		  super(source)
+		end
 
         def before_method(meth)
           return '' if @source.nil?
@@ -14,6 +19,14 @@ module Locomotive
         def resources
         	#::ContentType.find(:all, :conditions => {:slug => "resources", :contents => {"custom_field_4" => "breaking_bad_convention" }})
         	::ContentType.where(:slug => "resources")
+        end
+        
+        def id
+        	@id
+        end
+        
+        def site_id
+        	@context.registers[:site].id.to_s
         end
 
         def highlighted_field_value

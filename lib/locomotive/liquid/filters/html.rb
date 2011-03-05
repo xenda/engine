@@ -31,8 +31,8 @@ module Locomotive
            %{<script src="#{input}" type="text/javascript"></script>}
         end
         
-        def resource_image_url(id, *filename)
-        	"http: //alpha-theia.heroku.com.s3.amazonaws.com/sites/#{@context.registers[:site].id}/contents/content_instance/#{id}/files/#{filename}"
+        def resource_image_url(site_id, id, filename)
+        	"http: //alpha-theia.heroku.com.s3.amazonaws.com/sites/#{site_id}/contents/content_instance/#{id}/files/#{filename}"
         end
 
         def theme_image_url(input)
