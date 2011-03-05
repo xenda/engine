@@ -12,9 +12,7 @@ module Locomotive
         end
         
         def resources
-        	::Resource.where("event='#{@source._slug}'")
-        	Locomotive.logger @source._slug
-        	puts @source._slug
+        	Resource.where("event='#{@source._slug}'")
         end
 
         def highlighted_field_value
