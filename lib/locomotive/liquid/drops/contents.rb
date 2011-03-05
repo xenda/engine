@@ -34,13 +34,9 @@ module Locomotive
         end
         
         def get(conditions)
-        	@content_type.contents.klass.where(conditions)
+        	@content_type.contents.klass.send('where', conditions)
         end
         
-        def get2(conditions)
-        	@context.registers[:site].content_types.where(:slug => meth.to_s).first.where(conditions)
-        end
-
         def before_method(meth)
           klass = @content_type.contents.klass # delegate to the proxy class
           if (meth.to_s =~ /^group_by_.+$/) == 0
