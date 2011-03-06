@@ -17,10 +17,10 @@ module Locomotive
         end
         
         def resources
-        	puts @source._slug
-        	::ContentType.find(:all, :conditions => {:slug => "resources"}).where("contents.custom_field_4" => @source._slug)
-        	puts ::Logger.new($stdout)
-        	#::ContentType.where(:slug => "resources", :contents => {:custom_field_4 => @slug})
+        	#::ContentType.find(:all, :conditions => {:slug => "resources"}).where("contents.custom_field_4" => @source._slug)
+        	#::ContentType.logger = ::Logger.new(STDOUT)
+        	contents = ::ContentType.where(:slug => "resources").contents
+        	contents.select{|c| c[:custom_field_4] == @source._slug}
         end
         
         def id
