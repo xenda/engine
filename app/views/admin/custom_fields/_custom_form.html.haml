@@ -34,10 +34,10 @@
   %fieldset.inputs
     %legend
       %span Add resource
-    %ol
+    %ol{:id => "resources_list"}
       %li
         %button{:class => "button light add", :type => "button", :id => "add_resource"}
           %span + add
       %li.file{:id => "content_resource_file_input"}
         = label_tag "resource_custom_field_3_0", "File:"
-        = file_field_tag "resource[custom_field_3][0]"
+        = file_field_tag "resource_custom_field_3_0", "resource[custom_field_3][]"

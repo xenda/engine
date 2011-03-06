@@ -14,4 +14,12 @@
 %script{ :type => 'text/javascript' }
   = find_and_preserve(growl_message)
 
+:javascript
+  $(document).ready(function() {
+  	$('#add_resource').click(function(){
+  		var resources = $('#resources_list li.file').length;
+  		$('#resources_list').append('<li class="file" id="content_resource_file_input"><label for="resource_custom_field_3_'+resources+'">File:</label><input id="resource_custom_field_3_'+resources+'" name="resource[custom_field_3][]" type="file"></li>');
+  	});
+  });
+
 = yield :head
