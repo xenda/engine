@@ -46,5 +46,11 @@
       %ul{ :id => 'contents-list', :class => 'list'}
         - @content.resources.each do |resource|
           %li.content{ :id => "content-#{resource._id}" }
-            = resource.custom_field_3_filename
-            = link_to image_tag('admin/list/icons/trash.png'), admin_content_path('resources', resource), :class => 'remove', :confirm => t('admin.messages.confirm'), :method => :delete
+            %em
+            %strong
+              = link_to resource.custom_field_3_filename, edit_admin_content_path('resources', resource)
+            .more
+              %span
+                != t('admin.contents.index.updated_at')
+              = l content.updated_at, :format => :short rescue 'n/a'
+              = link_to image_tag('admin/list/icons/trash.png'), admin_content_path('resources', resource), :class => 'remove', :confirm => t('admin.messages.confirm'), :method => :delete, :remote => true
