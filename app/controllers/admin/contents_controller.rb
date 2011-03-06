@@ -16,8 +16,15 @@ module Admin
       
       if @content_type.name.downcase=='events'
       	resource_type = current_site.content_types.where(:slug => 'resources').first
-      	params[:resource][:custom_field_4] = @content._slug
-      	resource = resource_type.contents.create(params[:resource])
+      	
+      	resources = params[:resource][:custom_field_3]
+      	
+      	resources.each do |resource_file|
+      		resource = {:custom_field_3 => resource_file,
+      					:name => Time.zone.now
+      					}
+      		resource_type.contents.create(resource)
+  		end
       end
       
       respond_with(@content, :location => edit_admin_content_url(@content_type.slug, @content))

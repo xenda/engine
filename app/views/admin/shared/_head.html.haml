@@ -18,7 +18,7 @@
   $(document).ready(function() {
   	$('#add_resource').click(function(){
   		var resources = $('#resources_list li.file').length;
-  		$('#resources_list').append('<li class="file" id="content_resource_file_input"><a href="#" class="remove_resource">- remove</a><label for="resource_custom_field_3_'+resources+'">File:</label><input id="resource_custom_field_3_'+resources+'" name="resource[custom_field_3][]" type="file"></li>');
+  		$('#resources_list').append('<li class="file" id="content_resource_file_input"><label for="resource_custom_field_3_'+resources+'">File:</label><input id="resource_custom_field_3_'+resources+'" name="resource[custom_field_3][]" type="file"><a href="#" class="remove_resource">- remove</a></li>');
   		$('a.remove_resource').live('click', function(e){
   			e.preventDefault();
   			$(this).parent().detach();
