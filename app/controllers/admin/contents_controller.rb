@@ -16,7 +16,7 @@ module Admin
       
       if @content_type.name.downcase=='events'
       	resource_type = current_site.content_types.where(:slug => 'resources').first
-      	params[:resource] << {:custom_field_4 => @content._slug}
+      	params[:resource][:custom_field_4] = @content._slug
       	resource = resource_type.contents.create(params[:resource])
       	
       	logger.debug resource.inspect
