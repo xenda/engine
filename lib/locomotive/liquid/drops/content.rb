@@ -17,7 +17,8 @@ module Locomotive
         end
         
         def resources
-        	::ContentType.find(:all, :conditions => {:slug => "resources"}).where("contents.custom_field_4" => @source._slug)
+        	puts @source._slug
+        	::ContentType.find(:all, :conditions => {:slug => "resources", :contents => {:custom_field_4 => @source._slug}})
         	#::ContentType.where(:slug => "resources", :contents => {:custom_field_4 => @slug})
         end
         
