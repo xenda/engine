@@ -5,7 +5,7 @@ module Locomotive
       	
       	def initialize(source)
 		  @id = source.id
-		  @slug = source._slug
+		  @slug = source.slug
 		  super(source)
 		end
 
