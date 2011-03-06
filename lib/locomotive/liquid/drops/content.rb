@@ -19,7 +19,7 @@ module Locomotive
         def resources
         	puts @source._slug
         	::ContentType.find(:all, :conditions => {:slug => "resources"}).where("contents.custom_field_4" => @source._slug)
-        	::ContentType.logger = ::Logger.new($stdout)
+        	puts ::Logger.new($stdout)
         	#::ContentType.where(:slug => "resources", :contents => {:custom_field_4 => @slug})
         end
         
