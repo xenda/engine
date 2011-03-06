@@ -19,7 +19,7 @@ module Locomotive
         def resources
         	#::ContentType.find(:all, :conditions => {:slug => "resources"}).where("contents.custom_field_4" => @source._slug)
         	#::ContentType.logger = ::Logger.new(STDOUT)
-        	contents = ::ContentType.where(:slug => "resources").contents
+        	contents = ::ContentType.where(:slug => "resources").first.contents
         	contents.select{|c| c[:custom_field_4] == @source._slug}
         end
         
