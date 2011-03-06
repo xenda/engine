@@ -29,6 +29,12 @@
               &nbsp;/&nbsp;
               != t('.delete_file')
               = form.check_box :"remove_#{field._name}"
+
+
+= form.input "content[new_resource][name]", :as => :string, :label => "Name:"
+= form.input "content[new_resource][file]", :as => :file, :label => "File:", :css => 'file'
+= parent.name
+= @content_type.name
 - if parent.name=='events'
   = form.input "content[new_resource][name]", :as => :string, :label => "Name:"
   = form.input "content[new_resource][file]", :as => :file, :label => "File:", :css => 'file'
