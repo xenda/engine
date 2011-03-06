@@ -50,6 +50,7 @@ module Admin
 	      		resource_type.contents.create(resource)
       		end
   		end
+  	  end
     end
 
     def sort
