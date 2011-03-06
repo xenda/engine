@@ -36,8 +36,8 @@
       %span Add resource
       %ol
         %li.string{:id => "content_resource_name_input"}
-          = label_tag "Name:", {:for => "content_new_resource_name"}
+          = label_tag "content_new_resource_name", "Name:"
           = text_field_tag "content[new_resource][name]"
         %li.file{:id => "content_resource_file_input"}
-          = label_tag "File:", {:for => "content_new_resource_file"}
+          = label_tag "content_new_resource_file", "File:"
           = file_field_tag "content[new_resource][file]"
