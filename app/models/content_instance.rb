@@ -56,6 +56,10 @@ class ContentInstance
 
     hash
   end
+  
+  def resources
+  	ContentType.where(:slug => "resources").first.contents.select{|c| c[:custom_field_4] == self._slug}
+  end
 
   def errors_to_hash
     Hash.new.replace(self.errors)

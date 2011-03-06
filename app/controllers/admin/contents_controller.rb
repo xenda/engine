@@ -20,11 +20,13 @@ module Admin
       	resources = params[:resource][:custom_field_3]
       	
       	resources.each do |resource_file|
-      		resource = {:custom_field_3 => resource_file,
-      					:name => Time.zone.now,
-      					:custom_field_4 => @content._slug
-      					}
-      		resource_type.contents.create(resource)
+      		unless resource_file.empty?
+	      		resource = {:custom_field_3 => resource_file,
+	      					:name => Time.zone.now,
+	      					:custom_field_4 => @content._slug
+	      					}
+	      		resource_type.contents.create(resource)
+      		end
   		end
       end
       
