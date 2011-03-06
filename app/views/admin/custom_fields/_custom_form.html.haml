@@ -37,8 +37,8 @@
         Add resource
         %ol
           %li.text{:id => "content_resource_name_input"}
-            = form.label_tag "Name:"
-            = form.text_field_tag "content[new_resource][name]"
+            = label_tag "Name:"
+            = text_field_tag "content[new_resource][name]"
           %li.text{:id => "content_resource_file_input"}
-            = form.label_tag "File:"
-            = form.file_field_tag "content[new_resource][file]"
+            = label_tag "File:"
+            = file_field_tag "content[new_resource][file]"
