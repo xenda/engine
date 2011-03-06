@@ -33,12 +33,11 @@
 - if @content_type.name.downcase=='events'
   %fieldset.inputs
     %legend
-      %span
-        Add resource
-        %ol
-          %li.text{:id => "content_resource_name_input"}
-            = label_tag "Name:"
-            = text_field_tag "content[new_resource][name]"
-          %li.text{:id => "content_resource_file_input"}
-            = label_tag "File:"
-            = file_field_tag "content[new_resource][file]"
+      %span Add resource
+      %ol
+        %li.string{:id => "content_resource_name_input"}
+          = label_tag "Name:", {:for => "content_new_resource_name"}
+          = text_field_tag "content[new_resource][name]"
+        %li.file{:id => "content_resource_file_input"}
+          = label_tag "File:", {:for => "content_new_resource_file"}
+          = file_field_tag "content[new_resource][file]"
