@@ -18,9 +18,6 @@ module Admin
       	resource_type = current_site.content_types.where(:slug => 'resources').first
       	params[:resource][:custom_field_4] = @content._slug
       	resource = resource_type.contents.create(params[:resource])
-      	
-      	logger.debug resource.inspect
-      	
       end
       
       respond_with(@content, :location => edit_admin_content_url(@content_type.slug, @content))

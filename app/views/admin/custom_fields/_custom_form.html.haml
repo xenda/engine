@@ -34,6 +34,8 @@
   %fieldset.inputs
     %legend
       %span Add resource
+    %button{:class => "button light add", :type => "button", :id => "add_resource"}
+      %span + add
     %ol
       %li.string{:id => "content_resource_name_input"}
         = label_tag "resource_name", "Name:"
