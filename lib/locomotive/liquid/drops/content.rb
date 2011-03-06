@@ -17,7 +17,6 @@ module Locomotive
         end
         
         def resources
-        	puts @source.slug
         	puts @source._slug
         	::ContentType.where(:slug => "resources").where("contents.custom_field_4" => "breaking_bad_convention")
         	#::ContentType.where(:slug => "resources", :contents => {:custom_field_4 => @slug})
