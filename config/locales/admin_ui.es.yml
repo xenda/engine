@@ -100,7 +100,7 @@ es:
         title: "Nueva página"
         help: "Llene la información para crear la página. Por defecto, la página no será publicada."
       page:
-        updated_at: Actualizaba el 
+        updated_at: Actualizada el 
       edit:
         show: ver
         help: "Puedes actualizar el título de la página haciendo click en esta."
