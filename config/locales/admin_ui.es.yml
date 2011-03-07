@@ -160,7 +160,8 @@ es:
         en: "Inglés"
         de: "Alemán"
         fr: "Francés"
-        pt-BR: "Portugués Brazileño"
+        pt-BR: "Portugués Brasileño"
+        es: "Español"
         ask_for_name: "Ingresa el nuevo nombre"
 
     theme_assets:
