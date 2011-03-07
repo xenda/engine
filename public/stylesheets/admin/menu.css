@@ -72,7 +72,7 @@ body.assets ul#menu li.settings a { background-position: right -120px; }
 
 ul#menu li.clear { float: none; height: 1px; }
 
-ul#menu li.single { width: 45px; background: url(/images/admin/menu/right_single.png) no-repeat left; margin-left: 0px; }
+ul#menu li.single a { width: 45px; background: url(/images/admin/menu/right_single.png) no-repeat left; margin-left: 0px; }
 
 /* ___ submenu ___ */
 
