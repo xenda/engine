@@ -1,4 +1,3 @@
-console.log("<%= @content_type.slug %>");
-<% if @content_type.slug == 'events' %>
+<% if @content_type.slug == 'resources' %>
 $("#content-<%= @content.id %>").detach();
 <% end %>
