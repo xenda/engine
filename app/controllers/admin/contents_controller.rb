@@ -59,7 +59,8 @@ module Admin
       destroy! do |format|
       	format.html { admin_contents_url(@content_type.slug) }
       	format.js { render :update do |page|
-      		page.remove "content-#{@content.id}"
+      			page.remove "content-#{@content.id}"
+  			end
   		}
       end
     end
