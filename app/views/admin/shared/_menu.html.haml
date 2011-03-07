@@ -3,4 +3,6 @@
   - if current_site.memberships.where(:account_id => current_admin.id).first.admin?
     = admin_menu_item('assets', admin_asset_collections_url)
     = admin_menu_item('settings', edit_admin_current_site_url)
+  - else
+    %li.single
   %li.clear
