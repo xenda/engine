@@ -56,7 +56,10 @@ module Admin
     end
 
     def destroy
-      destroy! { admin_contents_url(@content_type.slug) }
+      destroy! do |format|
+      	format.html { admin_contents_url(@content_type.slug) }
+      	format.js  {render :layout => false }
+      end
     end
 
     protected
