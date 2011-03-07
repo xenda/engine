@@ -1,3 +1,4 @@
+console.log("<%= @content_type.slug %>");
 <% if @content_type.slug == 'events' %>
-$("#content-<%= @content.id %>").detach()
+$("#content-<%= @content.id %>").detach();
 <% end %>
