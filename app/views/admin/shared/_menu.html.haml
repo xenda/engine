@@ -1,3 +1,4 @@
+= debug(current_site.memberships)
 %ul#menu
   = admin_menu_item('contents', admin_pages_url)
   - if current_site.memberships.where(:account_id => current_admin.id).first.admin?
