@@ -24,5 +24,6 @@
               = link_to truncate(content.send(content_type.highlighted_field_name), :length => 30), edit_admin_content_path(content_type.slug, content)
               %span= time_ago_in_words(content.updated_at)
 
-.action
-  = link_to content_tag(:span, t('admin.content_types.index.new')), new_admin_content_type_url
+- if current_site.memberships.where(:account_id => current_admin.id).first.admin?
+  .action
+    = link_to content_tag(:span, t('admin.content_types.index.new')), new_admin_content_type_url
