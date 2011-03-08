@@ -22,6 +22,10 @@ module Locomotive
         def depth
           @source.depth
         end
+        
+        def editable_elements
+        	::Page.criteria.id(@source.id).editable_elements
+        end
 
       end
     end
