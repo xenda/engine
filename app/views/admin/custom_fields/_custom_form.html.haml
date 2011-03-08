@@ -29,8 +29,8 @@
               &nbsp;/&nbsp;
               != t('.delete_file')
               = form.check_box :"remove_#{field._name}"
-    %li{ :class => "select optional" }
-      = form.input :locale, :as => :select, :collection => [['Español', 'es'], ['English', 'en']], :include_blank => false
+%li{ :class => "select optional" }
+  = form.input :locale, :as => :select, :collection => [['Español', 'es'], ['English', 'en']], :include_blank => false
 
 - if @content_type.name.downcase=='events'
   %fieldset.inputs
