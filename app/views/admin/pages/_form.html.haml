@@ -30,8 +30,7 @@
   = f.input :redirect_url, :required => true, :wrapper_html => { :style => "#{'display: none' unless @page.redirect?}" }
   
   %li{ :class => "select optional" }
-    = label_tag "page_locale", "Idioma:"
-    = f.input :locale, :as => :select, :collection => options_for_select([['Español', 'es'], ['English', 'en']])
+    = f.input :locale, :as => :select, :collection => [['Español', 'es'], ['English', 'en']], :include_blank => false
 
 = render 'editable_elements', :page => @page
 
