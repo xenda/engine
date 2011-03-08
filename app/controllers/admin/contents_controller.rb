@@ -14,7 +14,7 @@ module Admin
     def create
       @content = @content_type.contents.create(params[:content])
       
-      if @content_type.name.downcase=='events'
+      if @content_type.slug=='events'
       	resource_type = current_site.content_types.where(:slug => 'resources').first
       	
       	resources = params[:resource][:custom_field_3]

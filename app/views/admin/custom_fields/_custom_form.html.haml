@@ -32,7 +32,7 @@
   %li{ :class => "select optional" }
     = form.input :locale, :as => :select, :collection => [['Español', 'es'], ['English', 'en']], :include_blank => false
 
-- if @content_type.name.downcase=='events'
+- if @content_type.slug=='events'
   %fieldset.inputs
     %legend
       %span Add resource
