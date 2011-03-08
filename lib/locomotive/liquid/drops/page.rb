@@ -24,11 +24,8 @@ module Locomotive
         end
         
         def editable_elements
-        	puts ::Page.criteria.id(@source.id).first.title
-        	puts ::Page.criteria.id(@source.id).first.attributes
-        	puts ::Page.criteria.id(@source.id).first.editable_elements.attributes
-        	puts ::Page.criteria.id(@source.id).first.editable_elements.methods
-        	::Page.criteria.id(@source.id).first.editable_elements
+        	puts ::Page.criteria.id(@source.id).first.attributes.editable_elements
+        	::Page.criteria.id(@source.id).first.attributes.editable_elements
         end
 
       end
