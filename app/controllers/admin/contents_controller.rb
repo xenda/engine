@@ -17,8 +17,12 @@ module Admin
       if @content_type.slug=='events'
       	resource_type = current_site.content_types.where(:slug => 'resources').first
       	
-      	resources = params[:resource][:custom_field_3].to_a
-      	
+      	if params[:resource].nil?
+      		resources = []
+  		else
+      		resources = params[:resource][:custom_field_3]
+  		end
+  		
       	resources.each do |resource_file|
       		resource = {:custom_field_3 => resource_file,
       					:name => Time.zone.now,
