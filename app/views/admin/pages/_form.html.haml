@@ -29,7 +29,8 @@
 
   = f.input :redirect_url, :required => true, :wrapper_html => { :style => "#{'display: none' unless @page.redirect?}" }
   
-  = select_tag "page[locale]", '<option value="es">Español</option><option value="en">English</option>'
+  = label_tag "page_locale", "Idioma:"
+  = select_tag "page[locale]", options_for_select([['Español', 'es'], ['English', 'en']])
 
 = render 'editable_elements', :page => @page
 
