@@ -10,7 +10,9 @@ class ContentInstance
   field :_slug
   field :_position_in_list, :type => Integer, :default => 0
   field :_visible, :type => Boolean, :default => true
-
+  
+  field :locale
+  
   ## validations ##
   validate :require_highlighted_field
 

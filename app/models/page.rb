@@ -18,6 +18,8 @@ class Page
   field :raw_template
   field :published, :type => Boolean, :default => false
   field :cache_strategy, :default => 'none'
+  
+  field :locale
 
   ## associations ##
   referenced_in :site
