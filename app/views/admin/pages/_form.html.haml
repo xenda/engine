@@ -31,7 +31,7 @@
   
   %li{ :class => "select optional" }
     = label_tag "page_locale", "Idioma:"
-    = select_tag "page[locale]", raw(options_for_select([['Español', 'es'], ['English', 'en']]))
+    = select_tag :locale, raw(options_for_select([['Español', 'es'], ['English', 'en']]))
 
 = render 'editable_elements', :page => @page
 
