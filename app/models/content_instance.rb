@@ -11,7 +11,7 @@ class ContentInstance
   field :_position_in_list, :type => Integer, :default => 0
   field :_visible, :type => Boolean, :default => true
   
-  field :locale
+  field :locale, :default => "es"
   
   ## validations ##
   validate :require_highlighted_field
