@@ -24,9 +24,7 @@ module Locomotive
         end
         
         def editable_elements
-        	puts ::Page.criteria.id(@source.id).first.attributes.editable_elements.to_s
-        	puts ::Page.criteria.id(@source.id).first.attributes.editable_elements.class
-        	::Page.criteria.id(@source.id).first.attributes.editable_elements.select{|c| c[:block] == "main"}
+        	puts ::Page.criteria.id(@source.id).first.attributes[:editable_elements]
         end
 
       end
