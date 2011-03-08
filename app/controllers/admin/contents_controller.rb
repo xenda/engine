@@ -19,7 +19,7 @@ module Admin
       	
       	resources = params[:resource][:custom_field_3]
       	
-      	unless resources.nil?
+      	if resources?
 	      	resources.each do |resource_file|
 	      		resource = {:custom_field_3 => resource_file,
 	      					:name => Time.zone.now,
@@ -41,7 +41,7 @@ module Admin
       	
       	resources = params[:resource][:custom_field_3]
       	
-      	unless resources.nil?
+      	if resources?
 	      	resources.each do |resource_file|
 	      		resource = {:custom_field_3 => resource_file,
 	      					:name => Time.zone.now,
