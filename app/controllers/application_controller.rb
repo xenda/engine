@@ -3,11 +3,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :write_stuff
   def write_stuff
-    #logger.info Rails.env
-    #logger.info Rails.new.to_sym
-    #logger.info ENV['S3_KEY_ID']
-    #logger.info ENV['S3_SECRET_KEY']
-    #logger.info ENV['S3_BUCKET']
+    logger.info Rails.env
+    logger.info ENV['S3_KEY_ID']
+    logger.info ENV['S3_SECRET_KEY']
+    logger.info ENV['S3_BUCKET']
   end
 
   protected
