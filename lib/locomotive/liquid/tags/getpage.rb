@@ -6,8 +6,8 @@ module Liquid
         def initialize(tag_name, markup, tokens)
 		    super 
 		    setup_options(markup)
-		    if permalink = options[:slug]
-		      @page = ::Page.where({slug: options[:slug]).first
+		    if slug = options[:slug]
+		      @page = ::Page.where(:slug => slug).first
 		    else
 		      @page = Page.where(options[:key] => options[:value]).first
 		    end
