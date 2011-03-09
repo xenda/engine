@@ -19,6 +19,7 @@ module Liquid
 					%{
 						calendar
 					}
+					super
 					#render_erb(context, 'shared/calendar', :events => @events)
 				end
 				
