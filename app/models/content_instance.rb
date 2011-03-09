@@ -64,7 +64,7 @@ class ContentInstance
   end
   
   def start_date
-  	puts self.custom_fields.inspect
+  	puts self.attributes.inspect
   	self.attributes[:custom_field_7]
   end
   
