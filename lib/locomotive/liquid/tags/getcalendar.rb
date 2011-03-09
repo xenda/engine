@@ -14,7 +14,8 @@ module Locomotive
 				end
 				
 				def render(context)
-					render_erb(context, 'shared/calendar', :events => @events)
+					render :partial => "shared/calendar", :locals => {:events => @events}
+					#render_erb(context, 'shared/calendar', :events => @events)
 				end
 				
 				def render_erb(context, file_name, locals = {})
