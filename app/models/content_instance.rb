@@ -64,6 +64,7 @@ class ContentInstance
   end
   
   def start_date
+  	puts self.custom_field_7.class
   	Date.parse(self.custom_field_7.inspect.to_s) unless self.custom_field_7.nil?
   end
   
