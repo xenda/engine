@@ -11,13 +11,13 @@ module Locomotive
 					
 					@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
 					
-					puts "----------------"
-					puts render_erb(context, 'shared/calendar', :events => @events)
-					
 				end
 				
 				def render(context)
 					render_erb(context, 'shared/calendar', :events => @events)
+					
+					puts "----------------"
+					puts render_erb(context, 'shared/calendar', :events => @events)
 				end
 				
 				def render_erb(context, file_name, locals = {})
