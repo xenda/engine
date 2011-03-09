@@ -1,9 +1,9 @@
-<% calendar_for(@tasks, :year => @year, :month => @month) do |t| %>
+<% calendar_for(events, :year => 2011, :month => 3) do |t| %>
 	<%= t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
-	<% t.day(:day_method => YOUR_DATE_METHOD) do |day, tasks| %>
+	<% t.day(:day_method => start_date) do |day, events| %>
 		<%= day.day %><br />
-			<% tasks.each do |task| %>
-				<%= h(task.name) %><br />
+			<% events.each do |event| %>
+				<%= h(event.title) %><br />
 			<% end %>
 		<% end %>
 	<% end %>

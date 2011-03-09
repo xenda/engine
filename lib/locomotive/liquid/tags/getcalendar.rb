@@ -14,8 +14,10 @@ module Locomotive
 					
 					@events = ::ContentType.where(:slug => "events").first.contents.select{ |c| c[:custom_field_7].strftime "%b" == month_name }
 					
-					render :partial => 'shared/calendar'
-					
+				end
+				
+				def render(context)
+					render :partial => 'shared/calendar', :locals { :events => @events }
 				end
 				
 			end
