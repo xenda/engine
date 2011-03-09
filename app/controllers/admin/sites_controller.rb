@@ -23,6 +23,20 @@ module Admin
 
       respond_with @site, :location => edit_admin_my_account_url
     end
+    
+    def change_language
+    	puts params.inspect
+    	
+    	if params[:lang]
+    		lang = params[:lang]
+    	else
+    		lang = "es"
+    	end
+    	
+    	cookies.permanent.signed[:locale] = lang
+
+    	redirect_to request.env["HTTP_REFERER"]
+    end
 
     protected
 

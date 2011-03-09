@@ -2,6 +2,7 @@ en:
   date:
     formats:
       default: "%m/%d/%Y"
+      short_month: "%b"
 
   errors:
       messages:

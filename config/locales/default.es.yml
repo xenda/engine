@@ -115,6 +115,7 @@ es:
       short: "%d de %b"
       default: "%d/%m/%Y"
       long: "%A, %d de %B del %Y"
+      short_month: "%b"
   time:
     formats:
       short: "%d de %b a las %H:%M hrs"

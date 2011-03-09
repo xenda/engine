@@ -62,6 +62,16 @@ class ContentInstance
   def resources
   	ContentType.where(:slug => "resources").first.contents.select{|c| c[:custom_field_4] == self._slug}
   end
+  
+  def start_date
+  	puts self.custom_fields.inspect
+  	self.custom_fields[:custom_field_7]
+  end
+  
+  def end_date
+  	puts self.custom_fields.inspect
+  	self.custom_fields[:custom_field_8]
+  end
 
   def errors_to_hash
     Hash.new.replace(self.errors)
