@@ -17,7 +17,7 @@ module Locomotive
 				end
 				
 				def render(context)
-					render :partial => 'shared/calendar', :locals { :events => @events }
+					render :partial => 'shared/calendar', :locals => { :events => @events }
 				end
 				
 			end
