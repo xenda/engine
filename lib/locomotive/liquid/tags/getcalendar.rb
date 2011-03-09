@@ -1,7 +1,7 @@
 module Liquid
   module Locomotive
     module Tags
-      class GetCalendar < ::Liquid::Block
+      class GetCalendar < ::Liquid::Tag
 				
 		def initialize(tag_name, markup, tokens, context)
 			super
