@@ -4,15 +4,12 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
-			month_name = ::Date.today.strftime "%b"
+			super
+			#month_name = ::Date.today.strftime "%b"
 			
-			@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
+			#@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
 			
-			puts context.inspect
-			puts "----------------"
-			%{
-				calendar
-			}
+			#puts context.inspect
 			#render_erb(context, 'shared/calendar', :events => @events)
 		end
 		
