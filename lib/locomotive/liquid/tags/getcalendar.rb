@@ -4,6 +4,9 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
+			%{
+            	<b>calendario</b>
+          	}
 			#super
 			#month_name = ::Date.today.strftime "%b"
 			
