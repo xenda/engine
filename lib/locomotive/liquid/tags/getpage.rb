@@ -6,8 +6,8 @@ module Liquid
         def initialize(tag_name, markup, tokens, context)
 		    super
 		    slug = markup
+		    puts markup.inspect
 		    puts slug
-		    puts ::Page.where(:slug => slug).first.inspect
 		    @page = ::Page.where(:slug => slug).first
 		  end
 		  
