@@ -13,9 +13,9 @@ module Locomotive
 			#render_erb(context, 'shared/calendar', :events => @events)
 		end
 		
-		def render_erb(context, file_name, locals = {})
-			context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
-		end
+		#def render_erb(context, file_name, locals = {})
+		#	context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
+		#end
 		
 	end
 	
