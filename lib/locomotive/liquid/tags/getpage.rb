@@ -10,7 +10,7 @@ module Liquid
 		  end
 		  
 		  def render(context)
-		  	context.scopes.last['page'] = @page
+		  	context.scopes.last['_page'] = @page
     		super
 		  end
       end
