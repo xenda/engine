@@ -6,11 +6,12 @@ module Liquid
         def initialize(tag_name, markup, tokens, context)
 		    super
 		    slug = markup
+		    puts slug
+		    puts ::Page.where(:slug => slug).first.inspect
 		    @page = ::Page.where(:slug => slug).first
 		  end
 		  
 		  def render(context)
-		  	puts @page.inspect
 		  	context.scopes.last['_page'] = @page
     		super
 		  end
