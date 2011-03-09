@@ -25,8 +25,11 @@ module Locomotive
         
         def editable_elements
         	puts ::Page.criteria.id(@source.id).first.attributes.inspect
-        	puts ::Page.criteria.id(@source.id).first.inspect
-        	puts "--------------"
+        	puts "..........."
+        	puts ::Page.criteria.id(@source.id).first.attributes.to_a.inspect
+        	puts "..........."
+        	puts ::Page.criteria.id(@source.id).first.attributes.class
+        	puts "-------------"
         	#::Page.criteria.id(@source.id).first.attributes[:editable_elements].select{|c| c[:custom_field_4] == @source._slug}
         	::Page.criteria.id(@source.id).first
         end
