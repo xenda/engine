@@ -16,7 +16,9 @@ module Liquid
 				def render(context)
 					puts context.inspect
 					puts "----------------"
-					"calendar"
+					%{
+						calendar
+					}
 					#render_erb(context, 'shared/calendar', :events => @events)
 				end
 				
