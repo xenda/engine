@@ -3,7 +3,7 @@ module Liquid
     module Tags
       class GetPage < ::Liquid::Block
 
-        def initialize(tag_name, markup, tokens)
+        def initialize(tag_name, markup, tokens, context)
 		    super 
 		    setup_options(markup)
 		    if slug = options[:slug]
