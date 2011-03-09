@@ -16,6 +16,7 @@ module Liquid
 		def render(context)
 			puts context.inspect
 			puts "----------------"
+			context.scopes.last['_events'] = @events
 			super
 			#render_erb(context, 'shared/calendar', :events => @events)
 		end
