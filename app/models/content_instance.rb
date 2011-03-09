@@ -65,12 +65,12 @@ class ContentInstance
   
   def start_date
   	puts self.custom_fields.inspect
-  	self.custom_fields[:custom_field_7]
+  	self.attributes[:custom_field_7]
   end
   
   def end_date
-  	puts self.custom_fields.inspect
-  	self.custom_fields[:custom_field_8]
+  	puts self.attributes.inspect
+  	self.attributes[:custom_field_8]
   end
 
   def errors_to_hash
