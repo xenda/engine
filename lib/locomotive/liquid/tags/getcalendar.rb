@@ -9,12 +9,12 @@ module Locomotive
 					
 					month_name = ::Date.today.strftime "%b"
 					
-					@events = ::ContentType.where(:slug => "events").first.contents.select{ |c| c[:custom_field_7].strftime "%b" == month_name }
+					@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
 					
 				end
 				
 				def render(context)
-					render :partial => 'shared/calendar', :locals => { :events => @events }
+					render :partial => '/shared/calendar', :locals => { :events => @events }
 				end
 				
 			end
