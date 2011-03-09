@@ -24,13 +24,14 @@ module Locomotive
         end
         
         def editable_elements
-        	elements = []
-        	attributes = ::Page.criteria.id(@source.id).first.attributes['editable_elements'].each do |element|
-        		element = element.to_s.gsub("BSON::ObjectId('", "").gsub("'),", ",").gsub("=>", ":")
-        		element = ActiveSupport::JSON.decode(element)
-        		elements << element
-        	end
-        	elements
+        	#elements = []
+        	::Page.criteria.id(@source.id).first.attributes['editable_elements']
+        	#attributes = ::Page.criteria.id(@source.id).first.attributes['editable_elements'].each do |element|
+        	#	element = element.gsub("BSON::ObjectId('", "").gsub("'),", ",").gsub("=>", ":")
+        	#	element = ActiveSupport::JSON.decode(element)
+        	#	elements << element
+        	#end
+        	#elements
         end
 
       end
