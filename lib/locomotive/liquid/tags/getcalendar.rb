@@ -11,9 +11,9 @@ module Locomotive
 					
 					@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
 					
-					logger.info context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
-					logger.info "----------------"
-					logger.info render_erb(context, 'shared/calendar', :events => @events)
+					puts context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
+					puts "----------------"
+					puts render_erb(context, 'shared/calendar', :events => @events)
 					
 				end
 				
