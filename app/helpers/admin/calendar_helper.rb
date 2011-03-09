@@ -1,4 +1,4 @@
-module CalendarHelper
+module Admin::CalendarHelper
 
   def calendar_for(objects, *args)
     raise ArgumentError, "Missing block" unless block_given?
