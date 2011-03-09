@@ -25,7 +25,7 @@ module Locomotive
         
         def editable_elements
         	attributes = ::Page.criteria.id(@source.id).first.attributes['editable_elements'].first
-        	attributes = attributes.gsub("BSON::ObjectId('", "").gsub("')", "").gsub("=>", ":")
+        	attributes = attributes.to_s.gsub("BSON::ObjectId('", "").gsub("')", "").gsub("=>", ":")
         	attributes = ActiveSupport::JSON.decode(attributes)
         	puts attributes.inspect
         	#::Page.criteria.id(@source.id).first.attributes[:editable_elements].select{|c| c[:custom_field_4] == @source._slug}
