@@ -1,21 +1,18 @@
-module Liquid
-  module Locomotive
+module Locomotive
+  module Liquid
     module Tags
       class GetCalendar < ::Liquid::Tag
-				
-		def initialize(tag_name, markup, tokens, context)
-			super
+		
+		def render(context)
 			month_name = ::Date.today.strftime "%b"
 			
 			@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
 			
-		end
-		
-		def render(context)
 			puts context.inspect
 			puts "----------------"
-			context.scopes.last['_events'] = @events
-			super
+			%{
+				calendar
+			}
 			#render_erb(context, 'shared/calendar', :events => @events)
 		end
 		
