@@ -1,6 +1,6 @@
 #Thanks to p8 (Petrik de Heus): https://github.com/p8/table_builder
 
-module Admin::TableHelper
+module TableHelper
 
   def table_for(objects, *args)
     raise ArgumentError, "Missing block" unless block_given?
