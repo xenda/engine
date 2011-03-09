@@ -1,8 +1,4 @@
 es:
-  date:
-    formats:
-      default: "%d/%m/%Y"
-
   errors:
       messages:
         domain_taken: "%{value} ya fue tomado"
@@ -110,6 +106,7 @@ es:
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
     formats:
+      default: "%d/%m/%Y"
       month_and_year: "%B %Y"
       date_and_day: "%A %d"
       short: "%d de %b"

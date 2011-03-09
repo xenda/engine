@@ -1,7 +1,7 @@
-module Locomotive
-	module Liquid
-		module Tags
-			class GetCalendar < ::Liquid::Block
+module Liquid
+  module Locomotive
+    module Tags
+      class GetCalendar < ::Liquid::Tag
 				
 				def initialize(tag_name, markup, tokens, context)
 					
@@ -14,11 +14,10 @@ module Locomotive
 				end
 				
 				def render(context)
-					render_erb(context, 'shared/calendar', :events => @events)
-					
 					puts context.inspect
 					puts "----------------"
-					puts render_erb(context, 'shared/calendar', :events => @events)
+					"calendar"
+					#render_erb(context, 'shared/calendar', :events => @events)
 				end
 				
 				def render_erb(context, file_name, locals = {})
