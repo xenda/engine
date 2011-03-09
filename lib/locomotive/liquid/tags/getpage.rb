@@ -17,6 +17,22 @@ module Liquid
 		  	context.scopes.last['page'] = @page
     		super
 	  	  end
+	  	  
+	  	  private
+
+			  def setup_options(options_list)
+			    options_list = options_list.split(",")
+			    if options_list.size == 1
+			     options[:permalink] = options_list.first.gsub("\"","")
+			    else
+			     options[:key] = options_list.first.gsub("\"","").to_sym
+			     options[:value] = options_list.last.gsub(" ","")
+			    end
+			  end
+			
+			  def options
+			    @options ||= {}
+			  end
       end
 
       ::Liquid::Template.register_tag('getpage', GetPage)
