@@ -5,13 +5,19 @@ module Locomotive
 
         def initialize(tag_name, markup, tokens, context)
 		    super
+		    puts markup.inspect
 		    setup_options(markup)
+		    puts "Options:"
+		    puts options.inspect
+		    puts "------"
 		    if slug = options[:permalink].strip
+		    	puts slug
 		    	@page = ::Page.where(:slug => slug).first
 		    end
 		  end
 		  
 		  def render(context)
+		  	puts @page.inspect
 		  	context.scopes.last['_page'] = @page
     		super
 		  end
