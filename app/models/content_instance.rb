@@ -64,12 +64,11 @@ class ContentInstance
   end
   
   def start_date
-  	puts self.custom_field_7.class
-  	Date.parse(self.custom_field_7.inspect.to_s) unless self.custom_field_7.nil?
+  	Date.parse(self.custom_field_7)
   end
   
   def end_date
-  	Date.parse(self.custom_field_8.inspect.to_s) unless self.custom_field_8.nil?
+  	Date.parse(self.custom_field_8)
   end
 
   def errors_to_hash

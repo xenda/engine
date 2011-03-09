@@ -1,0 +1,10 @@
+<% calendar_for(@tasks, :year => @year, :month => @month) do |t| %>
+	<%= t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
+	<% t.day(:day_method => YOUR_DATE_METHOD) do |day, tasks| %>
+		<%= day.day %><br />
+			<% tasks.each do |task| %>
+				<%= h(task.name) %><br />
+			<% end %>
+		<% end %>
+	<% end %>
+<% end %>
