@@ -16,6 +16,7 @@ module Locomotive
 				def render(context)
 					render_erb(context, 'shared/calendar', :events => @events)
 					
+					puts context.inspect
 					puts "----------------"
 					puts render_erb(context, 'shared/calendar', :events => @events)
 				end
