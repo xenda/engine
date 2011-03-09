@@ -3,7 +3,7 @@ module Liquid
     module Tags
       class GetPage < ::Liquid::Block
 
-        def initialize(tag_name, markup, tokens, context)
+        def initialize(tag_name, markup, tokens)
 		    super
 		    setup_options(markup)
 		    puts "Options:"
