@@ -8,7 +8,7 @@ module Locomotive
 			
 			@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
 			
-			template %{
+			template = %{
 			<% calendar_for(events, :year => 2011, :month => 3) do |t| %>
 				<%= t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') %>
 				<% t.day(:day_method => start_date) do |day, events| %>
@@ -20,7 +20,7 @@ module Locomotive
 			<% end %>
 			}
 			
-			render_erb(context, , :events => @events)
+			render_erb(context, template, :events => @events)
 		end
 		
 		def render_erb(context, file_name, locals = {})
