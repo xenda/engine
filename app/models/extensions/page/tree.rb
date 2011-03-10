@@ -31,7 +31,7 @@ module Models
 
           # Warning: used only in read-only
           def quick_tree(site)
-            pages = site.pages.minimal_attributes.order_by([[:depth, :asc], [:position, :asc]]).to_a
+            pages = site.pages.minimal_attributes.order_by([[:depth, :asc], [:position, :asc]]).limit(20).to_a
 
             tmp = []
 
