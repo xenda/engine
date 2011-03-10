@@ -1,6 +1,8 @@
 module Locomotive
   module Liquid
     module Tags
+    	include TableHelper
+    	include CalendarHelper
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
