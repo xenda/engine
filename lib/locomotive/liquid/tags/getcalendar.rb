@@ -12,11 +12,12 @@ module Locomotive
 		end
 		
 		def render_erb(context, file_name, locals = {})
-			if context
-				context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
-			else
-				@context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
-			end
+			Liquid::Template.parse(file_name).render(locals, :registers=>{:controller => controller})
+			#if context
+			#	context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
+			#else
+			#	@context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
+			#end
 		end
 		
 	end
