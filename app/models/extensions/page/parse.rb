@@ -53,7 +53,7 @@ module Models
           end
 
           def _serialize_template
-            self.serialized_template = BSON::Binary.new(Marshal.dump(@template))
+            self.serialized_template = ""# BSON::Binary.new(Marshal.dump(@template))
           end
 
           def parse(context = {})

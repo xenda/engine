@@ -7,11 +7,12 @@ module Locomotive
 		    super
 		    setup_options(markup)
 		    if slug = options[:permalink].strip
-		    	@page = ::Page.where(:slug => slug).first
+		    	@slug = options[:permalink];
 		    end
 		  end
 		  
 		  def render(context)
+		    @page = ::Page.where(:slug => @slug).first
 		  	context.scopes.last['_page'] = @page
     		super
 		  end
