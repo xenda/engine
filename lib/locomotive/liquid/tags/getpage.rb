@@ -12,8 +12,8 @@ module Locomotive
 		  end
 		  
 		  def render(context)
-		  	puts @slug
 		    @page = ::Page.where(:slug => @slug).first
+		    puts @page.title
 		  	context.scopes.last['_page'] = @page
     		super
 		  end
