@@ -8,11 +8,11 @@ module Locomotive
 		    setup_options(markup)
 		    if slug = options[:permalink].strip
 		    	@slug = options[:permalink];
-		    	@page = ::Page.where(:slug => @slug).first
 		    end
 		  end
 		  
 		  def render(context)
+		    @page = ::Page.where(:slug => @slug).first
 		  	context.scopes.last['_page'] = @page
     		super
 		  end
