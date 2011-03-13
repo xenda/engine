@@ -1,6 +1,7 @@
 puts "...loading Locomotive engine"
 
 require 'rails'
+require 'json/pure'
 require 'devise'
 require 'mongoid'
 require 'mongoid_acts_as_tree'
@@ -24,6 +25,8 @@ $:.unshift File.dirname(__FILE__)
 
 module Locomotive
   class Engine < Rails::Engine
+
+    config.autoload_once_paths += %W( #{config.root}/app/controllers #{config.root}/app/models #{config.root}/app/helpers #{config.root}/app/uploaders)
 
     rake_tasks do
       load "railties/tasks.rake"

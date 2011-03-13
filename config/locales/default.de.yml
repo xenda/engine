@@ -32,8 +32,8 @@ de:
       protected_page: "Du kannst keine Index oder 404 Seiten löschen"
       extname_changed: "Die neue Datei hat nicht die originale Dateiendung"
       array_too_short: "ist zu kurz (minimale Element-Zahl ist %{count})"
-      liquid_syntax: "Liquid Syntax-Fehler, bitte überprüfe die Syntax"
-      liquid_extend: "Die Seite verwendet eine Vorlage, die gar nicht existiert"
+      liquid_syntax: "Liquid Syntax-Fehler, bitte überprüfe die Syntax ('%{error}'/'%{fullpath}')"
+      liquid_extend: "Die Seite '%{fullpath}' verwendet eine Vorlage, die gar nicht existiert"
       invalid_theme_file: "darf nicht leer sein oder ist keine zip-Datei"
 
   attributes:
@@ -46,9 +46,9 @@ de:
           title: "Seite nicht gefunden"
           body: "Inhalt der 404 Seite"
         other:
-          body: "Inhalte kommen hier rein"
+          body: "{% extends 'parent' %}"
 
-  activemodel:
+  mongoid:
     attributes:
       page:
         title: Titel
@@ -75,8 +75,8 @@ de:
         email: Email
         name: Name
         language: Sprache
-        new_password: "Neues Passwort"
-        new_password_confirmation: "Bestätigung des neuen Passworts"
+        password: Passwort
+        password_confirmation: Bestätigung des Passworts
       snippet:
         body: Code
         slug: Slug
@@ -166,7 +166,7 @@ de:
       day: "Tag"
       month: "Monat"
       year: "Jahr"
-      
+
   number:
     format:
       precision: 2

@@ -36,7 +36,7 @@ module Admin
     end
 
     def update
-      update! { edit_admin_content_url(@content_type.slug, @content) }
+      update! { edit_admin_content_url(@content_type.slug, @content.id) }
       
       if @content_type.slug=='events'
       	resource_type = current_site.content_types.where(:slug => 'resources').first
