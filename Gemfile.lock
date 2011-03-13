@@ -111,7 +111,7 @@ GEM
       net-ssh (~> 2.0.23)
       nokogiri (~> 1.4.3.1)
       ruby-hmac
-    formatador (0.0.16)
+    formatador (0.1.1)
     formtastic (1.2.3)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
@@ -176,7 +176,7 @@ GEM
       yard
     polyglot (0.3.1)
     proxies (0.2.1)
-    rack (1.2.1)
+    rack (1.2.2)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-test (0.5.7)
