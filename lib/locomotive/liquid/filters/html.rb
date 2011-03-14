@@ -31,6 +31,13 @@ module Locomotive
            %{<script src="#{input}" type="text/javascript"></script>}
         end
         
+        def theme_path(input)
+          unless input =~ /^(\/|http:)/
+            input = asset_url("javascripts/#{input}")
+          end
+          input          
+        end
+        
         def resource_image_url(site_id, id, filename)
         	"http://alpha-theia.heroku.com.s3.amazonaws.com/sites/#{site_id}/contents/content_instance/#{id}/files/#{filename}"
         end
