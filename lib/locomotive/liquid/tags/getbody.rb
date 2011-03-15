@@ -4,8 +4,8 @@ module Locomotive
       class GetBody < ::Liquid::Block
 		  
 		  def render(context)
-		  	case request.fullpath.to_s
-				when "/" then "home"
+		  	case context.registers[:page].fullpath
+				when "/index" then "home"
 				when /events/ then "events"
 				when "/agenda" then "schedule"
 				when "/archivo" then "archive"
