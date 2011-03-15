@@ -5,10 +5,10 @@ module Locomotive
 		  
 		  def render(context)
 		  	case context.registers[:page].fullpath
-				when "/index" then "home"
+				when "index" then "home"
 				when /events/ then "events"
-				when "/agenda" then "schedule"
-				when "/archivo" then "archive"
+				when "agenda" then "schedule"
+				when "archivo" then "archive"
 				else "inner"
 			end
     		super
