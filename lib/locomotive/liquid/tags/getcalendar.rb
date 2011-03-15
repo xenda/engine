@@ -4,15 +4,15 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
-			month_name = ::Date.today.strftime "%b"
+			month = ::Date.today.strftime "%m"
 			
-			@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%b")==month_name }
+			@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m")==month }
 			calendar(@events)
 		end
 		
 		def calendar(events)
 			events.each do |event|
-				puts event.inspect
+				puts event.custom_field_8.strftime("%b")
 				puts "-----------------"
 			end
 		end
