@@ -12,7 +12,6 @@ module Locomotive
 				else bodyclass = "inner"
 			end
 			context.registers[:page].fullpath
-    		super
 		  end
 		  
 		  private
