@@ -4,37 +4,17 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
-			require '/helpers/admin/table_builder.rb'
-			
 			month_name = ::Date.today.strftime "%b"
 			
 			@events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_7.strftime("%b")==month_name }
-			
-			calendar = "%{}"
-			
-			calendar_for(@events, :year => 2011, :month => 3) do |t|
-				t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
-				t.day(:day_method => start_date) do |day, events|
-					calendar << %{#{day.day} <br />}
-					events.each do |event|
-						title = h(event.title)
-						calendar << %{#{title} <br />}
-					end
-				end
-			end
-			
-			calendar.strip
-			
-			#render_erb(context, "/shared/calendar", :events => @events)
 		end
 		
-		def render_erb(context, file_name, locals = {})
-			if context
-				template = context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
-			else
-				template = @context.registers[:controller].send(:render_to_string, :partial => file_name, :locals => locals)
+		def calendar
+			@events.each do |event|
+				puts event.custom_field_1
+				puts event.custom_field_7
+				puts "-----------------"
 			end
-			::Liquid::Template.parse(template).render(locals, :registers=>{:controller => context.registers[:controller]})
 		end
 		
 	end

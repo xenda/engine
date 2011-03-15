@@ -25,7 +25,6 @@ module Admin
     end
     
     def change_language
-    	puts params.inspect
     	
     	if params[:lang]
     		lang = params[:lang]
