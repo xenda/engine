@@ -12,8 +12,7 @@ module Locomotive
 		
 		def calendar(events)
 			events.each do |event|
-				puts event.custom_field_1
-				puts event.custom_field_7
+				puts event.inspect
 				puts "-----------------"
 			end
 		end
