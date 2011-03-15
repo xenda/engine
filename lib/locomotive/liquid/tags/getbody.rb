@@ -4,21 +4,14 @@ module Locomotive
       class GetBody < ::Liquid::Block
 		  
 		  def render(context)
-		  	case context.registers[:page].fullpath
-				when "index" then bodyclass = "home"
-				when /events/ then bodyclass = "events"
-				when "agenda" then bodyclass = "schedule"
-				when "archivo" then bodyclass = "archive"
-				else bodyclass = "inner"
+		  	bodyclass = case context.registers[:page].fullpath
+				when /index/ then "home"
+				when /events/ then "events"
+				when /agenda/ then "schedule"
+				when /archivo/ then "archive"
+				else "inner"
 			end
-			context.registers[:page].fullpath
 		  end
-		  
-		  private
-			def starts_with?(prefix)
-			  prefix = prefix.to_s
-			  self[0, prefix.length] == prefix
-			end
       end
 
       ::Liquid::Template.register_tag('getbody', GetBody)
