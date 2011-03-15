@@ -31,7 +31,7 @@ module Locomotive
            %{<script src="#{input}" type="text/javascript"></script>}
         end
         
-        def theme_path(input)
+        def theme_path_tag(input)
           unless input =~ /^(\/|http:)/
             input = asset_url("javascripts/#{input}")
           end
