@@ -34,7 +34,7 @@ module Locomotive
 			calendar_output = %{<div class="month clearfix">
 				#{previous_link}
 				<h3>#{month_name} #{thisyear}</h3>
-				#{next_link}}
+				#{next_link}</div>}
 			
 			calendar_output << %{<div class='schedule-container'>
 				<table summary="Calendario">
