@@ -12,6 +12,10 @@ module Locomotive
         def pages
           @pages ||= @source.pages.to_a.collect(&:to_liquid)
         end
+        
+        def params
+        	puts @source.inspect
+        end
 
       end
     end

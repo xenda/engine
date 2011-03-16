@@ -67,8 +67,7 @@ module Models
 
             self.template_dependencies = context[:templates]
             self.snippet_dependencies = context[:snippets]
-
-            puts @template.root.inspect
+            
             @template.root.context.clear
           end
 
