@@ -98,8 +98,10 @@ module Locomotive
 			
 			daysinmonth = last_day.to_i
 			
+			newrow = false
+			
 			(1..daysinmonth).each do |day|
-				if newrow.presence? && newrow
+				if newrow
 					calendar_output << %{</tr>
 						<tr>}
 				end
