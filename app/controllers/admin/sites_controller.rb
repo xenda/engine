@@ -24,6 +24,10 @@ module Admin
       respond_with @site, :location => edit_admin_my_account_url
     end
     
+    def get_params
+    	puts params.inspect unless params.nil?
+    end
+    
     def change_language
     	
     	if params[:lang]

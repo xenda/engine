@@ -72,12 +72,6 @@ class Site
   def full_subdomain
     "#{self.subdomain}.#{Locomotive.config.default_domain}"
   end
-  
-  def getparams
-  	unless params.nil?
-  		puts params.inspect
-  	end
-  end
 
   def to_liquid
     Locomotive::Liquid::Drops::Site.new(self)
