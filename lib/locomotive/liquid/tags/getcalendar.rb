@@ -4,12 +4,20 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
-			puts context.registers[:controller].send(:get_params)
+			params = context.registers[:controller].send(:get_params)
 			week_begins = 0
-			thismonth = ::Date.today.strftime("%m").to_i
-			thisyear = ::Date.today.strftime("%Y").to_i
-			
-			month_name = ::Date.today.strftime("%B")
+			if params[:mes]
+				thismonth = params[:mes].to_i
+			else
+				thismonth = ::Date.today.strftime("%m").to_i
+			end
+			if params[:y]
+				thisyear = params[:y].to_i
+			else
+				thisyear = ::Date.today.strftime("%Y").to_i
+			end
+			month_names = ::I18n.t('date.month_names')
+			month_name = month_names[thismonth]
 			
 			unixmonth = ::Time.mktime(thisyear, thismonth, 1, 0, 0, 0, 0)
 			last_day = ::Date.civil(thisyear, thismonth, -1).day
