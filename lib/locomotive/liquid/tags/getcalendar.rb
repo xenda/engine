@@ -139,6 +139,14 @@ module Locomotive
 				</table>
 			</div>
 			}
+			
+			unless params.nil?
+				puts params.inspect
+			else
+				puts "params no existe"
+			end
+			
+			puts context[:params].inspect
 		end
 		
 		def calendar
