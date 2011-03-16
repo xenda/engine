@@ -73,7 +73,7 @@ class Site
     "#{self.subdomain}.#{Locomotive.config.default_domain}"
   end
   
-  def params
+  def getparams
   	unless params.nil?
   		puts params.inspect
   	end

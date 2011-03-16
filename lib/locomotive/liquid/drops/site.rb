@@ -14,7 +14,7 @@ module Locomotive
         end
         
         def params
-        	@source.params
+        	@source.getparams
         end
 
       end
