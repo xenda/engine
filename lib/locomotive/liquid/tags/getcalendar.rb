@@ -32,12 +32,10 @@ module Locomotive
 			end	
 =end			
 			calendar_output = %{}
-			calendar_output = %{
-				<div class='month clearfix'>
+			calendar_output = %{<div class="month clearfix">
 				#{previous_link}
 				<h3>#{month_name} #{thisyear}</h3>
-				#{next_link}
-			}
+				#{next_link}}
 =begin			
 			calendar_output << %{<div class='schedule-container'>
 				<table summary="Calendario">
@@ -147,6 +145,7 @@ module Locomotive
 			}
 =end
 			puts calendar_output
+			calendar_output
 		end
 		
 		def calendar
