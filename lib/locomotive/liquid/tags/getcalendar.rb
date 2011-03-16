@@ -22,9 +22,28 @@ module Locomotive
 			unixmonth = ::Time.mktime(thisyear, thismonth, 1, 0, 0, 0, 0)
 			last_day = ::Date.civil(thisyear, thismonth, -1).day
 			
+			previousmonth = thismonth
+			previousyear = thisyear
+			nextmonth = thismonth
+			nextyear = thisyear
+			
+			if thismonth == 1
+				previousmonth = 12
+				previousyear -= 1
+			else
+				previousmonth -= 1
+			end
+			
+			if thismonth == 12
+				nextmonth = 1
+				nextyear += 1
+			else
+				nextmonth += 1
+			end
+			
 			previous_link = "<a href='?mes=#{thismonth-1}&y=#{thisyear}' class='prev' style='opacity:0.5'>Anterior</a>"
 			
-			next_link = "<a href='?mes=#{thismonth+1}&y=#{thisyear}' class='next' style='opacity:0.5'>Siguiente</a>"
+			next_link = "<a href='?mes=#{nextmonth}&y=#{nextyear}' class='next' style='opacity:0.5'>Siguiente</a>"
 			
 			calendar_output = %{}
 			calendar_output = %{<div class="month clearfix">
