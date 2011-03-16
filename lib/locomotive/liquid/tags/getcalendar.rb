@@ -16,6 +16,8 @@ module Locomotive
 			
 			previous_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth-1 }
 			
+			puts previous_events
+			
 			next_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth+1 }
 			
 			if previous_events.empty?
