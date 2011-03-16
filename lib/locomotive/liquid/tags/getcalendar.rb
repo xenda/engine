@@ -31,10 +31,13 @@ module Locomotive
 				next_link = "<a href='?mes=#{thismonth+1}&y=#{thisyear}' class='next' style='opacity:0.5'>Siguiente</a>"
 			end	
 =end			
-			calendar_output = %{<div class='month clearfix'>
+			calendar_output = %{}
+			calendar_output = %{
+				<div class='month clearfix'>
 				#{previous_link}
 				<h3>#{month_name} #{thisyear}</h3>
-				#{next_link}}
+				#{next_link}
+			}
 =begin			
 			calendar_output << %{<div class='schedule-container'>
 				<table summary="Calendario">
