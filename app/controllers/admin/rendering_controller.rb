@@ -17,9 +17,7 @@ module Admin
     end
     
     def get_params
-    	puts request.inspect unless request.nil?
-    	puts "--------------------------------"
-    	puts params.inspect unless params.nil?
+    	params unless params.nil?
     end
 
 

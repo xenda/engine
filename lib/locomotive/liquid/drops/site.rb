@@ -12,10 +12,6 @@ module Locomotive
         def pages
           @pages ||= @source.pages.to_a.collect(&:to_liquid)
         end
-        
-        def params
-        	@context.registers[:controller].send(:get_params)
-        end
 
       end
     end
