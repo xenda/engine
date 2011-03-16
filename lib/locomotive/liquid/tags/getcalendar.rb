@@ -4,6 +4,8 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
+			puts context.inspect
+			
 			week_begins = 0
 			thismonth = ::Date.today.strftime("%m").to_i
 			thisyear = ::Date.today.strftime("%Y").to_i
