@@ -4,7 +4,6 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
-			puts "calendar"
 			myweek = []
 			week_begins = 0
 			thismonth = ::Date.today.strftime("%m").to_i
@@ -18,6 +17,11 @@ module Locomotive
 			previous_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth-1 }
 			
 			next_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth+1 }
+			
+			puts previous_events.inspect
+			puts "---------------"
+			puts next_events.inspect
+			puts "---------------"
 			
 			if previous_events.empty?
 				previous_link = "<a class='prev' style='opacity:0.5'></a>"
@@ -34,35 +38,35 @@ module Locomotive
 			calendar_output = %{<div class='month clearfix'>
 				#{previous_link}
 				<h3>#{month_name} #{thisyear}</h3>
-				#{next_link}
-			}
+				#{next_link}}
 			
 			calendar_output << %{<div class='schedule-container'>
 				<table summary="Calendario">
 					<thead>
-						<tr>
-			}
+						<tr>}
 			
 			(0..6).each do |n|
-				myweek << (n+week_begins)%7 #Cambiar por nombres de dias de la semana
+				#Cambiar por nombres de dias de la semana
+				myweek << (n+week_begins)%7
 			end
 			
 			myweek.each do |w|
 				day_name = w
-				calendar_output << %{
-						<th scope="col" title="#{w}">#{day_name}</th>
-				}
+				calendar_output << %{<th scope="col" title="#{w}">#{day_name}</th>}
 			end
 			
-			calendar_output << %{
-					</tr>
+			calendar_output << %{</tr>
 				</thead>
 				<tbody>
-					<tr>
-				}
+					<tr>}
 			
 			events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8 >= ::Date.civil(thisyear, thismonth, 1) && c.custom_field_8 <= ::Date.civil(thisyear, thismonth, last_day) }
+			
+			puts events.inspect
+			puts "---------------"
+			
 			dayswithevents = []
+			
 			events.each{ |e| dayswithevents << e.custom_field_8.day }
 			
 			events_photos = []
@@ -95,10 +99,8 @@ module Locomotive
 			
 			pad = calendar_week_mod(unixmonth.strftime("%w").to_i-week_begins)
 			
-			if pad!=0
-				calendar_output << %{
-						<td colspan='#{pad}' class="pad"> </td>
-				}
+			if pad != 0
+				calendar_output << %{<td colspan='#{pad}' class="pad"> </td>}
 			end
 			
 			daysinmonth = last_day.to_i
@@ -107,15 +109,13 @@ module Locomotive
 			
 			(1..daysinmonth).each do |day|
 				if newrow.present? && newrow
-					calendar_output << %{
-						</tr>
-						<tr>
-					}
+					calendar_output << %{</tr>
+						<tr>}
 				end
 				newrow = false
 				
 				if day = ::Date.today.day && thismonth == ::Date.today.month && thisyear == ::Date.today.year
-					calendar_output << %{<td class ='today'>}
+					calendar_output << %{<td class='today'>}
 				else
 					calendar_output << %{<td>}
 				end
@@ -123,15 +123,14 @@ module Locomotive
 				calendar_output << %{<div class='content'>}
 				
 				if dayswithevents.include?(day)
-					calendar_output << %{events_photos[day]
+					calendar_output << %{#{events_photos[day]}
 					<span class='day'>#{day}</span>#{events_for_day[day]}}
 				else
 					calendar_output << %{<span class='day'>#{day}</span>}
 				end
 				
 				calendar_output << %{</div>
-					</td>
-				}
+					</td>}
 				
 				if calendar_week_mod(::Time.mktime(thisyear, thismonth, day, 0, 0, 0, 0).strftime("%w").to_i-week_begins)==6
 					newrow = true
@@ -141,9 +140,7 @@ module Locomotive
 			pad = 7 - calendar_week_mod(::Time.mktime(thisyear, thismonth, day, 0, 0, 0, 0).strftime("%w").to_i-week_begins)
 			
 			if pad!=0 && pad!=7
-				calendar_output << %{
-					<td class='pad' colspan='#{pad}'> </td>
-				}
+				calendar_output << %{<td class='pad' colspan='#{pad}'> </td>}
 			end
 			
 			calendar_output << %{
@@ -152,7 +149,7 @@ module Locomotive
 				</table>
 			</div>
 			}
-			puts calendar_output
+			puts calendar_output.inspect
 			#calendar
 		end
 		
