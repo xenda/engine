@@ -4,12 +4,6 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
-			calendar
-		end
-		
-		def calendar
-			test = ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth+1 }
-			puts test
 			myweek = []
 			week_begins = 0
 			thismonth = ::Date.today.strftime("%m").to_i
@@ -156,6 +150,11 @@ module Locomotive
 			</div>
 			}
 			puts calendar_output
+			#calendar
+		end
+		
+		def calendar
+			#
 		end
 		
 		private
