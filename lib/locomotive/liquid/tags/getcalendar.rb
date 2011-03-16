@@ -4,6 +4,7 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
+=begin
 			myweek = []
 			week_begins = 0
 			thismonth = ::Date.today.strftime("%m").to_i
@@ -29,12 +30,12 @@ module Locomotive
 			else
 				next_link = "<a href='?mes=#{thismonth+1}&y=#{thisyear}' class='next' style='opacity:0.5'>Siguiente</a>"
 			end	
-			
+=end			
 			calendar_output = %{<div class='month clearfix'>
 				#{previous_link}
 				<h3>#{month_name} #{thisyear}</h3>
 				#{next_link}}
-			
+=begin			
 			calendar_output << %{<div class='schedule-container'>
 				<table summary="Calendario">
 					<thead>
@@ -141,8 +142,8 @@ module Locomotive
 				</table>
 			</div>
 			}
-			puts calendar_output.class
-			#calendar
+=end
+			puts calendar_output
 		end
 		
 		def calendar
