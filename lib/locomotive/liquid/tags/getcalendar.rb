@@ -22,21 +22,9 @@ module Locomotive
 			unixmonth = ::Time.mktime(thisyear, thismonth, 1, 0, 0, 0, 0)
 			last_day = ::Date.civil(thisyear, thismonth, -1).day
 			
-			previous_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == (thismonth - 1) }
+			previous_link = "<a href='?mes=#{thismonth-1}&y=#{thisyear}' class='prev' style='opacity:0.5'>Anterior</a>"
 			
-			next_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == (thismonth + 1) }
-			
-			if previous_events.empty?
-				previous_link = "<a class='prev' style='opacity:0.5'></a>"
-			else
-				previous_link = "<a href='?mes=#{thismonth-1}&y=#{thisyear}' class='prev' style='opacity:0.5'>Anterior</a>"
-			end
-			
-			if next_events.empty?
-				next_link = "<a class='next' style='opacity:0.5'></a>"
-			else
-				next_link = "<a href='?mes=#{thismonth+1}&y=#{thisyear}' class='next' style='opacity:0.5'>Siguiente</a>"
-			end	
+			next_link = "<a href='?mes=#{thismonth+1}&y=#{thisyear}' class='next' style='opacity:0.5'>Siguiente</a>"
 			
 			calendar_output = %{}
 			calendar_output = %{<div class="month clearfix">
