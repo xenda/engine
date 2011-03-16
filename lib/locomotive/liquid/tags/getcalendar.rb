@@ -92,16 +92,14 @@ module Locomotive
 			
 			pad = calendar_week_mod(unixmonth.strftime("%w").to_i - week_begins)
 			
-			if pad != 0
+			if 0 != pad
 				calendar_output << %{<td colspan='#{pad}' class="pad"> </td>}
 			end
 			
 			daysinmonth = last_day.to_i
 			
-			newrow = true
-			
 			(1..daysinmonth).each do |day|
-				if newrow
+				if newrow.presence? && newrow
 					calendar_output << %{</tr>
 						<tr>}
 				end
