@@ -12,7 +12,7 @@ module Locomotive
 			month_name = ::Date.today.strftime("%B")
 			
 			unixmonth = ::Time.mktime(thisyear, thismonth, 1, 0, 0, 0, 0)
-			last_day = ::Date.civil(thisyear, thismonth, -1).day.to_i
+			last_day = ::Date.civil(thisyear, thismonth, -1).day
 			
 			previous_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == (thismonth - 1) }
 			
@@ -131,7 +131,7 @@ module Locomotive
 				end
 			end
 			
-			pad = 7 - calendar_week_mod(::Time.mktime(thisyear, thismonth, day, 0, 0, 0, 0).strftime("%w").to_i - week_begins)
+			pad = 7 - calendar_week_mod(::Time.mktime(thisyear, thismonth, daysinmonth, 0, 0, 0, 0).strftime("%w").to_i - week_begins)
 			
 			if pad != 0 && pad != 7
 				calendar_output << %{<td class='pad' colspan='#{pad}'> </td>}
