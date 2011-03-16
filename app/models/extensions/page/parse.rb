@@ -59,7 +59,15 @@ module Models
           def parse(context = {})
             self.disable_all_editable_elements
             
-            puts request.inspect
+            puts "site:"
+            puts self.site.inspect
+            puts "------------------"
+            puts "page:"
+            puts self.inspect
+            puts "------------------"
+            puts "context:"
+            puts context.inspect
+            puts "------------------"
             
             default_context = { :site => self.site, :page => self, :templates => [], :snippets => [] }
 
@@ -69,6 +77,14 @@ module Models
 
             self.template_dependencies = context[:templates]
             self.snippet_dependencies = context[:snippets]
+            
+            puts "context 2:"
+            puts context.inspect
+            puts "------------------"
+            
+            puts "context 3:"
+            puts @template.root.context.inspect
+            puts "------------------"
 
             @template.root.context.clear
           end

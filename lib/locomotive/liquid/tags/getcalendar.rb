@@ -139,8 +139,6 @@ module Locomotive
 				</table>
 			</div>
 			}
-			
-			#puts request.env.inspect
 		end
 		
 		def calendar
