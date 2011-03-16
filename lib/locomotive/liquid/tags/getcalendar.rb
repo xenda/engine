@@ -4,7 +4,6 @@ module Locomotive
       class GetCalendar < ::Liquid::Tag
 		
 		def render(context)
-			myweek = []
 			week_begins = 0
 			thismonth = ::Date.today.strftime("%m").to_i
 			thisyear = ::Date.today.strftime("%Y").to_i
@@ -41,14 +40,11 @@ module Locomotive
 					<thead>
 						<tr>}
 			
-			(0..6).each do |n|
-				#Cambiar por nombres de dias de la semana
-				myweek << (n + week_begins)%7
-			end
+			day_names = ::I18n.t('date.day_names')
+			abbr_day_names = ::I18n.t('date.abbr_day_names')
 			
-			myweek.each do |w|
-				day_name = w
-				calendar_output << %{<th scope="col" title="#{w}">#{day_name}</th>}
+			(0..6).each do |n|
+				calendar_output << %{<th scope="col" title="#{day_names[(n + week_begins)%7]}">#{abbr_day_names[(n + week_begins)%7]}</th>}
 			end
 			
 			calendar_output << %{</tr>
