@@ -140,13 +140,7 @@ module Locomotive
 			</div>
 			}
 			
-			unless params.nil?
-				puts params.inspect
-			else
-				puts "params no existe"
-			end
-			
-			puts context[:params].inspect
+			puts request.env.inspect
 		end
 		
 		def calendar

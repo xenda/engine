@@ -59,11 +59,7 @@ module Models
           def parse(context = {})
             self.disable_all_editable_elements
             
-            if params.nil?
-            	params = []
-            end
-
-            default_context = { :site => self.site, :page => self, :templates => [], :snippets => [], :params => params }
+            default_context = { :site => self.site, :page => self, :templates => [], :snippets => [] }
 
             context = default_context.merge(context)
 
