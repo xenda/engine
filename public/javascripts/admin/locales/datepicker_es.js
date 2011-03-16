@@ -13,6 +13,6 @@ jQuery(function($){
 		dayNames: ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sábado'],
 		dayNamesShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'],
 		dayNamesMin: ['Do','Lu','Ma','Mie','Ju','Vi','Sa'],
-		dateFormat: 'yy-mm-dd', firstDay: 1,
+		dateFormat: 'dd/mm/yy', firstDay: 1,
 		isRTL: false};
 });
