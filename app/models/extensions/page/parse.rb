@@ -59,7 +59,7 @@ module Models
           def parse(context = {})
             self.disable_all_editable_elements
             
-            puts request.env.inspect
+            puts request.inspect
             
             default_context = { :site => self.site, :page => self, :templates => [], :snippets => [] }
 
