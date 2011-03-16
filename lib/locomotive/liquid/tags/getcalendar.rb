@@ -16,8 +16,6 @@ module Locomotive
 			
 			previous_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth-1 }
 			
-			puts previous_events
-			
 			next_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth+1 }
 			
 			if previous_events.empty?
@@ -104,6 +102,8 @@ module Locomotive
 			
 			daysinmonth = last_day.to_i
 			
+			newrow = true
+			
 			(1..daysinmonth).each do |day|
 				if newrow.present? && newrow
 					calendar_output << %{
@@ -162,7 +162,7 @@ module Locomotive
 		private
 			def calendar_week_mod(num)
 				base = 7
-				(num - base*floor(num/base))
+				(num - base*(num/base))
 			end
 	end
 	
