@@ -140,7 +140,7 @@ module Locomotive
 			</div>
 			}
 			
-			puts request.env.inspect
+			#puts request.env.inspect
 		end
 		
 		def calendar

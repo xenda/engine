@@ -59,6 +59,8 @@ module Models
           def parse(context = {})
             self.disable_all_editable_elements
             
+            puts request.env.inspect
+            
             default_context = { :site => self.site, :page => self, :templates => [], :snippets => [] }
 
             context = default_context.merge(context)
