@@ -42,7 +42,7 @@ module Locomotive
 						<tr>
 			}
 			
-			[0..6].each do |n|
+			(0..6).each do |n|
 				myweek << (n+week_begins)%7 #Cambiar por nombres de dias de la semana
 			end
 			
@@ -102,7 +102,7 @@ module Locomotive
 			
 			daysinmonth = last_day.to_i
 			
-			[1..daysinmonth].each do |day|
+			(1..daysinmonth).each do |day|
 				if newrow.present? && newrow
 					calendar_output << %{
 						</tr>
