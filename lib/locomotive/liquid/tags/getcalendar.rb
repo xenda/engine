@@ -41,7 +41,7 @@ module Locomotive
 				nextmonth += 1
 			end
 			
-			previous_link = "<a href='?mes=#{thismonth-1}&y=#{thisyear}' class='prev' style='opacity:0.5'>Anterior</a>"
+			previous_link = "<a href='?mes=#{previousmonth}&y=#{previousyear}' class='prev' style='opacity:0.5'>Anterior</a>"
 			
 			next_link = "<a href='?mes=#{nextmonth}&y=#{nextyear}' class='next' style='opacity:0.5'>Siguiente</a>"
 			
