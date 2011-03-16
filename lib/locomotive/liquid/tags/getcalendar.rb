@@ -14,9 +14,9 @@ module Locomotive
 			unixmonth = ::Time.mktime(thisyear, thismonth, 1, 0, 0, 0, 0)
 			last_day = ::Date.civil(thisyear, thismonth, -1).day.to_i
 			
-			previous_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth-1 }
+			previous_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == (thismonth - 1) }
 			
-			next_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth+1 }
+			next_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == (thismonth + 1) }
 			
 			if previous_events.empty?
 				previous_link = "<a class='prev' style='opacity:0.5'></a>"
@@ -43,7 +43,7 @@ module Locomotive
 			
 			(0..6).each do |n|
 				#Cambiar por nombres de dias de la semana
-				myweek << (n+week_begins)%7
+				myweek << (n + week_begins)%7
 			end
 			
 			myweek.each do |w|
@@ -90,7 +90,7 @@ module Locomotive
 				end
 			end
 			
-			pad = calendar_week_mod(unixmonth.strftime("%w").to_i-week_begins)
+			pad = calendar_week_mod(unixmonth.strftime("%w").to_i - week_begins)
 			
 			if pad != 0
 				calendar_output << %{<td colspan='#{pad}' class="pad"> </td>}
@@ -101,13 +101,14 @@ module Locomotive
 			newrow = true
 			
 			(1..daysinmonth).each do |day|
-				if newrow.present? && newrow
+				if newrow
 					calendar_output << %{</tr>
 						<tr>}
 				end
+				
 				newrow = false
 				
-				if day = ::Date.today.day && thismonth == ::Date.today.month && thisyear == ::Date.today.year
+				if day == ::Date.today.day && thismonth == ::Date.today.month && thisyear == ::Date.today.year
 					calendar_output << %{<td class='today'>}
 				else
 					calendar_output << %{<td>}
@@ -125,14 +126,14 @@ module Locomotive
 				calendar_output << %{</div>
 					</td>}
 				
-				if calendar_week_mod(::Time.mktime(thisyear, thismonth, day, 0, 0, 0, 0).strftime("%w").to_i-week_begins)==6
+				if calendar_week_mod(::Time.mktime(thisyear, thismonth, day, 0, 0, 0, 0).strftime("%w").to_i - week_begins) == 6
 					newrow = true
 				end
 			end
 			
-			pad = 7 - calendar_week_mod(::Time.mktime(thisyear, thismonth, day, 0, 0, 0, 0).strftime("%w").to_i-week_begins)
+			pad = 7 - calendar_week_mod(::Time.mktime(thisyear, thismonth, day, 0, 0, 0, 0).strftime("%w").to_i - week_begins)
 			
-			if pad!=0 && pad!=7
+			if pad != 0 && pad != 7
 				calendar_output << %{<td class='pad' colspan='#{pad}'> </td>}
 			end
 			
