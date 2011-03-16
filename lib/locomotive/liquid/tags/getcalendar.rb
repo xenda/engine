@@ -18,11 +18,6 @@ module Locomotive
 			
 			next_events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8.strftime("%m").to_i == thismonth+1 }
 			
-			puts previous_events.inspect
-			puts "---------------"
-			puts next_events.inspect
-			puts "---------------"
-			
 			if previous_events.empty?
 				previous_link = "<a class='prev' style='opacity:0.5'></a>"
 			else
@@ -61,9 +56,6 @@ module Locomotive
 					<tr>}
 			
 			events = ::ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8 >= ::Date.civil(thisyear, thismonth, 1) && c.custom_field_8 <= ::Date.civil(thisyear, thismonth, last_day) }
-			
-			puts events.inspect
-			puts "---------------"
 			
 			dayswithevents = []
 			
@@ -149,7 +141,7 @@ module Locomotive
 				</table>
 			</div>
 			}
-			puts calendar_output.inspect
+			puts calendar_output.class
 			#calendar
 		end
 		
