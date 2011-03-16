@@ -15,6 +15,12 @@ module Admin
       logger.info ENV['S3_SECRET_KEY']
       logger.info ENV['S3_BUCKET']
     end
+    
+    def get_params
+    	puts request.inspect unless request.nil?
+    	puts "--------------------------------"
+    	puts params.inspect unless params.nil?
+    end
 
 
     def show

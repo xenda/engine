@@ -14,7 +14,6 @@ module Locomotive
         end
         
         def params
-        	puts @context.registers[:controller].class
         	@context.registers[:controller].send(:get_params)
         end
 
