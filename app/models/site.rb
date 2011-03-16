@@ -76,7 +76,7 @@ class Site
   def params
   	puts request.inspect
   	unless params.nil?
-  		params
+  		puts params.inspect
   	end
   end
 

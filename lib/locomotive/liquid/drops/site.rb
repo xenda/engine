@@ -14,7 +14,7 @@ module Locomotive
         end
         
         def params
-        	puts @source.inspect
+        	@source.params
         end
 
       end
