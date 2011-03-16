@@ -2,6 +2,8 @@ module Admin
   class SitesController < BaseController
 
     defaults :instance_name => 'site'
+    
+    liquid_methods :get_params
 
     sections 'settings'
 
