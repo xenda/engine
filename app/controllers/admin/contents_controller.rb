@@ -13,22 +13,22 @@ module Admin
 
 
     def update_resources
-      if @content_type.slug=='events'
-        resource_type = current_site.content_types.where(:slug => 'resources').first
-        resources = []
-
-        if params[:resource] && params[:resource][:custom_field_3]
-          resources = params[:resource][:custom_field_3]
-        end
-
-        resources.each do |resource_file|
-          resource = {:custom_field_3 => resource_file,
-            :name => Time.zone.now,
-            :custom_field_4 => @content._slug
-          }
-          resource_type.contents.create(resource)
-        end
-      end
+      # if @content_type.slug=='events'
+      #      resource_type = current_site.content_types.where(:slug => 'resources').first
+      #      resources = []
+      # 
+      #      if params[:resource] && params[:resource][:custom_field_3]
+      #        resources = params[:resource][:custom_field_3]
+      #      end
+      # 
+      #      resources.each do |resource_file|
+      #        resource = {:custom_field_3 => resource_file,
+      #          :name => Time.zone.now,
+      #          :custom_field_4 => @content._slug
+      #        }
+      #        resource_type.contents.create(resource)
+      #      end
+      #    end
     end
 
     def create
@@ -40,21 +40,21 @@ module Admin
     def update
       update! { 
 
-        if @content_type.slug=='events'
-        	resource_type = current_site.content_types.where(:slug => 'resources').first
-
-         	if params[:resource] && params[:resource][:custom_field_3]
-              	resources = params[:resource][:custom_field_3].to_a
-
-              	resources.each do |resource_file|
-              		resource = {:custom_field_3 => resource_file,
-              					:name => Time.zone.now,
-              					:custom_field_4 => @content._slug
-              					}
-              		resource_type.contents.create(resource)
-          		end
-            end
-    	  end
+        #         if @content_type.slug=='events'
+        #           resource_type = current_site.content_types.where(:slug => 'resources').first
+        # 
+        #           if params[:resource] && params[:resource][:custom_field_3]
+        #                 resources = params[:resource][:custom_field_3].to_a
+        # 
+        #                 resources.each do |resource_file|
+        #                   resource = {:custom_field_3 => resource_file,
+        #                         :name => Time.zone.now,
+        #                         :custom_field_4 => @content._slug
+        #                         }
+        #                   resource_type.contents.create(resource)
+        #               end
+        #             end
+        # end
         edit_admin_content_url(@content_type.slug, @content.id) 
         
         
