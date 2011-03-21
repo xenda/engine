@@ -58,7 +58,7 @@ module Models
 
           def parse(context = {})
             self.disable_all_editable_elements
-
+            
             default_context = { :site => self.site, :page => self, :templates => [], :snippets => [] }
 
             context = default_context.merge(context)
@@ -67,7 +67,7 @@ module Models
 
             self.template_dependencies = context[:templates]
             self.snippet_dependencies = context[:snippets]
-
+            
             @template.root.context.clear
           end
 

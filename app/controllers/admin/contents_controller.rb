@@ -43,7 +43,7 @@ module Admin
         if @content_type.slug=='events'
         	resource_type = current_site.content_types.where(:slug => 'resources').first
 
-          if params[:resource] && params[:resource][:custom_field_3]
+         	if params[:resource] && params[:resource][:custom_field_3]
               	resources = params[:resource][:custom_field_3].to_a
 
               	resources.each do |resource_file|
@@ -55,8 +55,6 @@ module Admin
           		end
             end
     	  end
-        
-        
         edit_admin_content_url(@content_type.slug, @content.id) 
         
         
