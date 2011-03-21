@@ -1,6 +1,6 @@
 #Thanks to p8 (Petrik de Heus): https://github.com/p8/table_builder
 
-module TableHelper
+module Admin::TableHelper
 
   def table_for(objects, *args)
     raise ArgumentError, "Missing block" unless block_given?
@@ -13,7 +13,7 @@ module TableHelper
     end
   end
 
-  class TableBuilder
+  class Admin::TableBuilder
     include ::ActionView::Helpers::TagHelper
 
     def initialize(objects, template, options)
@@ -127,7 +127,7 @@ module TableHelper
   end
 end
 
-module CalendarHelper
+module Admin::CalendarHelper
 
   def calendar_for(objects, *args)
     raise ArgumentError, "Missing block" unless block_given?
@@ -140,7 +140,7 @@ module CalendarHelper
     end
   end
 
-  class CalendarBuilder < TableHelper::TableBuilder
+  class Admin::CalendarBuilder < Admin::TableHelper::TableBuilder
     def initialize(objects, template, calendar, options)
       super(objects, template, options)
       @calendar = calendar.new(options)
@@ -185,7 +185,7 @@ module CalendarHelper
 
   end
 
-  class Calendar
+  class Admin::Calendar
     attr_accessor :first_weekday, :last_weekday, :month
 
     # :first lets you set the first day to start the calendar on (default is the first day of the given :month and :year).

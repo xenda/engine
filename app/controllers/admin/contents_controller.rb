@@ -15,10 +15,9 @@ module Admin
     def update_resources
       if @content_type.slug=='events'
         resource_type = current_site.content_types.where(:slug => 'resources').first
+        resources = []
 
-        if params[:resource].nil?
-          resources = []
-        else
+        if params[:resource] && params[:resource][:custom_field_3]
           resources = params[:resource][:custom_field_3]
         end
 
