@@ -73,25 +73,30 @@ class ContentType
 
   def ordered_contents(conditions = {})
     column = self.order_by.to_sym
-
-    list = (if conditions.nil? || conditions.empty?
-      self.contents
+    
+    if self.name=="events"
+    	#ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8 >= Date.today+1 }
+    	self.contents.select { |c| c.custom_field_8 >= Date.today+1 }
     else
-      conditions_with_names = {}
-
-      conditions.each do |key, value|
-        # convert alias (key) to name
-        field = self.content_custom_fields.detect { |f| f._alias == key }
-
-        conditions_with_names[field._name.to_sym] = value
-      end
-
-      self.contents.where(conditions_with_names)
-    end).sort { |a, b| (a.send(column) || 0) <=> (b.send(column) || 0) }
-
-    return list if self.order_manually?
-
-    self.asc_order? ? list : list.reverse
+	    list = (if conditions.nil? || conditions.empty?
+	      self.contents
+	    else
+	      conditions_with_names = {}
+	
+	      conditions.each do |key, value|
+	        # convert alias (key) to name
+	        field = self.content_custom_fields.detect { |f| f._alias == key }
+	
+	        conditions_with_names[field._name.to_sym] = value
+	      end
+	
+	      self.contents.where(conditions_with_names)
+	    end).sort { |a, b| (a.send(column) || 0) <=> (b.send(column) || 0) }
+	
+	    return list if self.order_manually?
+	
+	    self.asc_order? ? list : list.reverse
+	end
   end
 
   def sort_contents!(order)
