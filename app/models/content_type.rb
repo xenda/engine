@@ -74,7 +74,7 @@ class ContentType
   def ordered_contents(conditions = {})
     column = self.order_by.to_sym
     
-    if self.name=="events"
+    if self.slug=="events"
     	#ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8 >= Date.today+1 }
     	self.contents.select { |c| c.custom_field_8 >= Date.today+1 }
     else
