@@ -1,3 +1,5 @@
+
+
 h1. Locomotive CMS
 
 Locomotive is a simple but powerful CMS based on liquid templates and mongodb database. At my company ("NoCoffee":http://www.nocoffee.fr), we use it for our clients when they request a simple website.
