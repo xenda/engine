@@ -53,7 +53,7 @@ class Page
   ## methods ##
   
   def contents
-    self.editable_elements.map(&:contents)
+    self.editable_elements.map(&:content)
   end
 
   def index?
