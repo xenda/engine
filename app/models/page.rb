@@ -19,7 +19,7 @@ class Page
   field :published, :type => Boolean, :default => false
   field :cache_strategy, :default => 'none'
   
-  liquid_methods :editable_elements
+  liquid_methods :contents
   
   field :locale
 
@@ -53,7 +53,7 @@ class Page
   ## methods ##
   
   def contents
-    self.editable_elements
+    self.editable_elements.map(&:contents)
   end
 
   def index?
