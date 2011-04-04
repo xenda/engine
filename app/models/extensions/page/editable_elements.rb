@@ -20,6 +20,8 @@ module Models
 
         module InstanceMethods
 
+          
+
           def disable_parent_editable_elements(block)
             self.editable_elements.each { |el| el.disabled = true if el.from_parent? && el.block == block }
           end

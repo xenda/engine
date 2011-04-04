@@ -17,7 +17,7 @@ require 'locomotive/routing'
 require 'locomotive/regexps'
 require 'locomotive/render'
 require 'locomotive/import'
-#require 'locomotive/delayed_job'
+require 'locomotive/delayed_job'
 require 'locomotive/middlewares'
 require 'locomotive/session_store'
 
@@ -58,8 +58,12 @@ module Locomotive
     Devise.mailer_sender = self.config.mailer_sender
 
     # Load all the dynamic classes (custom fields)
-    ContentType.all.collect(&:fetch_content_klass)
-    AssetCollection.all.collect(&:fetch_asset_klass)
+    begin
+      ContentType.all.collect(&:fetch_content_klass)
+      AssetCollection.all.collect(&:fetch_asset_klass)
+    rescue ::Mongoid::Errors::InvalidDatabase => e
+      # let assume it's because of the first install (meaning no config.yml file)
+    end
   end
 
   def self.logger(message)

@@ -25,7 +25,7 @@ module Locomotive
         
         def editable_elements
         	#elements = []
-        	::Page.criteria.id(@source.id).first.attributes['editable_elements']
+        	::Page.find(@source.id).contents #Page.criteria.id(@source.id).first.attributes['editable_elements']
         	#attributes = ::Page.criteria.id(@source.id).first.attributes['editable_elements'].each do |element|
         	#	element = element.gsub("BSON::ObjectId('", "").gsub("'),", ",").gsub("=>", ":")
         	#	element = ActiveSupport::JSON.decode(element)

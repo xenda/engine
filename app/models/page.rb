@@ -19,6 +19,8 @@ class Page
   field :published, :type => Boolean, :default => false
   field :cache_strategy, :default => 'none'
   
+  liquid_methods :contents
+  
   field :locale
 
   ## associations ##
@@ -49,6 +51,10 @@ class Page
   scope :minimal_attributes, :only => %w(title slug fullpath position depth published templatized listed parent_id created_at updated_at)
 
   ## methods ##
+  
+  def contents
+    self.editable_elements.map(&:content)
+  end
 
   def index?
     self.slug == 'index' && self.depth.to_i == 0

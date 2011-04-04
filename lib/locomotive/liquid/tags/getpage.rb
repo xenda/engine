@@ -13,10 +13,10 @@ module Locomotive
 		  end
 		  
 		  def render(context)
-        puts @slug
+        # puts @slug
         @slug = @slug.strip.gsub(" ", "")
 		    @page = ::Page.where(:slug => @slug).first
-		    puts @page.inspect
+        # puts @page.inspect
 		  	context.scopes.last['_page'] = @page
     		super
 		  end
