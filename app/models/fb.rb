@@ -1,8 +1,8 @@
-class Admin::FBPage
+class FBPage
 	require 'net/http'
 	require 'uri'
 	require 'json'
-	
+
 	attr_accessor :id, :url
 	
 	def initialize(id)
@@ -15,7 +15,7 @@ class Admin::FBPage
 	end
 end
 
-class Admin::FBAlbum
+class FBAlbum
 	require 'net/http'
 	require 'uri'
 	require 'json'
