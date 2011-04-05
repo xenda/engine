@@ -10,6 +10,16 @@ module Admin
     def index
       @contents = @content_type.list_or_group_contents
     end
+    
+    def new
+    	@galleries = FBPage.new("169431123106803").albums
+    	new!
+    end
+    
+    def edit
+    	@galleries = FBPage.new("169431123106803").albums
+    	edit!
+    end
 
 
     def update_resources

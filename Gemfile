@@ -26,6 +26,7 @@ gem 'mimetype-fu'
 gem 'actionmailer-with-request'
 gem 'heroku', '1.18.2'
 gem 'httparty', '>= 0.6.1'
+gem 'json'
 gem 'RedCloth', '4.2.7'
 # gem 'delayed_job', :git => "https://github.com/collectiveidea/delayed_job.git"
 gem 'delayed_job', '2.1.4'

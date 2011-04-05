@@ -21,4 +21,9 @@ $(document).ready(function() {
 
   $.datepicker.setDefaults($.datepicker.regional[I18nLocale]);
   $('input[type=text].date').datepicker($.datepicker.regional[I18nLocale]);
+  
+  $('a.gallery').click(function(e){
+  	e.preventDefault();
+  	$('#content_gallery').val($(this).attr('id'));
+  });
 });
