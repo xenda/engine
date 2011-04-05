@@ -1,3 +1,4 @@
+// Fix
 $(document).ready(function() {
 
   var wrapper = $('fieldset.editable-list.fields');
