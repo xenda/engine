@@ -74,6 +74,7 @@ class ContentType
     if self.slug=="events"
     	#ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8 >= Date.today+1 }
     	self.contents.select { |c| c.custom_field_8 >= Date.today+1 }
+    	self.contents.reverse
     else
     	column = self.order_by.to_sym
 	    list = (if conditions.nil? || conditions.empty?
