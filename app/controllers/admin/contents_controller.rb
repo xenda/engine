@@ -12,12 +12,12 @@ module Admin
     end
     
     def new
-    	@galleries = ::FBPage.new("169431123106803").albums
+    	@galleries = FBPage.new("169431123106803").albums
     	new!
     end
     
     def edit
-    	@galleries = ::FBPage.new("169431123106803").albums
+    	@galleries = FBPage.new("169431123106803").albums
     	edit!
     end
 

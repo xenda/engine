@@ -1,4 +1,4 @@
-class FBPage
+class Admin::FBPage
 	require 'net/http'
 	require 'uri'
 	require 'json'
@@ -15,7 +15,7 @@ class FBPage
 	end
 end
 
-class FBAlbum
+class Admin::FBAlbum
 	require 'net/http'
 	require 'uri'
 	require 'json'
