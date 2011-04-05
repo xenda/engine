@@ -280,6 +280,7 @@ DEPENDENCIES
   heroku (= 1.18.2)
   httparty (>= 0.6.1)
   inherited_resources (~> 1.1.2)
+  json
   launchy
   locomotive_carrierwave (= 0.5.0.1.beta3)
   locomotive_jammit-s3
