@@ -22,7 +22,18 @@ module Locomotive
         end
 
 	def gallery
-		@source.custom_field_10.to_s
+		output = %{<ul class="gallery">
+		}
+		album = ::FBAlbum.new(@source.custom_field_10.to_s)
+		album.photos.map do |photo|
+			output << %{<li>
+				<a href="#{photo['source']}" rel="gallery_group" title="#{photo['name']}">
+					<img src="#{photo['images'][1]['source']}" />
+				</a>
+			</li>}
+		end
+		output << %{</ul>}
+		output
 	end
         
         def id
