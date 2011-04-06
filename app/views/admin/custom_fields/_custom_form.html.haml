@@ -14,7 +14,7 @@
         %ul.gallery
           - @galleries.each do |gallery|
             - if @content.custom_field_10 && gallery.id == @content.custom_field_10
-              class = "selected"
+              - class = "selected"
             %li{:class => class}
               %a.gallery{:href => "#", :id => gallery.id}
                 %img{:src => gallery.cover_photo}
