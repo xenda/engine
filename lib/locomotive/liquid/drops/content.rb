@@ -25,7 +25,7 @@ module Locomotive
 		album_id = ""
 		if @source.content_type.slug == "events"
 			album_id = @source.custom_field_10.to_s
-		elsif @source.content_type.slug == "news" || @source.content_type.slug == "articles"
+		elsif @source.content_type.slug.strip == "news" || @source.content_type.slug.strip == "articles"
 			album_id = @source.custom_field_5.to_s
 		end
 		output = %{<ul class="gallery">
