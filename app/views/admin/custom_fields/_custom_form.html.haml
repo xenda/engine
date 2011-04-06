@@ -14,7 +14,7 @@
         %ul.gallery
           - @galleries.each do |gallery|
             %li
-              %a.gallery{:href => "#", :id => gallery['id']}
+              %a.gallery{:href => "#", :id => gallery.id}
                 %img{:src => gallery.cover_photo}
                 = gallery['name']
         = hidden_field_tag "content[#{field._alias.to_sym}]"
