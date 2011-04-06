@@ -17,7 +17,7 @@
               %a.gallery{:href => "#", :id => gallery.id}
                 %img{:src => gallery.cover_photo}
                 = gallery.data['name']
-        = hidden_field_tag "content[#{field._alias.to_sym}]"
+        = hidden_field_tag "content[#{field._alias.to_sym}]", {:value => field._name.to_sym}
     - else
       - if field.string?
         = form.input field._alias.to_sym, :label => field.label, :hint => field.hint, :required => required
