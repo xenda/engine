@@ -16,7 +16,7 @@
             %li
               %a.gallery{:href => "#", :id => gallery.id}
                 %img{:src => gallery.cover_photo}
-                = gallery['name']
+                = gallery.name
         = hidden_field_tag "content[#{field._alias.to_sym}]"
     - else
       - if field.string?
