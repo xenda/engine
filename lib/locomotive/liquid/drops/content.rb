@@ -25,18 +25,20 @@ module Locomotive
 		album_id = ""
 		if @source.content_type.slug == "events"
 			album_id = @source.custom_field_10.to_s
-		elsif @source.content_type.slug == "news"
+		elsif @source.content_type.slug == "articles"
 			album_id = @source.custom_field_5.to_s
 		end
 		output = %{<ul class="gallery">
 		}
 		album = ::FBAlbum.new(album_id)
-		album.photos.map do |photo|
-			output << %{<li>
-				<a href="#{photo['source']}" rel="gallery_group" title="#{photo['name']}">
-					<img src="#{photo['images'][1]['source']}" />
-				</a>
-			</li>}
+		if album
+			album.photos.map do |photo|
+				output << %{<li>
+					<a href="#{photo['source']}" rel="gallery_group" title="#{photo['name']}">
+						<img src="#{photo['images'][1]['source']}" />
+					</a>
+				</li>}
+			end
 		end
 		output << %{</ul>}
 		output

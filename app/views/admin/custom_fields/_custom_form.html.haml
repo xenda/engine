@@ -15,7 +15,7 @@
           - gallery_id = ""
           - if @content_type.slug=='events'
             - gallery_id = @content.custom_field_10
-          - elsif @content_type.slug == 'news'
+          - elsif @content_type.slug == 'articles'
             - gallery_id = @content.custom_field_5
           - @galleries.each do |gallery|
             - if gallery_id && gallery.id == gallery_id
