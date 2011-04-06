@@ -18,7 +18,7 @@
           - elsif @content_type.slug == 'news'
             - gallery_id = @content.custom_field_5
           - @galleries.each do |gallery|
-            - if @content.custom_field_10 && gallery.id == gallery_id
+            - if gallery_id && gallery.id == gallery_id
               %li{:class => "selected"}
                 %a.gallery{:href => "#", :id => gallery.id}
                   %img{:src => gallery.cover_photo}
