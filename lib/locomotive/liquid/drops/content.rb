@@ -20,6 +20,10 @@ module Locomotive
         	contents = ::ContentType.where(:slug => "resources").first.contents
         	contents.select{|c| c[:custom_field_4] == @source._slug}
         end
+
+	def gallery
+		@source.custom_field_10.to_s
+	end
         
         def id
         	@id.to_s
