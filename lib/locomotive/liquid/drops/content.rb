@@ -4,9 +4,9 @@ module Locomotive
       class Content < Base
       	
       	def initialize(source)
-		  @id = source.id
-		  super(source)
-		end
+		@id = source.id
+		super(source)
+	end
 
         def before_method(meth)
           return '' if @source.nil?
@@ -22,9 +22,15 @@ module Locomotive
         end
 
 	def gallery
+		album_id = ""
+		if @source.content_type.slug == "events"
+			album_id = @source.custom_field_10.to_s
+		elsif @source.content_type.slug == "news"
+			album_id = @source.custom_field_5.to_s
+		end
 		output = %{<ul class="gallery">
 		}
-		album = ::FBAlbum.new(@source.custom_field_10.to_s)
+		album = ::FBAlbum.new(album_id)
 		album.photos.map do |photo|
 			output << %{<li>
 				<a href="#{photo['source']}" rel="gallery_group" title="#{photo['name']}">

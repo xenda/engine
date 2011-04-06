@@ -12,8 +12,13 @@
         %label{:for => "content_gallery"}
           = field.label
         %ul.gallery
+          - gallery_id = ""
+          - if @content_type.slug=='events'
+            - gallery_id = @content.custom_field_10
+          - elsif @content_type.slug == 'news'
+            - gallery_id = @content.custom_field_5
           - @galleries.each do |gallery|
-            - if @content.custom_field_10 && gallery.id == @content.custom_field_10
+            - if @content.custom_field_10 && gallery.id == gallery_id
               %li{:class => "selected"}
                 %a.gallery{:href => "#", :id => gallery.id}
                   %img{:src => gallery.cover_photo}
@@ -23,7 +28,7 @@
                 %a.gallery{:href => "#", :id => gallery.id}
                   %img{:src => gallery.cover_photo}
                     = gallery.data['name']
-        = hidden_field_tag "content[#{field._alias.to_sym}]", @content.custom_field_10
+        = hidden_field_tag "content[#{field._alias.to_sym}]", gallery_id
     - else
       - if field.string?
         = form.input field._alias.to_sym, :label => field.label, :hint => field.hint, :required => required
