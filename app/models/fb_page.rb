@@ -12,10 +12,11 @@ class FBPage
 	end
 	
 	def albums
+		collection = []
 		data = ActiveSupport::JSON.decode(Net::HTTP.get_response(URI.parse("#{self.url}/albums")).body)['data']
 		data.each do |album|
-			albums << FBAlbum.new(album['id'])
+			collection << FBAlbum.new(album['id'])
 		end
-		albums
+		collection
 	end
 end
