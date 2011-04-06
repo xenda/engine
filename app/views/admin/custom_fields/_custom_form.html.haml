@@ -16,7 +16,7 @@
           - if @content_type.slug=='events'
             - gallery_id = @content.custom_field_10
           - elsif @content_type.slug.strip == 'news' || @content_type.slug.strip == 'articles'
-            - gallery_id = @content.custom_field_5
+            - gallery_id = @content.custom_field_6
           - @galleries.each do |gallery|
             - if gallery_id && gallery.id == gallery_id
               %li{:class => "selected"}
