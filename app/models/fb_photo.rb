@@ -1,4 +1,4 @@
-class FBPage
+class FBPhoto
 	require 'net/http'
 	require 'uri'
 	require 'json'
@@ -10,8 +10,8 @@ class FBPage
 		self.url = "http://graph.facebook.com/#{self.id}"
 		self.data = ActiveSupport::JSON.decode(Net::HTTP.get_response(URI.parse(self.url)).body)
 	end
-	
-	def albums
-		ActiveSupport::JSON.decode(Net::HTTP.get_response(URI.parse("#{self.url}/albums")).body)['data']
+
+	def picture
+		self.data['picture']
 	end
 end
