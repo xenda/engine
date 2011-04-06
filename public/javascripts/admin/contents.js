@@ -25,5 +25,7 @@ $(document).ready(function() {
   $('a.gallery').click(function(e){
   	e.preventDefault();
   	$('#content_gallery').val($(this).attr('id'));
+	$('ul.gallery li').removeClass("selected");
+	$(this).parent().addClass("selected");
   });
 });
