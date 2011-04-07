@@ -21,6 +21,21 @@ module Locomotive
 
         def render(context)
           
+          	case context.registers[:page].fullpath
+      				when /index/ 
+      				when /events/
+                @options[:og_title] = context.registers[:page].title
+                @options[:og_url] = "http://peru.info/events/#{context.registers[:page].slug}"
+                @options[:description] = context.registers[:page].summary                				  
+      				when /agenda/ then "schedule"
+      				when /archivo/ then "archive"
+      				else 
+                @options[:og_title] = context.registers[:page].title
+                @options[:og_url] = context.registers[:page]._permalink
+                @options[:og_image] = context.registers[:page].photo.url
+                @options[:description] = context.registers[:page].summary
+      			end
+
           output = %Q{ <meta property="og:title" content="#{@options[:og_title]}" />
            <meta property="og:type" content="country" />
            <meta property="og:url" content="#{@options[:og_url]}" />
