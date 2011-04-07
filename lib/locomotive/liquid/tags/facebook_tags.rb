@@ -11,11 +11,11 @@ module Locomotive
 
         def initialize(tag_name, markup, tokens, context)
           if markup =~ Syntax
+            @options = {}
             markup.scan(::Liquid::TagAttributes) { |key, value| @options[key.to_sym] = value.gsub(/"|'/, '') }  
           else
             raise ::Liquid::SyntaxError.new("Syntax Error in 'facebook_tags' - Valid syntax: nav og_type: og_url: og_")
           end
-
           super
         end
 
