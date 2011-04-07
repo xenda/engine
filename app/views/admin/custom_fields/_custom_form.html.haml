@@ -8,13 +8,27 @@
         = form.custom_input field._alias.to_sym, :label => field.label, :hint => field.hint, :css => 'toggle' do
           = form.select field._name.to_sym, [['Feria', 'faire'], ['Door to Door', 'door2door'], ['Workshop', 'workshop'], ['Fam Trips', 'fam-trips']]
     - elsif field._alias=='gallery'
-      %li{ :class => "input optional" }
+      %li{ :class => "select optional" }
+        %label{:for => "content_gallery"}
+          = field.label
         %ul.gallery
+          - gallery_id = ""
+          - if @content_type.slug=='events'
+            - gallery_id = @content.custom_field_10
+          - elsif @content_type.slug.strip == 'news' || @content_type.slug.strip == 'articles'
+            - gallery_id = @content.custom_field_6
           - @galleries.each do |gallery|
-            %li
-              %a.gallery{:href => "#", :id => gallery['id']}
-                = gallery['name']
-              = form.hidden_field_tag field._alias.to_sym
+            - if gallery_id && gallery.id == gallery_id
+              %li{:class => "selected"}
+                %a.gallery{:href => "#", :id => gallery.id}
+                  %img{:src => gallery.cover_photo}
+                    = gallery.data['name']
+            - else
+              %li
+                %a.gallery{:href => "#", :id => gallery.id}
+                  %img{:src => gallery.cover_photo}
+                    = gallery.data['name']
+        = hidden_field_tag "content[#{field._alias.to_sym}]", gallery_id
     - else
       - if field.string?
         = form.input field._alias.to_sym, :label => field.label, :hint => field.hint, :required => required

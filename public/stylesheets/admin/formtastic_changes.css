@@ -500,7 +500,25 @@ form.formtastic fieldset.preview li .inside {
 }
 
 form.formtastic fieldset.preview li img { }
-
+form.formtastic ul.gallery{
+  display: inline-block;
+  width: 75%;
+  height: 200px;
+  overflow-y: scroll;
+  padding-right: 10px;
+  font-size: 0.9em;
+}
+form.formtastic ul.gallery li{
+  padding: 6px 4px;
+}
+form.formtastic ul.gallery li.selected{
+  background:#dee1ec;
+}
+form.formtastic ul.gallery li a img{
+  padding: 5px;
+  vertical-align:middle;
+  border: solid 1px #c1c1c1;
+}
 
 /* ___ main error message ___ */
 
@@ -527,4 +545,3 @@ div.formError {
 }
 
 div.fieldWithErrors { display: inline; }
-

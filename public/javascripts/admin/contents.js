@@ -24,6 +24,14 @@ $(document).ready(function() {
   
   $('a.gallery').click(function(e){
   	e.preventDefault();
-  	$('#content_gallery').val($(this).attr('id'));
+	if($('#content_gallery').val()==$(this).attr('id')){
+		$('#content_gallery').val("");
+		$('ul.gallery li').removeClass("selected");
+	}
+	else{
+	  	$('#content_gallery').val($(this).attr('id'));
+		$('ul.gallery li').removeClass("selected");
+		$(this).parent().addClass("selected");
+	}
   });
 });
