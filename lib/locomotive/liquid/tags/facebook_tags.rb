@@ -32,7 +32,7 @@ module Locomotive
       				else 
                 @options[:og_title] = context.registers[:page].title
                 @options[:og_url] = "http://peru.info/news/#{context.registers[:page].slug}"
-                @options[:og_image] = context.registers[:page].photo.url
+                @options[:og_image] = context.registers[:page].photo
                 @options[:description] = context.registers[:page].summary
       			end
 

@@ -23,6 +23,10 @@ module Locomotive
           @source.depth
         end
         
+        def summary
+          @source.summary
+        end
+        
         def photo
           @source.photo
         end
