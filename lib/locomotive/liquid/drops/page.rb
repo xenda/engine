@@ -24,11 +24,11 @@ module Locomotive
         end
         
         def summary
-          @source.summary
+          @context['content_instance'].summary
         end
         
         def photo
-          @source.photo
+          @context['content_instance'].photo
         end
         
         def editable_elements
