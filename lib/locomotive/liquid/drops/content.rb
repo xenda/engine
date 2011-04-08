@@ -21,6 +21,14 @@ module Locomotive
         	contents.select{|c| c[:custom_field_4] == @source._slug}
         end
 
+  def summary
+    @source.summary
+  end
+  
+  def photo
+    @source.photo
+  end
+
 	def gallery
 		album_id = ""
 		if @source.content_type.slug == "events"
