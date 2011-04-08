@@ -26,14 +26,14 @@ module Locomotive
       				when /events/
                 @options[:og_title] = context.registers[:page].title
                 @options[:og_url] = "http://peru.info/events/#{context.registers[:page].slug}"
-                @options[:description] = context.registers[:page].summary                				  
+                @options[:description] = context.registers[:page].contents[0..150]                				  
       				when /agenda/ then "schedule"
       				when /archivo/ then "archive"
       				else 
                 @options[:og_title] = context.registers[:page].title
                 @options[:og_url] = "http://peru.info/news/#{context.registers[:page].slug}"
                 @options[:og_image] = context.registers[:page].photo
-                @options[:description] = context.registers[:page].summary
+                @options[:description] = context.registers[:page].contents[0..150]
       			end
 
           output = %Q{ <meta property="og:title" content="#{@options[:og_title]}" />
