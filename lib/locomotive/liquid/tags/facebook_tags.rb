@@ -20,7 +20,7 @@ module Locomotive
         end
 
         def render(context)
-          
+
           output = %Q{ <meta property="og:title" content="#{@options[:og_title]}" />
            <meta property="og:type" content="country" />
            <meta property="og:url" content="#{@options[:og_url]}" />
