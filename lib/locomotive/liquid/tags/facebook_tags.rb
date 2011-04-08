@@ -31,7 +31,7 @@ module Locomotive
       				when /archivo/ then "archive"
       				else 
                 @options[:og_title] = context.registers[:page].title
-                @options[:og_url] = context.registers[:page]._permalink
+                @options[:og_url] = "http://peru.info/news/#{context.registers[:page].slug}"
                 @options[:og_image] = context.registers[:page].photo.url
                 @options[:description] = context.registers[:page].summary
       			end
