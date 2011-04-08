@@ -23,6 +23,10 @@ module Locomotive
           @source.depth
         end
         
+        def photo
+          @source.photo
+        end
+        
         def editable_elements
         	#elements = []
         	::Page.find(@source.id).contents #Page.criteria.id(@source.id).first.attributes['editable_elements']
