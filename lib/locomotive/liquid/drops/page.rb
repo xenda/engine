@@ -28,6 +28,10 @@ module Locomotive
         end
         
         def photo
+          puts "HOOOLAAAA \n"
+          puts "*"*100
+          puts "HOOOLAAAA \n"
+          puts @context['content_instance'].inspect
           @context['content_instance'].photo
         end
         
