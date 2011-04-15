@@ -16,6 +16,7 @@ module Locomotive
 			else
 				thisyear = ::Date.today.strftime("%Y").to_i
 			end
+      ::I18n.locale = :es
 			month_names = ::I18n.t('date.month_names')
 			month_name = month_names[thismonth]
 			
