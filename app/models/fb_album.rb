@@ -12,8 +12,12 @@ class FBAlbum
 	end
 
 	def cover_photo
-		photo = FBPhoto.new(self.data['cover_photo'])
-		photo.picture
+	  if self.data['cover_photo']
+  		photo = FBPhoto.new(self.data['cover_photo'])
+  		photo.picture
+		else
+		  ""
+	  end
 	end
 	
 	def photos
