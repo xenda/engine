@@ -80,33 +80,28 @@ module Locomotive
 			events_for_day = []
 			
 			unless events.empty?
+
 				events.each do |event|
 					event_ID = event._id
 					event_title = event.custom_field_1
 					event_day = event.custom_field_8.day
 					event_category = event.custom_field_7
 					
-					if events_photos[event_day].nil?
-						photo = event.custom_field_4_filename
-						unless photo.nil?
-							events_photos[event_day] = "<img src='#{event.custom_field_4_filename}' width='107' heigth='81' />"
-						end
+					if event_day 
+  					if events_photos[event_day].nil?
+  						photo = event.custom_field_4_filename
+  						events_photos[event_day] = "<img src='#{event.custom_field_4_filename}' width='107' heigth='81' />" if photo
+  					end
+
+  					events_for_day[event_day]  = "<div class='events'>" unless events_for_day[event_day]
+
+  					events_for_day[event_day] << "<div class='event #{event_category}'></div>"
 					end
-					if events_for_day[events_for_day].nil?
-					  events_for_day[events_for_day]  = "<div class='events'>"
-				  end
-          # if events_for_day[event_day].nil?
-          #   events_for_day[event_day] = "<div class='events'><div class='event #{event_category}'></div>"
-          # else
-          #   events_for_day[event_day] << "<div class='event #{event_category}'></div>"
-          # end
-					events_for_day[event_day] << "<div class='event #{event_category}'></div>"
 					
-					
-          # events_for_day[event_day] << "</div>";
 				end
+				
+	      events_for_day.each{|e| e << "</div>" if e }
 			end
-			events_for_day.each{|key,value| events_for_day[key] << "</div>" }
 			
 			pad = calendar_week_mod(unixmonth.strftime("%w").to_i - week_begins)
 			
