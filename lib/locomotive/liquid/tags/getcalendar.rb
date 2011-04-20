@@ -90,7 +90,17 @@ module Locomotive
 					if event_day 
   					if events_photos[event_day].nil?
   						photo = event.custom_field_4_filename
-  						events_photos[event_day] = "<img src='#{event.custom_field_4_filename}' width='107' heigth='81' />" if photo
+  						if photo
+  						  assets = ::AssetCollection.first.assets.select{|a| a.source_filename == photo }
+  						  unless assets.empty?
+  						    asset = assets.first
+  						    site_id = asset.collection.site_id
+  						    asset_id = asset.id
+  						    url = "/sites/#{site_id}/assets/#{asset_id}/#{photo}"
+						    end
+                url ||= ""
+  						  events_photos[event_day] = "<img src='#{url}' width='107' heigth='81' />"
+						  end
   					end
 
   					events_for_day[event_day]  = "<div class='events'>" unless events_for_day[event_day]
