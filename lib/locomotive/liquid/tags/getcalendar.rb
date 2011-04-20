@@ -96,7 +96,6 @@ module Locomotive
           
           if event_day 
             
-            if events_photos[event_day].nil?
               photo = event.custom_field_4_filename
               if photo
                 assets = ::AssetCollection.first.assets.select{|a| a.source_filename == photo }
@@ -114,7 +113,6 @@ module Locomotive
                 end
               end
 
-            end
             event_range.to_a.each do |day|
               events_for_day[day]  ||= "<div class='events'>"
               events_for_day[day] << "<div class='event #{event_category}'></div>"
