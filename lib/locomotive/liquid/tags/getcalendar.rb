@@ -109,7 +109,7 @@ module Locomotive
 
                 event_range.to_a.each do |day|
                   events_photos[day] ||= ""
-                  events_photos[day] << "<a href='/events/#{event._slug}'><img src='#{url}' width='107' heigth='81' /></a>"
+                  events_photos[day] << "<a href='/events/#{event._slug}'><img src='#{url}' width='107' height='81' /></a>"
                 end
               end
 
