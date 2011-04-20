@@ -85,9 +85,11 @@ module Locomotive
 					event_ID = event._id
 					event_title = event.custom_field_1
 					event_day = event.custom_field_8.day
+					event_range = event.custom_field_8.day..event.custom_field_9.day
 					event_category = event.custom_field_7
 					
 					if event_day 
+					  
   					if events_photos[event_day].nil?
   						photo = event.custom_field_4_filename
   						if photo
@@ -99,14 +101,18 @@ module Locomotive
   						    url = "/sites/#{site_id}/assets/#{asset_id}/#{photo}"
 						    end
                 url ||= ""
-                events_photos[event_day] ||= ""
-  						  events_photos[event_day] << "<img src='#{url}' width='107' heigth='81' />"
+                
+                event_range.to_a.each do |day|
+                  events_photos[day] ||= ""
+    						  events_photos[day] << "<img src='#{url}' width='107' heigth='81' />"
+                end
 						  end
+						  
   					end
-
-  					events_for_day[event_day]  = "<div class='events'>" unless events_for_day[event_day]
-
-  					events_for_day[event_day] << "<div class='event #{event_category}'></div>"
+            event_range.to_a.each do |day|
+    					events_for_day[day]  ||= "<div class='events'>"
+    					events_for_day[day] << "<div class='event #{event_category}'></div>"
+					  end
 					end
 					
 				end
