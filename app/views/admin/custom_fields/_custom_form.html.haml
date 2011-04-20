@@ -19,15 +19,17 @@
             - gallery_id = @content.custom_field_6
           - @galleries.each do |gallery|
             - if gallery_id && gallery.id == gallery_id
-              %li{:class => "selected"}
-                %a.gallery{:href => "#", :id => gallery.id}
-                  %img{:src => gallery.cover_photo}
-                    = gallery.data['name']
+              - if gallery.data
+                %li{:class => "selected"}
+                  %a.gallery{:href => "#", :id => gallery.id}
+                    %img{:src => gallery.cover_photo}
+                      = gallery.data['name']
             - else
-              %li
-                %a.gallery{:href => "#", :id => gallery.id}
-                  %img{:src => gallery.cover_photo}
-                    = gallery.data['name']
+              - if gallery.data
+                %li
+                  %a.gallery{:href => "#", :id => gallery.id}
+                    %img{:src => gallery.cover_photo}
+                      = gallery.data['name']
         = hidden_field_tag "content[#{field._alias.to_sym}]", gallery_id
     - else
       - if field.string?
