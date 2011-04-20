@@ -92,16 +92,21 @@ module Locomotive
 							events_photos[event_day] = "<img src='#{event.custom_field_4_filename}' width='107' heigth='81' />"
 						end
 					end
+					if events_for_day[events_for_day].nil?
+					  events_for_day[events_for_day]  = "<div class='events'>"
+				  end
+          # if events_for_day[event_day].nil?
+          #   events_for_day[event_day] = "<div class='events'><div class='event #{event_category}'></div>"
+          # else
+          #   events_for_day[event_day] << "<div class='event #{event_category}'></div>"
+          # end
+					events_for_day[event_day] << "<div class='event #{event_category}'></div>"
 					
-					if events_for_day[event_day].nil?
-						events_for_day[event_day] = "<div class='events'><div class='event #{event_category}'></div>"
-					else
-						events_for_day[event_day] << "<div class='event #{event_category}'></div>"
-					end
 					
-					events_for_day[event_day] << "</div>";
+          # events_for_day[event_day] << "</div>";
 				end
 			end
+			events_for_day.each{|key,value| events_for_day[key] << "</div>" }
 			
 			pad = calendar_week_mod(unixmonth.strftime("%w").to_i - week_begins)
 			
@@ -130,8 +135,9 @@ module Locomotive
 				calendar_output << %{<div class='content'>}
 				
 				if dayswithevents.include?(day)
-					calendar_output << %{#{events_photos[day]}
-					<span class='day'>#{day}</span>#{events_for_day[day]}}
+					calendar_output << %{<span class='day'>#{day}</span>
+					<div class="event_photo">#{events_photos[day]}</div>
+					#{events_for_day[day]}}
 				else
 					calendar_output << %{<span class='day'>#{day}</span>}
 				end
