@@ -152,7 +152,7 @@ module Locomotive
         
         if dayswithevents.include?(day)
           calendar_output << %{<span class='day'>#{day}</span>
-          <div class="event_photo">#{events_photos[day]}</div>
+          <div class="event_photo" style="margin-top:-15px">#{events_photos[day]}</div>
           #{events_for_day[day]}}
         else
           calendar_output << %{<span class='day'>#{day}</span>}
