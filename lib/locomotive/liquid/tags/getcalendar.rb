@@ -99,7 +99,8 @@ module Locomotive
   						    url = "/sites/#{site_id}/assets/#{asset_id}/#{photo}"
 						    end
                 url ||= ""
-  						  events_photos[event_day] = "<img src='#{url}' width='107' heigth='81' />"
+                events_photos[event_day] ||= ""
+  						  events_photos[event_day] << "<img src='#{url}' width='107' heigth='81' />"
 						  end
   					end
 
