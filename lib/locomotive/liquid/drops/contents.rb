@@ -70,9 +70,6 @@ module Locomotive
         end
 
         def collection
-          	puts "slug"
-          	puts @content_type.slug
-          	puts "--------------------"
           	if @content_type.slug=='events'
             	@collection ||= @content_type.ordered_events
            	else

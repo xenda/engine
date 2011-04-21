@@ -95,7 +95,7 @@ module Locomotive
           event_category = event.custom_field_7
           
           if event_day 
-            
+=begin            
               photo = event.custom_field_4_filename
               if photo
                 assets = ::AssetCollection.first.assets.select{|a| a.source_filename == photo }
@@ -109,13 +109,26 @@ module Locomotive
 
                 event_range.to_a.each do |day|
                   events_photos[day] ||= ""
-                  events_photos[day] << "<a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' /></a>"
+                  events_photos[day] << "<a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' class='event_photo' /></a>"
                 end
               end
-
+=end
             event_range.to_a.each do |day|
-              events_for_day[day]  ||= "<div class='events'>"
-              events_for_day[day] << "<div class='event #{event_category}'></div>"
+              	photo = event.custom_field_4_filename
+              	assets = ::AssetCollection.first.assets.select{|a| a.source_filename == photo }
+	            unless assets.empty?
+	              asset = assets.first
+	              site_id = asset.collection.site_id
+	              asset_id = asset.id
+	              url = "/sites/#{site_id}/assets/#{asset_id}/#{photo}"
+	            end
+	            url ||= ""
+	            
+	            events_for_day[day]  ||= "<div class='events'>"
+	            events_for_day[day] << "<div class='event'>"
+	            events_for_day[day] << "	<div class='event_title #{event_category}' id='event_#{event_ID}'></div>"
+	            events_for_day[day] << "	<a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' class='event_photo' id='event_#{event_ID}' /></a>"
+	            events_for_day[day] << "</div>"
             end
           end
           
@@ -152,7 +165,6 @@ module Locomotive
         
         if dayswithevents.include?(day)
           calendar_output << %{<span class='day'>#{day}</span>
-          <div class="event_photo">#{events_photos[day]}</div>
           #{events_for_day[day]}}
         else
           calendar_output << %{<span class='day'>#{day}</span>}
