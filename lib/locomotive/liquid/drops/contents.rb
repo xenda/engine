@@ -49,7 +49,7 @@ module Locomotive
           klass = @content_type.contents.klass # delegate to the proxy class
           if (meth.to_s =~ /^group_by_.+$/) == 0
           	if @content_type.slug=='events'
-            	klass.send(meth, :ordered_contents, {:all => false})
+            	klass.send(meth, :ordered_events)
            else
            		klass.send(meth, :ordered_contents)
            end

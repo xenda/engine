@@ -69,12 +69,14 @@ class ContentType
       self.ordered_contents
     end
   end
+  
+  def ordered_events
+  	self.contents.select { |c| c.custom_field_8 >= Date.today+1 }.reverse
+  end
 
   def ordered_contents(conditions = {})
-    if self.slug=="events" && (!conditions.nil? || !conditions.empty?)
-    	#ContentType.where(:slug => "events").first.contents.select { |c| c.custom_field_8 >= Date.today+1 }
-    	self.contents.select { |c| c.custom_field_8 >= Date.today+1 }.reverse
-    else
+    #if self.slug=="events" && (!conditions.nil? || !conditions.empty?)
+    #else
     	conditions.delete(:all)
     	column = self.order_by.to_sym
 	    list = (if conditions.nil? || conditions.empty?
@@ -95,7 +97,7 @@ class ContentType
 	    return list if self.order_manually?
 	
 	    self.asc_order? ? list : list.reverse
-	end
+	#end
   end
 
   def sort_contents!(order)
