@@ -77,7 +77,6 @@ class ContentType
   def ordered_contents(conditions = {})
     #if self.slug=="events" && (!conditions.nil? || !conditions.empty?)
     #else
-    	conditions.delete(:all)
     	column = self.order_by.to_sym
 	    list = (if conditions.nil? || conditions.empty?
 	      self.contents
