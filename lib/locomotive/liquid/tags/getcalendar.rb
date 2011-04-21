@@ -127,7 +127,7 @@ module Locomotive
 	            events_for_day[day]  ||= "<div class='events'>"
 	            events_for_day[day] << "<div class='event'>"
 	            events_for_day[day] << "	<div class='event_title #{event_category}' id='event_#{event_ID}'></div>"
-	            events_for_day[day] << "	<a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' class='event_photo' id='event_#{event_ID}' /></a>"
+	            events_for_day[day] << "	<a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' class='event_photo' id='event_photo_#{event_ID}' /></a>"
 	            events_for_day[day] << "</div>"
             end
           end
