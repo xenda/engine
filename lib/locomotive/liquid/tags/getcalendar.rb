@@ -94,25 +94,7 @@ module Locomotive
           event_range = event.custom_field_8.day..event.custom_field_9.day
           event_category = event.custom_field_7
           
-          if event_day 
-=begin            
-              photo = event.custom_field_4_filename
-              if photo
-                assets = ::AssetCollection.first.assets.select{|a| a.source_filename == photo }
-                unless assets.empty?
-                  asset = assets.first
-                  site_id = asset.collection.site_id
-                  asset_id = asset.id
-                  url = "/sites/#{site_id}/assets/#{asset_id}/#{photo}"
-                end
-                url ||= ""
-
-                event_range.to_a.each do |day|
-                  events_photos[day] ||= ""
-                  events_photos[day] << "<a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' class='event_photo' /></a>"
-                end
-              end
-=end
+          if event_day
             event_range.to_a.each do |day|
               	photo = event.custom_field_4_filename
               	assets = ::AssetCollection.first.assets.select{|a| a.source_filename == photo }
@@ -127,7 +109,7 @@ module Locomotive
 	            events_for_day[day]  ||= "<div class='events' id='day_#{day}'>"
 	            events_for_day[day] << "<div class='event'>"
 	            events_for_day[day] << "	<div class='event_title #{event_category}' id='event_#{event_ID}_#{day}'></div>"
-	            events_for_day[day] << "	<a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' class='event_photo' id='event_photo_#{event_ID}_#{day}' /></a>"
+	            events_for_day[day] << "	<div class='event_photo' id='event_photo_#{event_ID}_#{day}'><a href='/events/#{event._slug}'><img src='#{url}' width='100%' height='81' /></a></div>"
 	            events_for_day[day] << "</div>"
             end
           end
