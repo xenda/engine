@@ -106,6 +106,7 @@ module Locomotive
 		      img = "<img src='#{url}' width='100%' alt='#{event_title}' title='#{event_title}' />";
 	            end
 	            url ||= ""
+		    img ||= "<div class='no_image #{event_category}'></div>"
 
 	            events_for_day[day]  ||= "<div class='events' id='day_#{day}'>"
 	            events_for_day[day] << "<div class='event'>"
