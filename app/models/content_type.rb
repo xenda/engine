@@ -71,7 +71,8 @@ class ContentType
   end
   
   def ordered_events
-  	self.contents.select { |c| c.custom_field_8 >= Date.today }.sort_by{ |c| c.custom_field_8 }
+  	#self.contents.select { |c| c.custom_field_8 >= Date.today || (c.custom_field_8 <= Date.today && c.custom_field_9 >= Date.today) }.sort_by{ |c| c.custom_field_8 }
+	self.contents.select { |c| c.custom_field_8 <= Date.today && c.custom_field_9 >= Date.today }.sort_by{ |c| c.custom_field_8 }.reverse
   end
 
   def ordered_contents(conditions = {})
