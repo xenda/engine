@@ -103,12 +103,9 @@ module Locomotive
 	              site_id = asset.collection.site_id
 	              asset_id = asset.id
 	              url = "/sites/#{site_id}/assets/#{asset_id}/#{photo}"
+		      img = "<img src='#{url}' width='100%' alt='#{event_title}' title='#{event_title}' />";
 	            end
 	            url ||= ""
-
-		    if(url=="")
-			img = "<img src='#{url}' width='100%' alt='#{event_title}' title='#{event_title}' />";
-	            end
 
 	            events_for_day[day]  ||= "<div class='events' id='day_#{day}'>"
 	            events_for_day[day] << "<div class='event'>"
