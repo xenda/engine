@@ -105,11 +105,14 @@ module Locomotive
 	              url = "/sites/#{site_id}/assets/#{asset_id}/#{photo}"
 	            end
 	            url ||= ""
+
+		    if(url=="")
+			img = "<img src='#{url}' width='100%' alt='#{event_title}' title='#{event_title}' />";
 	            
 	            events_for_day[day]  ||= "<div class='events' id='day_#{day}'>"
 	            events_for_day[day] << "<div class='event'>"
 	            events_for_day[day] << "	<div class='event_title #{event_category}' id='event_#{event_ID}_#{day}'></div>"
-	            events_for_day[day] << "	<div class='event_photo' id='event_photo_#{event_ID}_#{day}'><a href='/events/#{event._slug}' title='#{event_title}'><img src='#{url}' width='100%' alt='#{event_title}' title='#{event_title}' /></a><div class='event_photo_title #{event_category}'>#{event_title}</div></div>"
+	            events_for_day[day] << "	<div class='event_photo' id='event_photo_#{event_ID}_#{day}'><a href='/events/#{event._slug}' title='#{event_title}'>#{img}</a><div class='event_photo_title #{event_category}'>#{event_title}</div></div>"
 	            events_for_day[day] << "</div>"
             end
           end
