@@ -26,11 +26,11 @@ module Admin
     end
 
     def check_dates
-	if @content_type=='events'
+	if @content_type.slug=='events'
 		@content.custom_field_8 ||= Date.today if @content.custom_field_8
 		@content.custom_field_9 ||= Date.today if @content.custom_field_9
 	end
-	if @content_type=='articles'
+	if @content_type.slug=='articles'
 		@content.custom_field_5 ||= Date.today if @content.custom_field_5
 	end
     end
