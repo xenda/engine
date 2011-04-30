@@ -13,28 +13,26 @@ module Admin
     
     def new
 	@content = @content_type.contents.new
-	if @content_type=='events'
-		@content.custom_field_8 ||= Date.today
-		@content.custom_field_9 ||= Date.today
-	end
-	if @content_type=='articles'
-		@content.custom_field_5 ||= Date.today
-	end
+	check_dates
     	@galleries = FBPage.new("169431123106803").albums
     	new!
     end
     
     def edit
 	@content = @content_type.contents.new
-	if @content_type=='events'
-		@content.custom_field_8 ||= Date.today
-		@content.custom_field_9 ||= Date.today
-	end
-	if @content_type=='articles'
-		@content.custom_field_5 ||= Date.today
-	end
+	check_dates
     	@galleries = FBPage.new("169431123106803").albums
     	edit!
+    end
+
+    def check_dates
+	if @content_type=='events'
+		@content.custom_field_8 ||= Date.today if @content.custom_field_8
+		@content.custom_field_9 ||= Date.today if @content.custom_field_9
+	end
+	if @content_type=='articles'
+		@content.custom_field_5 ||= Date.today if @content.custom_field_5
+	end
     end
 
     # def create
