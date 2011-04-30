@@ -68,15 +68,15 @@ module Admin
     # end
 
     def create
-      check_dates
+      #check_dates
       create! { update_resources; edit_admin_content_url(@content_type.slug, @content.id) }
     end
 
     def update
-      check_dates
+      #check_dates
       update! { update_resources; edit_admin_content_url(@content_type.slug, @content.id) }
     end
-
+=begin
     def check_dates
        if params[:content][:date] && params[:content][:date]==""
          params[:content][:date] = Date.today
@@ -88,7 +88,7 @@ module Admin
          params[:content][:end_date] = Date.today
        end
     end
-
+=end
     def sort
       @content_type.sort_contents!(params[:order])
       respond_with(@content_type, :location => admin_contents_url(@content_type.slug))
