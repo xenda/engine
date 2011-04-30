@@ -29,9 +29,12 @@ module Admin
 	if @content_type.slug=='events'
 		@content.start_date ||= Date.today if @content.start_date
 		@content.end_date ||= Date.today if @content.end_date
+		@content.custom_field_8 ||= Date.today if @content.custom_field_8
+		@content.custom_field_9 ||= Date.today if @content.custom_field_9
 	end
 	if @content_type.slug=='articles'
 		@content.date ||= Date.today if @content.date
+		@content.custom_field_5 ||= Date.today if @content.custom_field_5
 	end
     end
 
