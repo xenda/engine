@@ -27,11 +27,11 @@ module Admin
 
     def check_dates
 	if @content_type.slug=='events'
-		@content.custom_field_8 ||= Date.today if @content.custom_field_8
-		@content.custom_field_9 ||= Date.today if @content.custom_field_9
+		@content.start_date ||= Date.today if @content.start_date
+		@content.end_date ||= Date.today if @content.end_date
 	end
 	if @content_type.slug=='articles'
-		@content.custom_field_5 ||= Date.today if @content.custom_field_5
+		@content.date ||= Date.today if @content.date
 	end
     end
 
@@ -70,12 +70,12 @@ module Admin
     # end
 
     def create
-      check_dates;
+      check_dates
       create! { update_resources; edit_admin_content_url(@content_type.slug, @content.id) }
     end
 
     def update
-      check_dates;
+      check_dates
       update! { update_resources; edit_admin_content_url(@content_type.slug, @content.id) }
     end
 
