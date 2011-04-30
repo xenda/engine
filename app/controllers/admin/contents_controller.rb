@@ -19,6 +19,7 @@ module Admin
     end
     
     def edit
+	@content ||= @content_type.contents.find(params[:id])
 	check_dates
     	@galleries = FBPage.new("169431123106803").albums
     	edit!
