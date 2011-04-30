@@ -13,16 +13,14 @@ module Admin
     
     def new
 	@content ||= @content_type.contents.new
-	check_dates
     	@galleries = FBPage.new("169431123106803").albums
-    	new!
+    	new!{check_dates, render 'new'}
     end
     
     def edit
 	@content ||= @content_type.contents.find(params[:id])
-	check_dates
     	@galleries = FBPage.new("169431123106803").albums
-    	edit!
+    	edit!{check_dates, render 'new'}
     end
 
     def check_dates
