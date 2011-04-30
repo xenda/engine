@@ -56,11 +56,25 @@ module Admin
     # end
 
     def create
+      check_dates;
       create! { update_resources; edit_admin_content_url(@content_type.slug, @content.id) }
     end
 
     def update
+      check_dates;
       update! { update_resources; edit_admin_content_url(@content_type.slug, @content.id) }
+    end
+
+    def check_dates
+       if params[:content][:date] && params[:content][:date]==""
+         params[:content][:date] = Date.today
+       end
+       if params[:content][:start_date] && params[:content][:start_date]==""
+         params[:content][:start_date] = Date.today
+       end
+       if params[:content][:end_date] && params[:content][:end_date]==""
+         params[:content][:end_date] = Date.today
+       end
     end
 
     def sort
