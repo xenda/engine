@@ -12,6 +12,7 @@ module Admin
     end
     
     def new
+	@content ||= @content_type.contents.new
 	check_dates
     	@galleries = FBPage.new("169431123106803").albums
     	new!
