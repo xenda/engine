@@ -4,14 +4,12 @@ module Locomotive
       class Contents < ::Liquid::Drop
 
         def before_method(meth)
+		puts meth.inspect
           if meth.to_s=='events_with_photos'
               meth = :events
               @events_with_photos = true
           end
 
-          puts '--------------------'
-          puts meth.to_s
-          puts '--------------------'
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
         end
