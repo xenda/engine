@@ -4,7 +4,10 @@ module Locomotive
       class Contents < ::Liquid::Drop
 
         def before_method(meth)
+		puts meth
+		puts '-------'
           meth = 'events' if meth=='events_with_photos'
+		puts meth
           @events_with_photos = true
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
