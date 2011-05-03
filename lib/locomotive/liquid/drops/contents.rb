@@ -4,14 +4,14 @@ module Locomotive
       class Contents < ::Liquid::Drop
 
         def before_method(meth)
-		puts meth.inspect
-          if meth.to_s=='events_with_photos'
+          if meth.to_s=="events_with_photos"
               meth = :events
               @events_with_photos = true
           end
 
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
+		puts type.inspect
         end
 
       end
@@ -78,7 +78,10 @@ module Locomotive
         def collection
           	if @content_type.slug=='events'
             		@collection ||= @content_type.ordered_events
-			@collection.select{|i| i.custom_field_4_filename } if @events_with_photos
+			@collection.select{|i| i.custom_field_4_filename } if @events_with_photos && @collection
+			puts '----------------------------'
+			puts @collection
+			puts '----------------------------'
            	else
            		@collection ||= @content_type.ordered_contents(@context['with_scope'])
            	end
