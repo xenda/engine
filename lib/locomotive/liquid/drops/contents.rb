@@ -11,7 +11,6 @@ module Locomotive
 
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
-		puts type.inspect
         end
 
       end
@@ -79,7 +78,10 @@ module Locomotive
           	if @content_type.slug=='events'
 			if @events_with_photos
 				@collection ||= @content_type.contents.select{|i| i.custom_field_4_filename }
+
+				puts '------------------------------------------------------------------------'
 				puts @collection
+				puts '------------------------------------------------------------------------'
 			else
 				@collection ||= @content_type.ordered_events
 			end
