@@ -7,10 +7,7 @@ module Locomotive
           if meth.to_s=="events_with_photos"
               meth = :events
               @@events_with_photos = true
-          else
-              @@events_with_photos = false
           end
-
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
         end
