@@ -6,12 +6,15 @@ module Locomotive
         def before_method(meth)
           if meth.to_s=="events_with_photos"
               meth = :events
-              @events_with_photos = true
+              @@events_with_photos = true
           end
 
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
         end
+	def events_with_photos?
+           @@events_with_photos
+	end
 
       end
 
@@ -77,9 +80,9 @@ module Locomotive
         def collection
           	if @content_type.slug=='events'
 			puts "--------------------------"
-			puts Contents.events_with_photos.to_s
+			puts Contents.events_with_photos?.to_s
 			puts "--------------------------"
-			if Contents.events_with_photos
+			if Contents.events_with_photos?
 				@collection ||= @content_type.contents.select{|i| i.custom_field_4_filename }
 			else
 				@collection ||= @content_type.ordered_events
