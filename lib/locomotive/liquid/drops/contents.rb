@@ -77,11 +77,12 @@ module Locomotive
 
         def collection
           	if @content_type.slug=='events'
-            		@collection ||= @content_type.ordered_events
-			@collection.select{|i| i.custom_field_4_filename } if @events_with_photos && @collection
-			puts '----------------------------'
-			puts @collection
-			puts '----------------------------'
+			if @events_with_photos
+				@collection ||= @content_type.contents.select{|i| i.custom_field_4_filename }
+				puts @collection
+			else
+				@collection ||= @content_type.ordered_events
+			end
            	else
            		@collection ||= @content_type.ordered_contents(@context['with_scope'])
            	end
