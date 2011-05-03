@@ -2,20 +2,20 @@ module Locomotive
   module Liquid
     module Drops
       class Contents < ::Liquid::Drop
-
+	@@events_with_photos
         def before_method(meth)
           if meth.to_s=="events_with_photos"
               meth = :events
-              @events_with_photos = true
+              @@events_with_photos = true
           else
-              @events_with_photos = false
+              @@events_with_photos = false
           end
 
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
         end
 	def self.events_with_photos?
-           @events_with_photos
+           @@events_with_photos
 	end
 
       end
