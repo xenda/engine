@@ -2,7 +2,9 @@ module Locomotive
   module Liquid
     module Drops
       class Contents < ::Liquid::Drop
-	@@events_with_photos
+
+	@@events_with_photos = false
+
         def before_method(meth)
           if meth.to_s=="events_with_photos"
               meth = :events
