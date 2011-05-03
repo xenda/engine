@@ -12,7 +12,7 @@ module Locomotive
           type = @context.registers[:site].content_types.where(:slug => meth.to_s).first
           ProxyCollection.new(type)
         end
-	def events_with_photos?
+	def self.events_with_photos?
            @@events_with_photos
 	end
 
