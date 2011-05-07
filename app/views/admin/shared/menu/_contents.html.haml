@@ -28,6 +28,6 @@
           %li
             = link_to truncate(content_type.name, :length => 20), admin_contents_url(content_type.slug)
 
-- if current_site.memberships.where(:account_id => current_admin.id).first.admin?
+- if current_site.memberships.where(:account_id => current_admin.id.to_s).first.admin?
   .action
     = link_to content_tag(:em) + content_tag(:span, t('admin.content_types.index.new')), new_admin_content_type_url
