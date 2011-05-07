@@ -3,13 +3,13 @@ module Locomotive
     module Tags
       class GetPhotoEvents < ::Liquid::Block
             def render(context)
-                  @events = ::ContentType({:slug => "events"}).first.contents.select{|i| i.custom_field_4_filename }
+                  @events = ::ContentType.where({:slug => "events"}).first.contents.select{|i| i.custom_field_4_filename }
                   context.scopes.last['events'] = @events
                   super
             end
       end
 
-      ::Liquid::Template.register_tag('getphotoevents', GetPage)
+      ::Liquid::Template.register_tag('getphotoevents', GetPhotoEvents)
     end
   end
 end
