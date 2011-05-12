@@ -6,19 +6,16 @@ module Locomotive
         def initialize(tag_name, markup, tokens, context)
 		    super
 		    setup_options(markup)
-        puts options.inspect
 		    if slug = options[:permalink].strip
 		    	@slug = slug
 		    end
 		  end
 		  
 		  def render(context)
-        # puts @slug
-        @slug = @slug.strip.gsub(" ", "")
-		    @page = ::Page.where(:slug => @slug).first
-        # puts @page.inspect
+		        @slug = @slug.strip.gsub(" ", "")
+			@page = ::Page.where(:slug => @slug).first
 		  	context.scopes.last['_page'] = @page
-    		super
+	    		super
 		  end
 		  
 		  private
