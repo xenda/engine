@@ -98,11 +98,15 @@ module Admin
     end
 
     def destroy
-      destroy! do |format|
-      	format.html { redirect_to admin_contents_url(@content_type.slug) }
-      	format.js  {render :layout => false }
-      end
-    end
+         destroy! { admin_contents_url(@content_type.slug) }
+     end
+
+    # def destroy
+    #   destroy! do |format|
+    #     format.html { admin_contents_url(@content_type.slug) }
+    #     format.js  {render :layout => false }
+    #   end
+    # end
 
     protected
 
