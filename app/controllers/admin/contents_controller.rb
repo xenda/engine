@@ -99,7 +99,7 @@ module Admin
 
     def destroy
       destroy! do |format|
-      	format.html { admin_contents_url(@content_type.slug) }
+      	format.html { redirect_to admin_contents_url(@content_type.slug) }
       	format.js  {render :layout => false }
       end
     end
