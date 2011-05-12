@@ -85,11 +85,11 @@ module Locomotive
                 #   @collection ||= @content_type.contents.select{|i| i.custom_field_4_filename }
                 # else
           				@collection ||= @content_type.ordered_events
-                # end
            	else
            		@collection ||= @content_type.ordered_contents(@context['with_scope'])
            	end
         end
+        
       end
     end
   end
