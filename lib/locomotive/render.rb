@@ -15,7 +15,7 @@ module Locomotive
 
           redirect_to(@page.redirect_url) and return if @page.present? && @page.redirect?
 
-          render_no_page_error and return if @page.nil?
+          render_no_page_error(request.request_uri) and return if @page.nil?
 
           output = @page.render(locomotive_context)
 
@@ -23,8 +23,9 @@ module Locomotive
         end
       end
 
-      def render_no_page_error
-        render :template => "/admin/errors/no_page", :layout => false
+      def render_no_page_error(uri == "")
+        # render :template => "/admin/errors/no_page", :layout => false
+        redirect_to "http://peru.travel/#{uri}"
       end
 
       def locomotive_page
