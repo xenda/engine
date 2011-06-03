@@ -25,7 +25,7 @@ module Locomotive
 
       def render_no_page_error(uri = "")
         # render :template => "/admin/errors/no_page", :layout => false
-        redirect_to "http://peru.travel/#{uri}"
+        redirect_to "http://peru.travel#{uri}"
       end
 
       def locomotive_page
