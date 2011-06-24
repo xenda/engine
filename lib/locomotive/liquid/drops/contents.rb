@@ -71,11 +71,12 @@ module Locomotive
 
         def collection
           	if @content_type.slug=='events'
-			@collection ||= @content_type.ordered_events
+          				@collection ||= @content_type.ordered_events
            	else
            		@collection ||= @content_type.ordered_contents(@context['with_scope'])
            	end
         end
+        
       end
     end
   end
