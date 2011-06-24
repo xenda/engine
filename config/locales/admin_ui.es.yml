@@ -25,7 +25,7 @@ es:
         site: Sitio
         theme_assets: "Archivo de diseño"
       footer:
-        who_is_behind: "Desarrollado por Xenda utilizando LocomotiveCMS y HashiCMS."
+        who_is_behind: "Desarrolla utilizando LocomotiveCMS y HashiCMS."
       form_actions:
         back: Regresar sin grabar
         create: Crear
