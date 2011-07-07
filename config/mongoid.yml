@@ -19,6 +19,7 @@ test:
 production:
   <<: *defaults
   database: locomotive_prod
+  password: p3r41nf0
 
   # other settings for production
 
