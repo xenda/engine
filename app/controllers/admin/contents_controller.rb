@@ -36,6 +36,7 @@ module Admin
 		    @content.custom_field_5 ||= Date.today if @content.custom_field_5
 	    end
       @content.save
+      puts @content.inspect
     end
 
     # def create
