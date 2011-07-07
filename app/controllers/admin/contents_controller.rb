@@ -26,14 +26,14 @@ module Admin
 
     def check_dates
 	    if @content_type.slug=='events'
-		    @content.start_date ||= Date.today if @content.start_date.present?
-		    @content.end_date ||= Date.today if @content.end_date.present?
-		    @content.custom_field_8 ||= Date.today if @content.custom_field_8.present?
-		    @content.custom_field_9 ||= Date.today if @content.custom_field_9.present?
+		    @content.start_date ||= Date.today
+		    @content.end_date ||= Date.today
+		    @content.custom_field_8 ||= Date.today
+		    @content.custom_field_9 ||= Date.today
 	    end
 	    if @content_type.slug=='articles'
-		    @content.date ||= Date.today if @content.date.present?
-		    @content.custom_field_5 ||= Date.today if @content.custom_field_5.present?
+		    @content.date ||= Date.today
+		    @content.custom_field_5 ||= Date.today
 	    end
       @content.save
       puts @content.inspect
