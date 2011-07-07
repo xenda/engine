@@ -4,6 +4,7 @@ module Admin
     sections 'contents'
 
     before_filter :set_content_type
+    before_filter :check_dates, :only => [:create, :update]
 
     respond_to :json, :only => :update
 
