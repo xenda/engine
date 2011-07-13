@@ -12,6 +12,10 @@ class FBPhoto
 	end
 
 	def picture
-		self.data['picture']
+		if self.data
+			self.data['picture']
+		else
+			""
+		end
 	end
 end
