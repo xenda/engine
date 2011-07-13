@@ -12,12 +12,7 @@ class FBAlbum
 	end
 
 	def cover_photo
-	  if self.data
-  		photo = FBPhoto.new(self.data['cover_photo'])
-  		photo.picture
-	  else
-		  ""
-	  end
+	  "#{self.url}/picture"
 	end
 	
 	def photos
