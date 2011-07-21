@@ -6,7 +6,7 @@
     - if @content_type.slug=='events' && field._alias=='category'
       %li{ :class => "select optional" }
         = form.custom_input field._alias.to_sym, :label => field.label, :hint => field.hint, :css => 'toggle' do
-          = form.select field._name.to_sym, [['Feria', 'faire'], ['Door to Door', 'door2door'], ['Workshop', 'workshop'], ['Fam Trips', 'fam-trips']]
+          = form.select field._name.to_sym, [['Feria', 'faire'], ['Door to Door', 'door2door'], ['Workshop', 'workshop'], ['Fam Trips', 'fam-trips'],['Roadshow', 'roadshow']]
     - elsif field._alias=='gallery'
       %li{ :class => "select optional" }
         %label{:for => "content_gallery"}
